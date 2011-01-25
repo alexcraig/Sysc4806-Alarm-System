@@ -1,0 +1,1 @@
+A simulated home alarm system developed using Rational Rose Real-Time
