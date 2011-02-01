@@ -1,0 +1,9 @@
+Makefile_TARGETS = \
+	Makefile.dep \
+	src/Makefile \
+	build/Makefile
+
+Makefile_DEPS = \
+	M:/SYSC4806/Sysc4806-Alarm-System/4806_Alarm_System.rtmdl \
+	"C:/Program Files/Rational/Rose RealTime/C++/RTComponents.rtcmppkg"
+

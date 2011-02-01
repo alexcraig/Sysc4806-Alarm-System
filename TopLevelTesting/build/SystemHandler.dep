@@ -1,0 +1,5 @@
+SystemHandler_DEPS = \
+	../src/SystemHandler.cpp \
+	../src/RTSystem/TopLevelTesting.h \
+	../src/SystemHandler.h \
+	../src/HandlerProtocol.h

@@ -1,0 +1,4 @@
+HandlerProtocol_DEPS = \
+	../src/HandlerProtocol.cpp \
+	../src/RTSystem/TopLevelTesting.h \
+	../src/HandlerProtocol.h

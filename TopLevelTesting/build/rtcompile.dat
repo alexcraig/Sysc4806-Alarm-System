@@ -1,0 +1,10 @@
+# This file is not read by the Makefile,
+# but changing its contents triggers a recompile.
+RTS_HOME = C:/Program Files/Rational/Rose RealTime/C++/TargetRTS
+PLATFORM = NT40
+THREADED = T
+LIBRARY_SET = x86-VisualC++-6.0
+USER_CC = $(CC)
+USER_CCFLAGS = $(DEBUG_TAG)
+USER_INCPATHS = $(INCLUDE_TAG)../src
+USER_DEPPATHS = $(DEPEND_TAG) ../src
