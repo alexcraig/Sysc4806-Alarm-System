@@ -1082,6 +1082,10 @@
 								ends  ":Structure:sensorR1:fromCell"
 								ends  ":Structure:toSensors"
 								quidu "4D48609E0200"))))
+				class_attributes (list class_attribute_list
+					(object ClassAttribute "identifier"
+						quid "4D5193F90273"
+						type "RTString"))
 				statemachine (object State_Machine
 					quid "4D485B8401C2"
 					State (object State "TOP"
@@ -1290,6 +1294,10 @@
 							portCardinality  constValue "1"
 							isConjugated TRUE
 							isRelay FALSE)))
+				class_attributes (list class_attribute_list
+					(object ClassAttribute "identifier"
+						quid "4D5193E6032E"
+						type "RTString"))
 				statemachine (object State_Machine
 					quid "4D485C4502EE"
 					State (object State "TOP"
@@ -1608,7 +1616,8 @@
 								dataType  "void")
 							(object Signal "breakin"
 								quid "4D485DCC01C8"
-								dataType  "void"))
+								dataType  "Logical View::RTClasses::RTString"
+								quidu "37E928FA039F"))
 						outSignals (list outSignalsList
 							(object Signal "arm"
 								quid "4D485D89010B"
@@ -1744,10 +1753,10 @@
 						quidu "4D485B7E0069"
 						compartment (object Compartment
 							quid "4D485B7E0068"
-							pos (1260,518)
+							pos (1260,522)
 							anchor 2
 							nlines 8
-							max_width 591
+							max_width 600
 							justify 1)
 						width 612
 						height 498
@@ -1763,12 +1772,12 @@
 						pos (1586,1164)
 						label (object ItemLabel
 							quid "4D485B840183"
-							pos (1305,1085)
+							pos (1305,1054)
 							max_width 562
 							label "CellHandler")
 						stereotype (object ItemLabel
 							quid "4D485B8401CD"
-							pos (1305,1044)
+							pos (1305,1013)
 							anchor 10
 							max_width 562
 							label "<<Capsule>>")
@@ -1776,13 +1785,13 @@
 						quidu "4D485B8401C1"
 						compartment (object Compartment
 							quid "4D485B8401C0"
-							pos (1305,1143)
+							pos (1305,1112)
 							anchor 2
-							nlines 6
+							nlines 7
 							max_width 559
 							justify 1)
 						width 580
-						height 396
+						height 458
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
@@ -1811,7 +1820,7 @@
 							pos (2406,1789)
 							anchor 2
 							nlines 4
-							max_width 506
+							max_width 515
 							justify 1)
 						width 536
 						height 314
@@ -1827,26 +1836,26 @@
 						pos (2043,1768)
 						label (object ItemLabel
 							quid "4D485C4502BE"
-							pos (1784,1731)
-							max_width 518
+							pos (1788,1699)
+							max_width 510
 							label "Sensor")
 						stereotype (object ItemLabel
 							quid "4D485C4502F9"
-							pos (1784,1690)
+							pos (1788,1658)
 							anchor 10
-							max_width 518
+							max_width 510
 							label "<<Capsule>>")
 						icon_style "Decoration"
 						quidu "4D485C4502ED"
 						compartment (object Compartment
 							quid "4D485C4502EC"
-							pos (1784,1793)
+							pos (1788,1757)
 							anchor 2
-							nlines 4
+							nlines 5
 							max_width 506
 							justify 1)
-						width 536
-						height 314
+						width 528
+						height 376
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
@@ -1875,7 +1884,7 @@
 							pos (25,582)
 							anchor 2
 							nlines 4
-							max_width 534
+							max_width 543
 							justify 1)
 						width 556
 						height 314
@@ -1907,7 +1916,7 @@
 							pos (43,1129)
 							anchor 2
 							nlines 4
-							max_width 494
+							max_width 503
 							justify 1)
 						width 526
 						height 314
@@ -1923,25 +1932,25 @@
 						pos (2423,712)
 						label (object ItemLabel
 							quid "4D485CE3010A"
-							pos (2281,564)
-							max_width 284
+							pos (2262,563)
+							max_width 322
 							label "HandlerProtocol")
 						stereotype (object ItemLabel
 							quid "4D485CE30151"
-							pos (2281,523)
+							pos (2262,522)
 							anchor 10
-							max_width 284
+							max_width 322
 							label "<<Protocol>>")
 						icon_style "Decoration"
 						quidu "4D485CE30148"
 						compartment (object Compartment
 							quid "4D485CE30157"
-							pos (2281,626)
+							pos (2262,621)
 							anchor 2
 							nlines 7
-							max_width 281
+							max_width 319
 							justify 1)
-						width 302
+						width 340
 						height 464
 						annotation 8
 						autoResize TRUE
@@ -1953,76 +1962,76 @@
 						quidu "4D485E6202B5"
 						label (object SegLabel @84
 							quid "4D485E6202C4"
-							pos (2061,622)
+							pos (2052,621)
 							positionBySuperclass FALSE
 							max_width 97
 							label "toCells"
-							pctDist 0.527355
+							pctDist 0.527176
 							height 37
 							orientation 1)
 						positionBySuperclass FALSE
 						client @82
 						supplier @76
 						vertices (list Points
-							(2271,689)
+							(2252,686)
 							(1863,632))
 						line_style 6144
 						label (object SegLabel @85
 							quid "4D485E6202C6"
-							pos (2254,439)
+							pos (2245,438)
 							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "CellConfiguration::NUMBER_OF_CELLS"
-							pctDist 0.124834
-							height 245
+							pctDist 0.104482
+							height 244
 							orientation 1)
 						label (object SegLabel @86
 							quid "4D485E6202C5"
-							pos (2048,700)
+							pos (2039,699)
 							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.532411
-							height 41))
+							pctDist 0.532654
+							height 42))
 					(object PortRelVw ":Structure:fromSystem" @87
 						quid "4D485E6A0091"
 						uses_fill_color FALSE
 						quidu "4D485E6A0092"
 						label (object SegLabel @88
 							quid "4D485E6A00A1"
-							pos (2052,899)
+							pos (2044,904)
 							positionBySuperclass FALSE
 							max_width 169
 							label "fromSystem"
-							pctDist 0.542079
+							pctDist 0.540630
 							height 10
 							orientation 1)
 						positionBySuperclass FALSE
 						client @82
 						supplier @77
 						vertices (list Points
-							(2271,792)
+							(2252,803)
 							(1876,1006))
 						line_style 6144
 						label (object SegLabel @89
 							quid "4D485E6A00A3"
-							pos (2213,926)
+							pos (2205,931)
 							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist 0.255603
+							pctDist 0.239100
 							height 90)
 						label (object SegLabel @90
 							quid "4D485E6A00A2"
-							pos (2081,940)
+							pos (2073,945)
 							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.528795
+							pctDist 0.526495
 							height 40))
 					(object ClassView "ClassUtility" "Logical View::CellConfiguration" @91
 						ShowCompartmentStereotypes TRUE
@@ -2043,7 +2052,7 @@
 							pos (2705,400)
 							anchor 2
 							nlines 5
-							max_width 547
+							max_width 556
 							justify 1)
 						width 568
 						height 260
@@ -2055,32 +2064,32 @@
 						quidu "4D48610D02FC"
 						label (object SegLabel @93
 							quid "4D48610D030B"
-							pos (2316,1164)
+							pos (2322,1149)
 							max_width 116
 							label "fromCell"
-							pctDist 0.303146
-							height 53)
+							pctDist 0.293981
+							height 54)
 						client @82
 						supplier @79
 						vertices (list Points
 							(2338,944)
-							(2099,1610))
+							(2110,1579))
 						line_style 6144
 						label (object SegLabel @94
 							quid "4D48610D030D"
-							pos (2346,1126)
+							pos (2352,1111)
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist 0.238277
-							height 69)
+							pctDist 0.225947
+							height 70)
 						label (object SegLabel @95
 							quid "4D48610D030C"
-							pos (2256,1294)
+							pos (2262,1279)
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.504713
+							pctDist 0.505379
 							height 41))
 					(object PortRelVw ":Structure:fromCell" @96
 						quid "4D486123009A"
@@ -2140,7 +2149,7 @@
 							pos (738,526)
 							anchor 2
 							nlines 6
-							max_width 397
+							max_width 406
 							justify 1)
 						width 414
 						height 402
@@ -2173,7 +2182,7 @@
 							pos (724,1116)
 							anchor 2
 							nlines 2
-							max_width 406
+							max_width 415
 							justify 1)
 						width 426
 						height 238
@@ -2325,12 +2334,12 @@
 						pos (1757,2197)
 						label (object ItemLabel
 							quid "4D4863B50305"
-							pos (1652,2191)
+							pos (1652,2190)
 							max_width 210
 							label "HeatSensor")
 						stereotype (object ItemLabel
 							quid "4D4863B50330"
-							pos (1652,2150)
+							pos (1652,2149)
 							anchor 10
 							max_width 210
 							label "<<Capsule>>")
@@ -2350,12 +2359,12 @@
 						pos (2085,2194)
 						label (object ItemLabel
 							quid "4D4863DB0298"
-							pos (1959,2188)
+							pos (1959,2187)
 							max_width 252
 							label "BreakInSensor")
 						stereotype (object ItemLabel
 							quid "4D4863DB02F5"
-							pos (1959,2147)
+							pos (1959,2146)
 							anchor 10
 							max_width 252
 							label "<<Capsule>>")
@@ -2375,12 +2384,12 @@
 						pos (1416,2200)
 						label (object ItemLabel
 							quid "4D4863E60140"
-							pos (1271,2194)
+							pos (1271,2193)
 							max_width 290
 							label "MovementSensor")
 						stereotype (object ItemLabel
 							quid "4D4863E6018B"
-							pos (1271,2153)
+							pos (1271,2152)
 							anchor 10
 							max_width 290
 							label "<<Capsule>>")
@@ -2436,7 +2445,7 @@
 						supplier @79
 						vertices (list Points
 							(2071,2067)
-							(2057,1925))
+							(2061,1956))
 						line_style 6144)
 					(object InheritView "" @124
 						quid "4D4864040353"
@@ -2447,7 +2456,7 @@
 						supplier @79
 						vertices (list Points
 							(1839,2070)
-							(1936,1925))
+							(1915,1956))
 						line_style 6144)
 					(object InheritView "" @125
 						quid "4D4864070344"
@@ -2458,7 +2467,7 @@
 						supplier @79
 						vertices (list Points
 							(1570,2092)
-							(1812,1925))
+							(1778,1949))
 						line_style 6144)
 					(object ClassView "Class" "Logical View::UserConfiguration" @126
 						ShowCompartmentStereotypes TRUE
@@ -2479,7 +2488,7 @@
 							pos (508,1685)
 							anchor 2
 							nlines 4
-							max_width 616
+							max_width 625
 							justify 1)
 						width 661
 						height 218
