@@ -178,9 +178,10 @@ OnGenerateCode=
 OnBrowseCode=
 OnReverseEngineer=
 [Edit]
-Diagram1=4D3F30A503B2 192 38 1117 636 100 0 21 1 0 1 -1 -1 0
-Diagram2=3619364703D4 54 81 1013 679 100 0 30 1 1 3 -1 -1 0
-NumDiagrams=2
+Diagram1=3619364703E4 44 58 885 526 100 0 0 1 0 1 -1 -1 0
+Diagram2=4D3F30A503B2 192 38 1117 636 100 0 0 1 1 1 -1 -1 0
+Diagram3=3619364703D4 54 81 1013 679 100 0 0 1 2 3 -1 -1 0
+NumDiagrams=3
 NumSpecs=0
 [Normal Browsers]
 NumberOfBars=1
