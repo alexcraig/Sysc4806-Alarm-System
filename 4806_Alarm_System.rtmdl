@@ -31,282 +31,206 @@
 		quid "3619364703C6"
 		global TRUE
 		exportControl "Public"
-		logical_models (list unit_reference_list)
-		logical_presentations (list unit_reference_list
-			(object UseCaseDiagram "Main"
-				quid "3619364703E4")))
-	root_category (object Class_Category "Logical View"
-		quid "4D3F309C0384"
-		exportControl "Public"
 		logical_models (list unit_reference_list
-			(object Class "KeypadActor"
+			(object Class "Phone Line"
+				quid "4D3F31E003E5"
+				stereotype "Actor"
+				ends (list endsList
+					(object AssocEnd "$UNNAMED$0"
+						quid "4D3F33D0021B"
+						supplier  "Use Case View::Handle Break-In"
+						quidu "4D3F319001A2"))
+				language "C++")
+			(object Class "Alarm"
+				quid "4D3F31CF0200"
+				stereotype "Actor"
+				ends (list endsList
+					(object AssocEnd "$UNNAMED$1"
+						quid "4D3F32AA0254"
+						supplier  "Use Case View::Run Self Test"
+						quidu "4D3F317E028C")
+					(object AssocEnd "$UNNAMED$2"
+						quid "4D3F3635010B"
+						supplier  "Use Case View::Arm System"
+						quidu "4D3F315100E5")
+					(object AssocEnd "$UNNAMED$3"
+						quid "4D3F36380198"
+						supplier  "Use Case View::Disarm System"
+						quidu "4D3F31560366"))
+				language "C++")
+			(object Class "Display"
+				quid "4D3F31AB01D1"
+				stereotype "Actor"
+				assocsOwned (list assocsOwnedList
+					(object Assoc "$UNNAMED$4"
+						quid "4D59A8CA0111"
+						ends (list endsList
+							(object AssocEnd "$UNNAMED$5"
+								quid "4D59A8CA0112"
+								supplier  "Use Case View::Display"
+								quidu "4D3F31AB01D1")
+							(object AssocEnd "$UNNAMED$6"
+								quid "4D59A8CA0113"
+								supplier  "Use Case View::Enter Password"
+								quidu "4D3F315B00F5"
+								is_navigable TRUE)))
+					(object Assoc "$UNNAMED$7"
+						quid "4D59A8D603D0"
+						ends (list endsList
+							(object AssocEnd "$UNNAMED$8"
+								quid "4D59A8D603D1"
+								supplier  "Use Case View::Display"
+								quidu "4D3F31AB01D1"
+								is_navigable TRUE)
+							(object AssocEnd "$UNNAMED$9"
+								quid "4D59A8D603D2"
+								supplier  "Use Case View::Enter Password"
+								quidu "4D3F315B00F5"
+								is_navigable TRUE)))
+					(object Assoc "$UNNAMED$10"
+						quid "4D59B091034A"
+						ends (list endsList
+							(object AssocEnd "$UNNAMED$11"
+								quid "4D59B091034B"
+								supplier  "Use Case View::Display"
+								quidu "4D3F31AB01D1"
+								is_navigable TRUE)
+							(object AssocEnd "$UNNAMED$12"
+								quid "4D59B091034C"
+								supplier  "Use Case View::Run Self Test"
+								quidu "4D3F317E028C"
+								is_navigable TRUE))))
+				ends (list endsList
+					(object AssocEnd "$UNNAMED$13"
+						quid "4D3F332F01D9"
+						supplier  "Use Case View::Notify Break-In"
+						quidu "4D3F3176023E"))
+				language "C++")
+			(object Class "Keypad"
 				quid "4D3F31A5002B"
 				stereotype "Actor"
 				assocsOwned (list assocsOwnedList
-					(object Assoc "$UNNAMED$0"
+					(object Assoc "$UNNAMED$14"
 						quid "4D3F338D0313"
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$1"
+							(object AssocEnd "$UNNAMED$15"
 								quid "4D3F338D0314"
-								supplier  "Logical View::KeypadActor"
+								supplier  "Use Case View::Keypad"
 								quidu "4D3F31A5002B")
-							(object AssocEnd "$UNNAMED$2"
+							(object AssocEnd "$UNNAMED$16"
 								quid "4D3F338D0315"
-								supplier  "Logical View::Enable System"
+								supplier  "Use Case View::Enable System"
 								quidu "4D3F30DA0076")))
-					(object Assoc "$UNNAMED$3"
+					(object Assoc "$UNNAMED$17"
 						quid "4D3F339301BB"
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$4"
+							(object AssocEnd "$UNNAMED$18"
 								quid "4D3F339301BC"
-								supplier  "Logical View::KeypadActor"
+								supplier  "Use Case View::Keypad"
 								quidu "4D3F31A5002B")
-							(object AssocEnd "$UNNAMED$5"
+							(object AssocEnd "$UNNAMED$19"
 								quid "4D3F339301BD"
-								supplier  "Logical View::Disable System"
+								supplier  "Use Case View::Disable System"
 								quidu "4D3F314C0162")))
-					(object Assoc "$UNNAMED$6"
+					(object Assoc "$UNNAMED$20"
 						quid "4D3F339602A5"
 						stereotype " initiates "
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$7"
+							(object AssocEnd "$UNNAMED$21"
 								quid "4D3F339602A6"
-								supplier  "Logical View::KeypadActor"
+								supplier  "Use Case View::Keypad"
 								quidu "4D3F31A5002B")
-							(object AssocEnd "$UNNAMED$8"
+							(object AssocEnd "$UNNAMED$22"
 								quid "4D3F339602A7"
-								supplier  "Logical View::Arm System"
+								supplier  "Use Case View::Arm System"
 								quidu "4D3F315100E5")))
-					(object Assoc "$UNNAMED$9"
+					(object Assoc "$UNNAMED$23"
 						quid "4D3F339A01AC"
 						stereotype " initiates "
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$10"
+							(object AssocEnd "$UNNAMED$24"
 								quid "4D3F339A01AD"
-								supplier  "Logical View::KeypadActor"
+								supplier  "Use Case View::Keypad"
 								quidu "4D3F31A5002B")
-							(object AssocEnd "$UNNAMED$11"
+							(object AssocEnd "$UNNAMED$25"
 								quid "4D3F339A01AE"
-								supplier  "Logical View::Disarm System"
+								supplier  "Use Case View::Disarm System"
 								quidu "4D3F31560366")))
-					(object Assoc "$UNNAMED$12"
+					(object Assoc "$UNNAMED$26"
 						quid "4D3F33B002D5"
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$13"
+							(object AssocEnd "$UNNAMED$27"
 								quid "4D3F33B002D6"
-								supplier  "Logical View::KeypadActor"
+								supplier  "Use Case View::Keypad"
 								quidu "4D3F31A5002B"
 								is_navigable TRUE)
-							(object AssocEnd "$UNNAMED$14"
+							(object AssocEnd "$UNNAMED$28"
 								quid "4D3F33B002D7"
-								supplier  "Logical View::Invalidate Break-In"
+								supplier  "Use Case View::Invalidate Break-In"
 								quidu "4D3F31640347"
 								is_navigable TRUE))))
 				language "C++")
-			(object Class "DisplayActor"
-				quid "4D3F31AB01D1"
+			(object Class "Sensor"
+				quid "4D3F31D70358"
 				stereotype "Actor"
+				assocsOwned (list assocsOwnedList
+					(object Assoc "$UNNAMED$29"
+						quid "4D3F32E20215"
+						stereotype " initiates "
+						ends (list endsList
+							(object AssocEnd "$UNNAMED$30"
+								quid "4D3F32E20216"
+								supplier  "Use Case View::Sensor"
+								quidu "4D3F31D70358")
+							(object AssocEnd "$UNNAMED$31"
+								quid "4D3F32E20217"
+								supplier  "Use Case View::Notify Break-In"
+								quidu "4D3F3176023E"))))
 				ends (list endsList
-					(object AssocEnd "$UNNAMED$15"
-						quid "4D3F332F01D9"
-						supplier  "Logical View::Notify Break-In"
-						quidu "4D3F3176023E"))
+					(object AssocEnd "$UNNAMED$32"
+						quid "4D3F32AD02F0"
+						supplier  "Use Case View::Run Self Test"
+						quidu "4D3F317E028C")
+					(object AssocEnd "$UNNAMED$33"
+						quid "4D3F36140020"
+						supplier  "Use Case View::Arm System"
+						quidu "4D3F315100E5")
+					(object AssocEnd "$UNNAMED$34"
+						quid "4D3F361F032D"
+						supplier  "Use Case View::Disarm System"
+						quidu "4D3F31560366"))
 				language "C++")
 			(object Class "Timer"
 				quid "4D3F31B200C7"
 				stereotype "Actor"
 				assocsOwned (list assocsOwnedList
-					(object Assoc "$UNNAMED$16"
+					(object Assoc "$UNNAMED$35"
 						quid "4D3F329A037B"
 						stereotype " initiates "
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$17"
+							(object AssocEnd "$UNNAMED$36"
 								quid "4D3F329A037C"
-								supplier  "Logical View::Timer"
+								supplier  "Use Case View::Timer"
 								quidu "4D3F31B200C7")
-							(object AssocEnd "$UNNAMED$18"
+							(object AssocEnd "$UNNAMED$37"
 								quid "4D3F329A037D"
-								supplier  "Logical View::Run Self Test"
+								supplier  "Use Case View::Run Self Test"
 								quidu "4D3F317E028C")))
-					(object Assoc "$UNNAMED$19"
+					(object Assoc "$UNNAMED$38"
 						quid "4D3F33590266"
 						stereotype " initiates "
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$20"
+							(object AssocEnd "$UNNAMED$39"
 								quid "4D3F33590267"
-								supplier  "Logical View::Timer"
+								supplier  "Use Case View::Timer"
 								quidu "4D3F31B200C7"
 								is_navigable TRUE)
-							(object AssocEnd "$UNNAMED$21"
+							(object AssocEnd "$UNNAMED$40"
 								quid "4D3F33590268"
-								supplier  "Logical View::Handle Break-In"
+								supplier  "Use Case View::Handle Break-In"
 								quidu "4D3F319001A2"
 								is_navigable TRUE))))
 				language "C++")
-			(object Class "AlarmActor"
-				quid "4D3F31CF0200"
-				stereotype "Actor"
-				ends (list endsList
-					(object AssocEnd "$UNNAMED$22"
-						quid "4D3F32AA0254"
-						supplier  "Logical View::Run Self Test"
-						quidu "4D3F317E028C")
-					(object AssocEnd "$UNNAMED$23"
-						quid "4D3F3635010B"
-						supplier  "Logical View::Arm System"
-						quidu "4D3F315100E5")
-					(object AssocEnd "$UNNAMED$24"
-						quid "4D3F36380198"
-						supplier  "Logical View::Disarm System"
-						quidu "4D3F31560366"))
-				language "C++")
-			(object Class "SensorActor"
-				quid "4D3F31D70358"
-				stereotype "Actor"
-				assocsOwned (list assocsOwnedList
-					(object Assoc "$UNNAMED$25"
-						quid "4D3F32E20215"
-						stereotype " initiates "
-						ends (list endsList
-							(object AssocEnd "$UNNAMED$26"
-								quid "4D3F32E20216"
-								supplier  "Logical View::SensorActor"
-								quidu "4D3F31D70358")
-							(object AssocEnd "$UNNAMED$27"
-								quid "4D3F32E20217"
-								supplier  "Logical View::Notify Break-In"
-								quidu "4D3F3176023E"))))
-				ends (list endsList
-					(object AssocEnd "$UNNAMED$28"
-						quid "4D3F32AD02F0"
-						supplier  "Logical View::Run Self Test"
-						quidu "4D3F317E028C")
-					(object AssocEnd "$UNNAMED$29"
-						quid "4D3F36140020"
-						supplier  "Logical View::Arm System"
-						quidu "4D3F315100E5")
-					(object AssocEnd "$UNNAMED$30"
-						quid "4D3F361F032D"
-						supplier  "Logical View::Disarm System"
-						quidu "4D3F31560366"))
-				language "C++")
-			(object Class "Phone Line"
-				quid "4D3F31E003E5"
-				stereotype "Actor"
-				ends (list endsList
-					(object AssocEnd "$UNNAMED$31"
-						quid "4D3F33D0021B"
-						supplier  "Logical View::Handle Break-In"
-						quidu "4D3F319001A2"))
-				language "C++")
-			(object Class_Utility "CellConfiguration"
-				quid "4D485F0B016E"
-				class_attributes (list class_attribute_list
-					(object ClassAttribute "NUMBER_OF_CELLS"
-						quid "4D485F2B00F1"
-						initv "3"
-						type "int"
-						scope "Classifier"
-						visibility "Public")
-					(object ClassAttribute "SENSORS_PER_CELL"
-						quid "4D485F4C0305"
-						initv "3"
-						type "int"
-						scope "Classifier"
-						visibility "Public")
-					(object ClassAttribute "ALARMS_PER_CELL"
-						quid "4D485F5A0085"
-						initv "3"
-						type "int"
-						scope "Classifier"
-						visibility "Public"))
-				language "C++")
-			(object Class "UserConfiguration"
-				quid "4D4864590141"
-				class_attributes (list class_attribute_list
-					(object ClassAttribute "password"
-						quid "4D4864B100A6"
-						initv "1234"
-						type "RTString")
-					(object ClassAttribute "defaultPhoneNumber"
-						quid "4D4864D2029A"
-						initv "911"
-						type "RTString"))
-				language "C++")
-			(object UseCase "Enable System"
-				attributes (list Attribute_Set
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProProjectPath"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProProjectGuid"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocumentName"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocumentGuid"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocType"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProReqType"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProRequirementId"
-						value ""))
-				quid "4D3F30DA0076"
-				used_nodes (list uses_relationship_list
-					(object Uses_Relationship
-						quid "4D3F33FE0239"
-						stereotype " include "
-						supplier  "Logical View::Enter Password"
-						quidu "4D3F315B00F5")))
-			(object UseCase "Disable System"
-				attributes (list Attribute_Set
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProProjectPath"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProProjectGuid"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocumentName"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocumentGuid"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocType"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProReqType"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProRequirementId"
-						value ""))
-				quid "4D3F314C0162"
-				used_nodes (list uses_relationship_list
-					(object Uses_Relationship
-						quid "4D3F340900B3"
-						stereotype " include "
-						supplier  "Logical View::Enter Password"
-						quidu "4D3F315B00F5")))
 			(object UseCase "Arm System"
 				attributes (list Attribute_Set
 					(object Attribute
@@ -342,35 +266,72 @@
 					(object Uses_Relationship
 						quid "4D3F340B0287"
 						stereotype " include "
-						supplier  "Logical View::Enter Password"
+						supplier  "Use Case View::Enter Password"
 						quidu "4D3F315B00F5"))
 				assocsOwned (list assocsOwnedList
-					(object Assoc "$UNNAMED$32"
+					(object Assoc "$UNNAMED$41"
 						quid "4D3F3614001F"
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$29"
+							(object AssocEnd "$UNNAMED$33"
 								quid "4D3F36140020"
-								supplier  "Logical View::Arm System"
+								supplier  "Use Case View::Arm System"
 								quidu "4D3F315100E5"
 								is_navigable TRUE)
-							(object AssocEnd "$UNNAMED$33"
+							(object AssocEnd "$UNNAMED$42"
 								quid "4D3F36140021"
-								supplier  "Logical View::SensorActor"
+								supplier  "Use Case View::Sensor"
 								quidu "4D3F31D70358"
 								is_navigable TRUE)))
-					(object Assoc "$UNNAMED$34"
+					(object Assoc "$UNNAMED$43"
 						quid "4D3F3635010A"
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$23"
+							(object AssocEnd "$UNNAMED$2"
 								quid "4D3F3635010B"
-								supplier  "Logical View::Arm System"
+								supplier  "Use Case View::Arm System"
 								quidu "4D3F315100E5"
 								is_navigable TRUE)
-							(object AssocEnd "$UNNAMED$35"
+							(object AssocEnd "$UNNAMED$44"
 								quid "4D3F3635010C"
-								supplier  "Logical View::AlarmActor"
+								supplier  "Use Case View::Alarm"
 								quidu "4D3F31CF0200"
 								is_navigable TRUE)))))
+			(object UseCase "Disable System"
+				attributes (list Attribute_Set
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProProjectPath"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProProjectGuid"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocumentName"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocumentGuid"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocType"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProReqType"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProRequirementId"
+						value ""))
+				quid "4D3F314C0162"
+				used_nodes (list uses_relationship_list
+					(object Uses_Relationship
+						quid "4D3F340900B3"
+						stereotype " include "
+						supplier  "Use Case View::Enter Password"
+						quidu "4D3F315B00F5")))
 			(object UseCase "Disarm System"
 				attributes (list Attribute_Set
 					(object Attribute
@@ -406,35 +367,72 @@
 					(object Uses_Relationship
 						quid "4D3F340D02A7"
 						stereotype " include "
-						supplier  "Logical View::Enter Password"
+						supplier  "Use Case View::Enter Password"
 						quidu "4D3F315B00F5"))
 				assocsOwned (list assocsOwnedList
-					(object Assoc "$UNNAMED$36"
+					(object Assoc "$UNNAMED$45"
 						quid "4D3F361F032C"
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$30"
+							(object AssocEnd "$UNNAMED$34"
 								quid "4D3F361F032D"
-								supplier  "Logical View::Disarm System"
+								supplier  "Use Case View::Disarm System"
 								quidu "4D3F31560366"
 								is_navigable TRUE)
-							(object AssocEnd "$UNNAMED$37"
+							(object AssocEnd "$UNNAMED$46"
 								quid "4D3F361F032E"
-								supplier  "Logical View::SensorActor"
+								supplier  "Use Case View::Sensor"
 								quidu "4D3F31D70358"
 								is_navigable TRUE)))
-					(object Assoc "$UNNAMED$38"
+					(object Assoc "$UNNAMED$47"
 						quid "4D3F36380197"
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$24"
+							(object AssocEnd "$UNNAMED$3"
 								quid "4D3F36380198"
-								supplier  "Logical View::Disarm System"
+								supplier  "Use Case View::Disarm System"
 								quidu "4D3F31560366"
 								is_navigable TRUE)
-							(object AssocEnd "$UNNAMED$39"
+							(object AssocEnd "$UNNAMED$48"
 								quid "4D3F36380199"
-								supplier  "Logical View::AlarmActor"
+								supplier  "Use Case View::Alarm"
 								quidu "4D3F31CF0200"
 								is_navigable TRUE)))))
+			(object UseCase "Enable System"
+				attributes (list Attribute_Set
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProProjectPath"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProProjectGuid"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocumentName"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocumentGuid"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocType"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProReqType"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProRequirementId"
+						value ""))
+				quid "4D3F30DA0076"
+				used_nodes (list uses_relationship_list
+					(object Uses_Relationship
+						quid "4D3F33FE0239"
+						stereotype " include "
+						supplier  "Use Case View::Enter Password"
+						quidu "4D3F315B00F5")))
 			(object UseCase "Enter Password"
 				attributes (list Attribute_Set
 					(object Attribute
@@ -465,7 +463,12 @@
 						tool "RequisitePro"
 						name "ReqProRequirementId"
 						value ""))
-				quid "4D3F315B00F5")
+				quid "4D3F315B00F5"
+				ends (list endsList
+					(object AssocEnd "$UNNAMED$8"
+						quid "4D59A8D603D1"
+						supplier  "Use Case View::Display"
+						quidu "4D3F31AB01D1")))
 			(object UseCase "Invalidate Break-In"
 				attributes (list Attribute_Set
 					(object Attribute
@@ -501,133 +504,13 @@
 					(object Uses_Relationship
 						quid "4D3F34100065"
 						stereotype " include "
-						supplier  "Logical View::Enter Password"
+						supplier  "Use Case View::Enter Password"
 						quidu "4D3F315B00F5"))
 				ends (list endsList
-					(object AssocEnd "$UNNAMED$13"
+					(object AssocEnd "$UNNAMED$27"
 						quid "4D3F33B002D6"
-						supplier  "Logical View::KeypadActor"
+						supplier  "Use Case View::Keypad"
 						quidu "4D3F31A5002B")))
-			(object UseCase "Notify Break-In"
-				attributes (list Attribute_Set
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProProjectPath"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProProjectGuid"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocumentName"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocumentGuid"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocType"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProReqType"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProRequirementId"
-						value ""))
-				quid "4D3F3176023E"
-				assocsOwned (list assocsOwnedList
-					(object Assoc "$UNNAMED$40"
-						quid "4D3F332F01D8"
-						ends (list endsList
-							(object AssocEnd "$UNNAMED$15"
-								quid "4D3F332F01D9"
-								supplier  "Logical View::Notify Break-In"
-								quidu "4D3F3176023E"
-								is_navigable TRUE)
-							(object AssocEnd "$UNNAMED$41"
-								quid "4D3F332F01DA"
-								supplier  "Logical View::DisplayActor"
-								quidu "4D3F31AB01D1"
-								is_navigable TRUE)))))
-			(object UseCase "Run Self Test"
-				attributes (list Attribute_Set
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProProjectPath"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProProjectGuid"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocumentName"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocumentGuid"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProDocType"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProReqType"
-						value "")
-					(object Attribute
-						tool "RequisitePro"
-						name "ReqProRequirementId"
-						value ""))
-				quid "4D3F317E028C"
-				used_nodes (list uses_relationship_list
-					(object Uses_Relationship
-						quid "4D3F34420160"
-						stereotype " extend "
-						supplier  "Logical View::Notify Break-In"
-						quidu "4D3F3176023E"))
-				assocsOwned (list assocsOwnedList
-					(object Assoc "$UNNAMED$42"
-						quid "4D3F32550232"
-						ends (list endsList
-							(object AssocEnd "$UNNAMED$43"
-								quid "4D3F32550233"
-								supplier  "Logical View::Run Self Test"
-								quidu "4D3F317E028C")
-							(object AssocEnd "$UNNAMED$44"
-								quid "4D3F32550234"
-								supplier  "Logical View::Timer"
-								quidu "4D3F31B200C7")))
-					(object Assoc "$UNNAMED$45"
-						quid "4D3F32AA0253"
-						ends (list endsList
-							(object AssocEnd "$UNNAMED$22"
-								quid "4D3F32AA0254"
-								supplier  "Logical View::Run Self Test"
-								quidu "4D3F317E028C"
-								is_navigable TRUE)
-							(object AssocEnd "$UNNAMED$46"
-								quid "4D3F32AA0255"
-								supplier  "Logical View::AlarmActor"
-								quidu "4D3F31CF0200"
-								is_navigable TRUE)))
-					(object Assoc "$UNNAMED$47"
-						quid "4D3F32AD02EF"
-						ends (list endsList
-							(object AssocEnd "$UNNAMED$28"
-								quid "4D3F32AD02F0"
-								supplier  "Logical View::Run Self Test"
-								quidu "4D3F317E028C"
-								is_navigable TRUE)
-							(object AssocEnd "$UNNAMED$48"
-								quid "4D3F32AD02F1"
-								supplier  "Logical View::SensorActor"
-								quidu "4D3F31D70358"
-								is_navigable TRUE)))))
 			(object UseCase "Handle Break-In"
 				attributes (list Attribute_Set
 					(object Attribute
@@ -665,30 +548,1283 @@
 						ends (list endsList
 							(object AssocEnd "$UNNAMED$50"
 								quid "4D3F338100E1"
-								supplier  "Logical View::Handle Break-In"
+								supplier  "Use Case View::Handle Break-In"
 								quidu "4D3F319001A2")
 							(object AssocEnd "$UNNAMED$51"
 								quid "4D3F338100E2"
-								supplier  "Logical View::AlarmActor"
+								supplier  "Use Case View::Alarm"
 								quidu "4D3F31CF0200")))
 					(object Assoc "$UNNAMED$52"
 						quid "4D3F33D0021A"
 						ends (list endsList
-							(object AssocEnd "$UNNAMED$31"
+							(object AssocEnd "$UNNAMED$0"
 								quid "4D3F33D0021B"
-								supplier  "Logical View::Handle Break-In"
+								supplier  "Use Case View::Handle Break-In"
 								quidu "4D3F319001A2"
 								is_navigable TRUE)
 							(object AssocEnd "$UNNAMED$53"
 								quid "4D3F33D0021C"
-								supplier  "Logical View::Phone Line"
+								supplier  "Use Case View::Phone Line"
 								quidu "4D3F31E003E5"
 								is_navigable TRUE))))
 				ends (list endsList
-					(object AssocEnd "$UNNAMED$20"
+					(object AssocEnd "$UNNAMED$39"
 						quid "4D3F33590267"
-						supplier  "Logical View::Timer"
+						supplier  "Use Case View::Timer"
 						quidu "4D3F31B200C7")))
+			(object UseCase "Run Self Test"
+				attributes (list Attribute_Set
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProProjectPath"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProProjectGuid"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocumentName"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocumentGuid"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocType"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProReqType"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProRequirementId"
+						value ""))
+				quid "4D3F317E028C"
+				used_nodes (list uses_relationship_list
+					(object Uses_Relationship
+						quid "4D3F34420160"
+						stereotype " extend "
+						supplier  "Use Case View::Notify Break-In"
+						quidu "4D3F3176023E"))
+				assocsOwned (list assocsOwnedList
+					(object Assoc "$UNNAMED$54"
+						quid "4D3F32550232"
+						ends (list endsList
+							(object AssocEnd "$UNNAMED$55"
+								quid "4D3F32550233"
+								supplier  "Use Case View::Run Self Test"
+								quidu "4D3F317E028C")
+							(object AssocEnd "$UNNAMED$56"
+								quid "4D3F32550234"
+								supplier  "Use Case View::Timer"
+								quidu "4D3F31B200C7")))
+					(object Assoc "$UNNAMED$57"
+						quid "4D3F32AA0253"
+						ends (list endsList
+							(object AssocEnd "$UNNAMED$1"
+								quid "4D3F32AA0254"
+								supplier  "Use Case View::Run Self Test"
+								quidu "4D3F317E028C"
+								is_navigable TRUE)
+							(object AssocEnd "$UNNAMED$58"
+								quid "4D3F32AA0255"
+								supplier  "Use Case View::Alarm"
+								quidu "4D3F31CF0200"
+								is_navigable TRUE)))
+					(object Assoc "$UNNAMED$59"
+						quid "4D3F32AD02EF"
+						ends (list endsList
+							(object AssocEnd "$UNNAMED$32"
+								quid "4D3F32AD02F0"
+								supplier  "Use Case View::Run Self Test"
+								quidu "4D3F317E028C"
+								is_navigable TRUE)
+							(object AssocEnd "$UNNAMED$60"
+								quid "4D3F32AD02F1"
+								supplier  "Use Case View::Sensor"
+								quidu "4D3F31D70358"
+								is_navigable TRUE))))
+				ends (list endsList
+					(object AssocEnd "$UNNAMED$11"
+						quid "4D59B091034B"
+						supplier  "Use Case View::Display"
+						quidu "4D3F31AB01D1")))
+			(object UseCase "Notify Break-In"
+				attributes (list Attribute_Set
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProProjectPath"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProProjectGuid"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocumentName"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocumentGuid"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProDocType"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProReqType"
+						value "")
+					(object Attribute
+						tool "RequisitePro"
+						name "ReqProRequirementId"
+						value ""))
+				quid "4D3F3176023E"
+				assocsOwned (list assocsOwnedList
+					(object Assoc "$UNNAMED$61"
+						quid "4D3F332F01D8"
+						ends (list endsList
+							(object AssocEnd "$UNNAMED$13"
+								quid "4D3F332F01D9"
+								supplier  "Use Case View::Notify Break-In"
+								quidu "4D3F3176023E"
+								is_navigable TRUE)
+							(object AssocEnd "$UNNAMED$62"
+								quid "4D3F332F01DA"
+								supplier  "Use Case View::Display"
+								quidu "4D3F31AB01D1"
+								is_navigable TRUE))))))
+		logical_presentations (list unit_reference_list
+			(object UseCaseDiagram "Main"
+				quid "3619364703E4")
+			(object UseCaseDiagram "ProjectUseCases"
+				quid "4D3F30A503B2"
+				items (list diagram_item_list
+					(object UseCaseView "Use Case View::Notify Break-In" @1
+						quid "4D3F3176020F"
+						pos (1334,2011)
+						label (object ItemLabel
+							quid "4D3F3176023F"
+							pos (1334,2144)
+							nlines 2
+							max_width 633
+							label "Notify Break-In")
+						icon_style "Icon"
+						quidu "4D3F3176023E"
+						width 222
+						height 117
+						autoResize TRUE)
+					(object ClassView "Class" "Use Case View::Timer" @2
+						ShowCompartmentStereotypes TRUE
+						IncludeAttribute TRUE
+						IncludeOperation TRUE
+						quid "4D3F31BE003B"
+						pos (2283,563)
+						label (object ItemLabel
+							quid "4D3F31BE003C"
+							pos (2283,719)
+							nlines 2
+							max_width 230
+							label "Timer")
+						icon "Actor"
+						icon_style "Icon"
+						quidu "4D3F31B200C7"
+						width 120
+						height 162
+						annotation 8
+						autoResize TRUE)
+					(object UseCaseView "Use Case View::Enable System" @3
+						quid "4D3F30FD01AF"
+						pos (812,159)
+						label (object ItemLabel
+							quid "4D3F30FD01B0"
+							pos (812,292)
+							nlines 2
+							max_width 633
+							label "Enable System")
+						icon_style "Icon"
+						quidu "4D3F30DA0076"
+						width 222
+						height 117
+						autoResize TRUE)
+					(object UseCaseView "Use Case View::Disable System" @4
+						quid "4D3F314C0143"
+						pos (768,397)
+						label (object ItemLabel
+							quid "4D3F314C0163"
+							pos (768,530)
+							nlines 2
+							max_width 633
+							label "Disable System")
+						icon_style "Icon"
+						quidu "4D3F314C0162"
+						width 222
+						height 117
+						autoResize TRUE)
+					(object ClassView "Class" "Use Case View::Keypad" @5
+						ShowCompartmentStereotypes TRUE
+						IncludeAttribute TRUE
+						IncludeOperation TRUE
+						quid "4D3F31A403D4"
+						pos (254,696)
+						label (object ItemLabel
+							quid "4D3F31A403D5"
+							pos (254,852)
+							nlines 2
+							max_width 230
+							label "Keypad")
+						icon "Actor"
+						icon_style "Icon"
+						quidu "4D3F31A5002B"
+						width 120
+						height 162
+						annotation 8
+						autoResize TRUE)
+					(object AssocVw "$UNNAMED$14" @6
+						quid "4D3F338D01AA"
+						pos (427,320)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F338D0313"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$16" @7
+								quid "4D3F338D01AB"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F338D0315"
+								client @6
+								supplier @3
+								vertices (list Points
+									(502,456)
+									(696,270))
+								line_style 6144)
+							(object RoleView "$UNNAMED$15" @8
+								quid "4D3F338D0312"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F338D0314"
+								client @6
+								supplier @5
+								vertices (list Points
+									(502,456)
+									(308,642))
+								line_style 6144)))
+					(object AssocVw "$UNNAMED$17" @9
+						quid "4D3F339203AE"
+						pos (478,563)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F339301BB"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$19" @10
+								quid "4D3F339203AF"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F339301BD"
+								client @9
+								supplier @4
+								vertices (list Points
+									(478,563)
+									(649,465))
+								line_style 6144)
+							(object RoleView "$UNNAMED$18" @11
+								quid "4D3F339301BA"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F339301BC"
+								client @9
+								supplier @5
+								vertices (list Points
+									(478,563)
+									(308,661))
+								line_style 6144)))
+					(object UseCaseView "Use Case View::Invalidate Break-In" @12
+						quid "4D3F31640318"
+						pos (755,694)
+						label (object ItemLabel
+							quid "4D3F31640348"
+							pos (755,827)
+							nlines 2
+							max_width 633
+							label "Invalidate Break-In")
+						icon_style "Icon"
+						quidu "4D3F31640347"
+						width 222
+						height 117
+						autoResize TRUE)
+					(object AssocVw "$UNNAMED$26" @13
+						quid "4D3F33AF03DD"
+						pos (477,694)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F33B002D5"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$28" @14
+								quid "4D3F33AF03DE"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F33B002D7"
+								client @13
+								supplier @12
+								vertices (list Points
+									(477,694)
+									(647,694))
+								line_style 6144)
+							(object RoleView "$UNNAMED$27" @15
+								quid "4D3F33B002D4"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F33B002D6"
+								client @13
+								supplier @5
+								vertices (list Points
+									(477,694)
+									(308,694))
+								line_style 6144)))
+					(object UseCaseView "Use Case View::Handle Break-In" @16
+						quid "4D3F31900182"
+						pos (1738,561)
+						label (object ItemLabel
+							quid "4D3F319001A3"
+							pos (1738,694)
+							nlines 2
+							max_width 633
+							label "Handle Break-In")
+						icon_style "Icon"
+						quidu "4D3F319001A2"
+						width 222
+						height 117
+						autoResize TRUE)
+					(object AssocVw "$UNNAMED$38" @17
+						quid "4D3F3358036E"
+						pos (2034,561)
+						label (object SegLabel @18
+							quid "4D3F33610032"
+							pos (2034,561)
+							font (object Font
+								italics TRUE)
+							hidden TRUE
+							anchor 1
+							max_width 232
+							label ""
+							pctDist 0.500000
+							height 0
+							orientation 1)
+						stereotype (object SegLabel @19
+							quid "4D3F3364036F"
+							pos (2063,553)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 203
+							label "<< initiates >>"
+							pctDist 0.983333
+							height 8)
+						uses_fill_color FALSE
+						quidu "4D3F33590266"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$40" @20
+								quid "4D3F3358036F"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F33590268"
+								client @17
+								supplier @16
+								vertices (list Points
+									(2034,561)
+									(1843,561))
+								line_style 6144)
+							(object RoleView "$UNNAMED$39" @21
+								quid "4D3F33590265"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F33590267"
+								client @17
+								supplier @2
+								vertices (list Points
+									(2034,561)
+									(2226,561))
+								line_style 6144)))
+					(object ClassView "Class" "Use Case View::Phone Line" @22
+						ShowCompartmentStereotypes TRUE
+						IncludeAttribute TRUE
+						IncludeOperation TRUE
+						quid "4D3F31E003A6"
+						pos (2277,204)
+						label (object ItemLabel
+							quid "4D3F31E003A7"
+							pos (2277,360)
+							nlines 2
+							max_width 230
+							label "Phone Line")
+						icon "Actor"
+						icon_style "Icon"
+						quidu "4D3F31E003E5"
+						width 120
+						height 162
+						annotation 8
+						autoResize TRUE)
+					(object AssocVw "$UNNAMED$52" @23
+						quid "4D3F33CF0332"
+						pos (2017,373)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F33D0021A"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$53" @24
+								quid "4D3F33CF0333"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F33D0021C"
+								client @23
+								supplier @22
+								vertices (list Points
+									(2017,373)
+									(2220,239))
+								line_style 6144)
+							(object RoleView "$UNNAMED$0" @25
+								quid "4D3F33D00219"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F33D0021B"
+								client @23
+								supplier @16
+								vertices (list Points
+									(2017,373)
+									(1814,507))
+								line_style 6144)))
+					(object ClassView "Class" "Use Case View::Sensor" @26
+						ShowCompartmentStereotypes TRUE
+						IncludeAttribute TRUE
+						IncludeOperation TRUE
+						quid "4D3F31D7031A"
+						pos (2294,1248)
+						label (object ItemLabel
+							quid "4D3F31D7031B"
+							pos (2294,1404)
+							nlines 2
+							max_width 230
+							label "Sensor")
+						icon "Actor"
+						icon_style "Icon"
+						quidu "4D3F31D70358"
+						width 120
+						height 162
+						annotation 8
+						autoResize TRUE)
+					(object AssocVw "$UNNAMED$29" @27
+						quid "4D3F32E1012A"
+						pos (1816,1623)
+						label (object SegLabel @28
+							quid "4D3F3335034E"
+							pos (1816,1623)
+							font (object Font
+								italics TRUE)
+							hidden TRUE
+							anchor 1
+							max_width 232
+							label ""
+							pctDist 0.500000
+							height 0
+							orientation 1)
+						stereotype (object SegLabel @29
+							quid "4D3F333901E7"
+							pos (1827,1602)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 203
+							label "<< initiates >>"
+							pctDist 0.683333
+							height 21)
+						uses_fill_color FALSE
+						quidu "4D3F32E20215"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$31" @30
+								quid "4D3F32E1012B"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F32E20217"
+								client @27
+								supplier @1
+								vertices (list Points
+									(1816,1623)
+									(1396,1957))
+								line_style 6144)
+							(object RoleView "$UNNAMED$30" @31
+								quid "4D3F32E20214"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F32E20216"
+								client @27
+								supplier @26
+								vertices (list Points
+									(1816,1623)
+									(2237,1290))
+								line_style 6144)))
+					(object UseCaseView "Use Case View::Arm System" @32
+						quid "4D3F315100B7"
+						pos (797,1482)
+						label (object ItemLabel
+							quid "4D3F315100E6"
+							pos (797,1615)
+							nlines 2
+							max_width 633
+							label "Arm System")
+						icon_style "Icon"
+						quidu "4D3F315100E5"
+						width 222
+						height 117
+						autoResize TRUE)
+					(object AssocVw "$UNNAMED$20" @33
+						quid "4D3F339502F3"
+						pos (566,1148)
+						label (object SegLabel @34
+							quid "4D3F3697034C"
+							pos (566,1091)
+							font (object Font
+								italics TRUE)
+							hidden TRUE
+							anchor 1
+							max_width 232
+							label ""
+							pctDist 0.500000
+							height 57)
+						stereotype (object SegLabel @35
+							quid "4D3F369D008D"
+							pos (560,1159)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 203
+							label "<< initiates >>"
+							pctDist 0.400000
+							height 11
+							orientation 1)
+						uses_fill_color FALSE
+						quidu "4D3F339602A5"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$22" @36
+								quid "4D3F339502F4"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F339602A7"
+								client @33
+								supplier @32
+								vertices (list Points
+									(566,1148)
+									(758,1427))
+								line_style 6144)
+							(object RoleView "$UNNAMED$21" @37
+								quid "4D3F339602A4"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F339602A6"
+								client @33
+								supplier @5
+								vertices (list Points
+									(566,1148)
+									(374,870))
+								line_style 6144)))
+					(object AssocVw "$UNNAMED$41" @38
+						quid "4D3F36110118"
+						pos (1686,1381)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F3614001F"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$42" @39
+								quid "4D3F36110119"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F36140021"
+								client @38
+								supplier @26
+								vertices (list Points
+									(1570,1359)
+									(2238,1254))
+								line_style 6144)
+							(object RoleView "$UNNAMED$33" @40
+								quid "4D3F3614001E"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F36140020"
+								client @38
+								supplier @32
+								vertices (list Points
+									(1570,1359)
+									(902,1464))
+								line_style 6144)))
+					(object UseCaseView "Use Case View::Disarm System" @41
+						quid "4D3F31560337"
+						pos (802,1174)
+						label (object ItemLabel
+							quid "4D3F31560367"
+							pos (802,1307)
+							nlines 2
+							max_width 633
+							label "Disarm System")
+						icon_style "Icon"
+						quidu "4D3F31560366"
+						width 222
+						height 117
+						autoResize TRUE)
+					(object AssocVw "$UNNAMED$23" @42
+						quid "4D3F3399017C"
+						pos (557,960)
+						label (object SegLabel @43
+							quid "4D3F36930149"
+							pos (557,903)
+							font (object Font
+								italics TRUE)
+							hidden TRUE
+							anchor 1
+							max_width 232
+							label ""
+							pctDist 0.500000
+							height 57)
+						stereotype (object SegLabel @44
+							quid "4D3F3695034C"
+							pos (621,1000)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 203
+							label "<< initiates >>"
+							pctDist 1.566667
+							height 40
+							orientation 1)
+						uses_fill_color FALSE
+						quidu "4D3F339A01AC"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$25" @45
+								quid "4D3F3399017D"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F339A01AE"
+								client @42
+								supplier @41
+								vertices (list Points
+									(557,960)
+									(740,1120))
+								line_style 6144)
+							(object RoleView "$UNNAMED$24" @46
+								quid "4D3F339A01AB"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F339A01AD"
+								client @42
+								supplier @5
+								vertices (list Points
+									(557,960)
+									(375,801))
+								line_style 6144)))
+					(object AssocVw "$UNNAMED$45" @47
+						quid "4D3F361D009B"
+						pos (1572,1210)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F361F032C"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$46" @48
+								quid "4D3F361D009C"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F361F032E"
+								client @47
+								supplier @26
+								vertices (list Points
+									(1572,1210)
+									(2238,1243))
+								line_style 6144)
+							(object RoleView "$UNNAMED$34" @49
+								quid "4D3F361F032B"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F361F032D"
+								client @47
+								supplier @41
+								vertices (list Points
+									(1572,1210)
+									(907,1177))
+								line_style 6144)))
+					(object ClassView "Class" "Use Case View::Alarm" @50
+						ShowCompartmentStereotypes TRUE
+						IncludeAttribute TRUE
+						IncludeOperation TRUE
+						quid "4D3F31CF01D1"
+						pos (2294,959)
+						label (object ItemLabel
+							quid "4D3F31CF01D2"
+							pos (2294,1115)
+							nlines 2
+							max_width 230
+							label "Alarm")
+						icon "Actor"
+						icon_style "Icon"
+						quidu "4D3F31CF0200"
+						width 120
+						height 162
+						annotation 8
+						autoResize TRUE)
+					(object AssocVw "$UNNAMED$49" @51
+						quid "4D3F337F039E"
+						pos (2051,785)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F338100E0"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$51" @52
+								quid "4D3F337F039F"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F338100E2"
+								client @51
+								supplier @50
+								vertices (list Points
+									(2051,785)
+									(2239,919))
+								line_style 6144)
+							(object RoleView "$UNNAMED$50" @53
+								quid "4D3F338100DF"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F338100E1"
+								client @51
+								supplier @16
+								vertices (list Points
+									(2051,785)
+									(1864,651))
+								line_style 6144)))
+					(object AssocVw "$UNNAMED$43" @54
+						quid "4D3F363302ED"
+						pos (1560,1167)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F3635010A"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$44" @55
+								quid "4D3F363302EE"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F3635010C"
+								client @54
+								supplier @50
+								vertices (list Points
+									(1570,1209)
+									(2238,976))
+								line_style 6144)
+							(object RoleView "$UNNAMED$2" @56
+								quid "4D3F36350109"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F3635010B"
+								client @54
+								supplier @32
+								vertices (list Points
+									(1570,1209)
+									(902,1443))
+								line_style 6144)))
+					(object AssocVw "$UNNAMED$47" @57
+						quid "4D3F36370232"
+						pos (1572,1060)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F36380197"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$48" @58
+								quid "4D3F36370233"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F36380199"
+								client @57
+								supplier @50
+								vertices (list Points
+									(1572,1060)
+									(2238,965))
+								line_style 6144)
+							(object RoleView "$UNNAMED$3" @59
+								quid "4D3F36380196"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F36380198"
+								client @57
+								supplier @41
+								vertices (list Points
+									(1572,1060)
+									(907,1156))
+								line_style 6144)))
+					(object UseCaseView "Use Case View::Enter Password" @60
+						quid "4D3F315B00D6"
+						pos (1393,719)
+						label (object ItemLabel
+							quid "4D3F315B00F6"
+							pos (1393,852)
+							nlines 2
+							max_width 633
+							label "Enter Password")
+						icon_style "Icon"
+						quidu "4D3F315B00F5"
+						width 222
+						height 117
+						autoResize TRUE)
+					(object UsesView "" @61
+						quid "4D3F33FE0064"
+						stereotype (object SegLabel @62
+							quid "4D3F34060287"
+							pos (1076,410)
+							font (object Font
+								size 10)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 241
+							label "<< include >>"
+							pctDist 0.361336
+							height 3
+							orientation 1)
+						uses_fill_color FALSE
+						quidu "4D3F33FE0239"
+						label (object SegLabel @63
+							quid "4D3F34020101"
+							pos (1166,440)
+							hidden TRUE
+							positionBySuperclass FALSE
+							max_width 207
+							label ""
+							pctDist 0.512602
+							height 43)
+						positionBySuperclass FALSE
+						client @3
+						supplier @60
+						vertices (list Points
+							(927,270)
+							(1334,663))
+						line_style 6144)
+					(object UsesView "" @64
+						quid "4D3F34080314"
+						stereotype (object SegLabel @65
+							quid "4D3F341401FB"
+							pos (1032,534)
+							font (object Font
+								size 10)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 241
+							label "<< include >>"
+							pctDist 0.363882
+							height 2
+							orientation 1)
+						uses_fill_color FALSE
+						quidu "4D3F340900B3"
+						label (object SegLabel @66
+							quid "4D3F341102B6"
+							pos (1113,524)
+							hidden TRUE
+							positionBySuperclass FALSE
+							max_width 207
+							label ""
+							pctDist 0.511946
+							height 44)
+						positionBySuperclass FALSE
+						client @4
+						supplier @60
+						vertices (list Points
+							(886,456)
+							(1290,665))
+						line_style 6144)
+					(object UsesView "" @67
+						quid "4D3F340F021A"
+						stereotype (object SegLabel @68
+							quid "4D3F342102D6"
+							pos (1036,694)
+							font (object Font
+								size 10)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 241
+							label "<< include >>"
+							pctDist 0.413268
+							height 9
+							orientation 1)
+						uses_fill_color FALSE
+						quidu "4D3F34100065"
+						label (object SegLabel @69
+							quid "4D3F341F0055"
+							pos (1046,671)
+							hidden TRUE
+							positionBySuperclass FALSE
+							max_width 207
+							label ""
+							pctDist 0.434599
+							height 32)
+						positionBySuperclass FALSE
+						client @12
+						supplier @60
+						vertices (list Points
+							(860,696)
+							(1285,713))
+						line_style 6144)
+					(object UsesView "" @70
+						quid "4D3F340B0130"
+						stereotype (object SegLabel @71
+							quid "4D3F34190074"
+							pos (1133,1051)
+							font (object Font
+								size 10)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 241
+							label "<< include >>"
+							pctDist 0.678941
+							height 1
+							orientation 1)
+						uses_fill_color FALSE
+						quidu "4D3F340B0287"
+						label (object SegLabel @72
+							quid "4D3F3415022A"
+							pos (1054,1106)
+							hidden TRUE
+							positionBySuperclass FALSE
+							max_width 207
+							label ""
+							pctDist 0.194032
+							height 1512
+							orientation 1)
+						positionBySuperclass FALSE
+						client @32
+						supplier @60
+						vertices (list Points
+							(835,1428)
+							(1273,872))
+						line_style 6144)
+					(object UsesView "" @73
+						quid "4D3F340D00C2"
+						stereotype (object SegLabel @74
+							quid "4D3F341D0259"
+							pos (1052,942)
+							font (object Font
+								size 10)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 241
+							label "<< include >>"
+							pctDist 0.501827
+							height 30
+							orientation 1)
+						uses_fill_color FALSE
+						quidu "4D3F340D02A7"
+						label (object SegLabel @75
+							quid "4D3F341A0046"
+							pos (1052,926)
+							hidden TRUE
+							positionBySuperclass FALSE
+							max_width 207
+							label ""
+							pctDist 0.520966
+							height 43)
+						positionBySuperclass FALSE
+						client @41
+						supplier @60
+						vertices (list Points
+							(868,1120)
+							(1271,813))
+						line_style 6144)
+					(object ClassView "Class" "Use Case View::Display" @76
+						ShowCompartmentStereotypes TRUE
+						IncludeAttribute TRUE
+						IncludeOperation TRUE
+						quid "4D3F31AB01C1"
+						pos (2320,1843)
+						label (object ItemLabel
+							quid "4D3F31AB01C2"
+							pos (2320,1999)
+							nlines 2
+							max_width 230
+							label "Display")
+						icon "Actor"
+						icon_style "Icon"
+						quidu "4D3F31AB01D1"
+						width 120
+						height 162
+						annotation 8
+						autoResize TRUE)
+					(object AssocVw "$UNNAMED$61" @77
+						quid "4D3F332E01F7"
+						pos (1851,1920)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F332F01D8"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$62" @78
+								quid "4D3F332E01F8"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F332F01DA"
+								client @77
+								supplier @76
+								vertices (list Points
+									(1851,1920)
+									(2263,1851))
+								line_style 6144)
+							(object RoleView "$UNNAMED$13" @79
+								quid "4D3F332F01D7"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F332F01D9"
+								client @77
+								supplier @1
+								vertices (list Points
+									(1851,1920)
+									(1439,1990))
+								line_style 6144)))
+					(object AssocVw "$UNNAMED$7" @80
+						quid "4D59A8D503CF"
+						pos (1889,1321)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D59A8D603D0"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$9" @81
+								quid "4D59A8D503D0"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D59A8D603D2"
+								client @80
+								supplier @60
+								vertices (list Points
+									(1889,1321)
+									(1514,865))
+								line_style 6144)
+							(object RoleView "$UNNAMED$8" @82
+								quid "4D59A8D603CF"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D59A8D603D1"
+								client @80
+								supplier @76
+								vertices (list Points
+									(1889,1321)
+									(2265,1777))
+								line_style 6144)))
+					(object UseCaseView "Use Case View::Run Self Test" @83
+						quid "4D3F317E025D"
+						pos (1334,1615)
+						label (object ItemLabel
+							quid "4D3F317E028D"
+							pos (1334,1748)
+							nlines 2
+							max_width 633
+							label "Run Self Test")
+						icon_style "Icon"
+						quidu "4D3F317E028C"
+						width 222
+						height 117
+						autoResize TRUE)
+					(object AssocVw "$UNNAMED$35" @84
+						quid "4D3F329A0177"
+						pos (1802,1091)
+						label (object SegLabel @85
+							quid "4D3F32CA00DB"
+							pos (1802,1091)
+							font (object Font
+								italics TRUE)
+							hidden TRUE
+							anchor 1
+							max_width 232
+							label ""
+							pctDist 0.500000
+							height 0
+							orientation 1)
+						stereotype (object SegLabel @86
+							quid "4D3F32CE034D"
+							pos (1968,877)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 203
+							label "<< initiates >>"
+							pctDist 3.266667
+							height 214)
+						uses_fill_color FALSE
+						quidu "4D3F329A037B"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$37" @87
+								quid "4D3F329A0178"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F329A037D"
+								client @84
+								supplier @83
+								vertices (list Points
+									(1802,1091)
+									(1377,1561))
+								line_style 6144)
+							(object RoleView "$UNNAMED$36" @88
+								quid "4D3F329A037A"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F329A037C"
+								client @84
+								supplier @2
+								vertices (list Points
+									(1802,1091)
+									(2227,621))
+								line_style 6144)))
+					(object UsesView "" @89
+						quid "4D3F3441021B"
+						stereotype (object SegLabel @90
+							quid "4D3F34480160"
+							pos (1333,1820)
+							font (object Font
+								size 10)
+							positionBySuperclass FALSE
+							anchor 10
+							max_width 231
+							label "<< extend >>"
+							pctDist 0.276596
+							height 1
+							orientation 1)
+						uses_fill_color FALSE
+						quidu "4D3F34420160"
+						label (object SegLabel @91
+							quid "4D3F344400B4"
+							pos (4862,4565)
+							hidden TRUE
+							positionBySuperclass FALSE
+							max_width 200
+							label ""
+							pctDist 14.877660
+							height 3528)
+						positionBySuperclass FALSE
+						client @83
+						supplier @1
+						vertices (list Points
+							(1334,1768)
+							(1334,1956))
+						line_style 6144)
+					(object AssocVw "$UNNAMED$59" @92
+						quid "4D3F32AD005E"
+						pos (1838,1420)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F32AD02EF"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$60" @93
+								quid "4D3F32AD005F"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F32AD02F1"
+								client @92
+								supplier @26
+								vertices (list Points
+									(1838,1420)
+									(2237,1268))
+								line_style 6144)
+							(object RoleView "$UNNAMED$32" @94
+								quid "4D3F32AD02EE"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F32AD02F0"
+								client @92
+								supplier @83
+								vertices (list Points
+									(1838,1420)
+									(1439,1573))
+								line_style 6144)))
+					(object AssocVw "$UNNAMED$57" @95
+						quid "4D3F32A9037B"
+						pos (1823,1278)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D3F32AA0253"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$58" @96
+								quid "4D3F32A9037C"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F32AA0255"
+								client @95
+								supplier @50
+								vertices (list Points
+									(1823,1278)
+									(2237,995))
+								line_style 6144)
+							(object RoleView "$UNNAMED$1" @97
+								quid "4D3F32AA0252"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D3F32AA0254"
+								client @95
+								supplier @83
+								vertices (list Points
+									(1823,1278)
+									(1409,1561))
+								line_style 6144)))
+					(object AssocVw "$UNNAMED$10" @98
+						quid "4D59B091008A"
+						pos (1851,1732)
+						stereotype TRUE
+						uses_fill_color FALSE
+						quidu "4D59B091034A"
+						roleview_list (list RoleViews
+							(object RoleView "$UNNAMED$12" @99
+								quid "4D59B091008B"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D59B091034C"
+								client @98
+								supplier @83
+								vertices (list Points
+									(1851,1732)
+									(1439,1638))
+								line_style 6144)
+							(object RoleView "$UNNAMED$11" @100
+								quid "4D59B0910349"
+								stereotype TRUE
+								uses_fill_color FALSE
+								quidu "4D59B091034B"
+								client @98
+								supplier @76
+								vertices (list Points
+									(1851,1732)
+									(2263,1826))
+								line_style 6144)))))))
+	root_category (object Class_Category "Logical View"
+		quid "4D3F309C0384"
+		exportControl "Public"
+		logical_models (list unit_reference_list
+			(object Class_Utility "CellConfiguration"
+				quid "4D485F0B016E"
+				class_attributes (list class_attribute_list
+					(object ClassAttribute "NUMBER_OF_CELLS"
+						quid "4D485F2B00F1"
+						initv "3"
+						type "int"
+						scope "Classifier"
+						visibility "Public")
+					(object ClassAttribute "SENSORS_PER_CELL"
+						quid "4D485F4C0305"
+						initv "3"
+						type "int"
+						scope "Classifier"
+						visibility "Public")
+					(object ClassAttribute "ALARMS_PER_CELL"
+						quid "4D485F5A0085"
+						initv "3"
+						type "int"
+						scope "Classifier"
+						visibility "Public"))
+				language "C++")
+			(object Class "UserConfiguration"
+				quid "4D4864590141"
+				class_attributes (list class_attribute_list
+					(object ClassAttribute "password"
+						quid "4D4864B100A6"
+						initv "1234"
+						type "RTString")
+					(object ClassAttribute "defaultPhoneNumber"
+						quid "4D4864D2029A"
+						initv "911"
+						type "RTString"))
+				language "C++")
 			(object Capsule "SystemHandler"
 				quid "4D485B7E0069"
 				structure (object CapsuleCollaboration "Structure"
@@ -715,6 +1851,11 @@
 							quidu "4D485B8401C1"
 							capsuleRoleCardinality  constClass  "Logical View::CellConfiguration::NUMBER_OF_CELLS"
 							quidu "4D485F2B00F1"
+							genericity "fixed")
+						(object CapsuleRole "phoneLineR1"
+							quid "4D59ABA402F2"
+							classifier  "Logical View::PhoneLine"
+							quidu "4D59AB0102E1"
 							genericity "fixed"))
 					ports (list portsList
 						(object Port "toCells"
@@ -747,6 +1888,29 @@
 							quidu "4D485CE30148"
 							portCardinality  constValue "1"
 							isRelay FALSE
+							visibility "Protected")
+						(object Port "toLog"
+							quid "4D59A077002B"
+							classifier  "Logical View::RTClasses::Log"
+							quidu "37E92926019B"
+							portCardinality  constValue "1"
+							isRelay FALSE
+							isWired FALSE
+							visibility "Protected")
+						(object Port "toTimer"
+							quid "4D59A75B0128"
+							classifier  "Logical View::RTClasses::Timing"
+							quidu "37E9292C018C"
+							isRelay FALSE
+							isWired FALSE
+							visibility "Protected")
+						(object Port "toPhone"
+							quid "4D59AB5D03BD"
+							classifier  "Logical View::PhoneProtocol"
+							quidu "4D59AB0D014A"
+							portCardinality  constValue "1"
+							isConjugated TRUE
+							isRelay FALSE
 							visibility "Protected"))
 					connectors (list connectorsList
 						(object Connector "C4D4866380166"
@@ -776,7 +1940,14 @@
 							ends (list endsList
 								ends  ":Structure:cellHandlerR1:fromSystem"
 								ends  ":Structure:toCells"
-								quidu "4D485E6202B5"))))
+								quidu "4D485E6202B5"))
+						(object Connector "C4D59ABDF0286"
+							quid "4D59ABDF0286"
+							connectorCardinality  constValue "*"
+							ends (list endsList
+								ends  ":Structure:phoneLineR1:toSystem"
+								ends  ":Structure:toPhone"
+								quidu "4D59AB5D03BD"))))
 				class_attributes (list class_attribute_list
 					(object ClassAttribute "config"
 						quid "4D486508028B"
@@ -791,11 +1962,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485B7E006E"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @1
+						(object StateView "Perimeter" "TOP" @101
 							quid "4D485B7E0070"
 							pos (840,615)
 							quidu "4D485B7E006B")
-						(object StateView "StartState" "Initial" @2
+						(object StateView "StartState" "Initial" @102
 							quid "4D485B7E0071"
 							pos (180,180)
 							quidu "4D485B7E006C"))
@@ -804,38 +1975,38 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D485B7E0072"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @3
+						(object CapsulePerimeterVw "Structure" @103
 							quid "4D485B7E0074"
 							pos (981,725)
 							quidu "4D485B7E006D"
 							width 1782
 							height 1269
 							positionBySuperclass FALSE)
-						(object CapsuleRoleVw ":Structure:displayR1" @4
+						(object CapsuleRoleVw ":Structure:displayR1" @104
 							quid "4D4865DC0388"
-							pos (832,819)
+							pos (1035,828)
 							quidu "4D4865DD0156"
 							label (object ItemLabel
 								quid "4D4865DD015A"
-								pos (832,778)
+								pos (1035,787)
 								positionBySuperclass FALSE
 								nlines 2
 								max_width 178
 								label "displayR1")
 							positionBySuperclass FALSE
 							boundIcons (list boundIconsList
-								(object ConnectionPtVw ":Structure:displayR1:toSystem" @5
+								(object ConnectionPtVw ":Structure:displayR1:toSystem" @105
 									quid "4D4865DD0158"
-									pos (758,909)
+									pos (961,918)
 									label (object ItemLabel
 										quid "4D4865DD0159"
-										pos (596,928)
+										pos (1115,943)
 										positionBySuperclass FALSE
 										nlines 2
 										max_width 256
 										label "toSystem")
 									positionBySuperclass FALSE)))
-						(object CapsuleRoleVw ":Structure:keypadR1" @6
+						(object CapsuleRoleVw ":Structure:keypadR1" @106
 							quid "4D4865E90211"
 							pos (1514,824)
 							quidu "4D4865EA007B"
@@ -848,18 +2019,18 @@
 								label "keypadR1")
 							positionBySuperclass FALSE
 							boundIcons (list boundIconsList
-								(object ConnectionPtVw ":Structure:keypadR1:fromSystem" @7
+								(object ConnectionPtVw ":Structure:keypadR1:fromSystem" @107
 									quid "4D4865EA007D"
 									pos (1456,914)
 									label (object ItemLabel
 										quid "4D4865EA007E"
-										pos (1287,921)
+										pos (1630,936)
 										positionBySuperclass FALSE
 										nlines 2
 										max_width 263
 										label "fromSystem")
 									positionBySuperclass FALSE)))
-						(object CapsuleRoleVw ":Structure:soundAlarmR1" @8
+						(object CapsuleRoleVw ":Structure:soundAlarmR1" @108
 							quid "4D4865F601E2"
 							pos (991,244)
 							quidu "4D4865F70369"
@@ -871,7 +2042,7 @@
 								max_width 250
 								label "soundAlarmR1")
 							boundIcons (list boundIconsList
-								(object ConnectionPtVw ":Structure:soundAlarmR1:fromCell" @9
+								(object ConnectionPtVw ":Structure:soundAlarmR1:fromCell" @109
 									quid "4D4865F7036B"
 									pos (1138,242)
 									label (object ItemLabel
@@ -882,44 +2053,68 @@
 										max_width 288
 										label "fromCell")
 									positionBySuperclass FALSE)))
-						(object CapsuleRoleVw ":Structure:cellHandlerR1" @10
+						(object CapsuleRoleVw ":Structure:cellHandlerR1" @110
 							quid "4D48667F03D8"
-							pos (360,526)
+							pos (478,526)
 							quidu "4D486680003E"
 							width 282
 							label (object ItemLabel
 								quid "4D48668301DE"
-								pos (356,513)
+								pos (474,513)
 								positionBySuperclass FALSE
 								nlines 2
 								max_width 244
 								label "cellHandlerR1")
 							positionBySuperclass FALSE
 							boundIcons (list boundIconsList
-								(object ConnectionPtVw ":Structure:cellHandlerR1:fromSystem" @11
+								(object ConnectionPtVw ":Structure:cellHandlerR1:fromSystem" @111
 									quid "4D48668301D6"
-									pos (254,436)
+									pos (371,436)
 									label (object ItemLabel
 										quid "4D48668301D7"
-										pos (476,336)
+										pos (593,336)
 										positionBySuperclass FALSE
 										nlines 2
 										max_width 288
 										label "fromSystem")
 									positionBySuperclass FALSE)))
-						(object PortVw ":Structure:toCells" @12
+						(object CapsuleRoleVw ":Structure:phoneLineR1" @112
+							quid "4D59ABA3038F"
+							pos (612,829)
+							quidu "4D59ABA402F2"
+							label (object ItemLabel
+								quid "4D59ABA402F6"
+								pos (612,791)
+								positionBySuperclass FALSE
+								nlines 2
+								max_width 234
+								label "phoneLineR1")
+							positionBySuperclass FALSE
+							boundIcons (list boundIconsList
+								(object ConnectionPtVw ":Structure:phoneLineR1:toSystem" @113
+									quid "4D59ABA402F4"
+									pos (562,919)
+									label (object ItemLabel
+										quid "4D59ABA402F5"
+										pos (737,944)
+										positionBySuperclass FALSE
+										nlines 2
+										max_width 247
+										label "toSystem")
+									positionBySuperclass FALSE)))
+						(object PortVw ":Structure:toCells" @114
 							quid "4D485E6202B6"
-							pos (253,244)
+							pos (371,244)
 							quidu "4D485E6202B5"
 							label (object ItemLabel
 								quid "4D485E6202B8"
-								pos (333,209)
+								pos (451,209)
 								positionBySuperclass FALSE
 								nlines 2
 								max_width 266
 								label "toCells")
 							positionBySuperclass FALSE)
-						(object PortVw ":Structure:toKeypad" @13
+						(object PortVw ":Structure:toKeypad" @115
 							quid "4D48634500C2"
 							pos (1457,1154)
 							quidu "4D48634500C1"
@@ -931,19 +2126,19 @@
 								max_width 284
 								label "toKeypad")
 							positionBySuperclass FALSE)
-						(object PortVw ":Structure:toDisplay" @14
+						(object PortVw ":Structure:toDisplay" @116
 							quid "4D48636D03D0"
-							pos (759,1157)
+							pos (962,1166)
 							quidu "4D48636D03CF"
 							label (object ItemLabel
 								quid "4D48636D03DE"
-								pos (768,1193)
+								pos (971,1202)
 								positionBySuperclass FALSE
 								nlines 2
 								max_width 278
 								label "toDisplay")
 							positionBySuperclass FALSE)
-						(object PortVw ":Structure:toInternalAlarm" @15
+						(object PortVw ":Structure:toInternalAlarm" @117
 							quid "4D48641A01BD"
 							pos (1527,240)
 							quidu "4D48641702B7"
@@ -955,73 +2150,127 @@
 								max_width 275
 								label "toInternalAlarm")
 							positionBySuperclass FALSE)
-						(object ConnectorVw ":Structure:C4D4866380166" @16
+						(object PortVw ":Structure:toLog" @118
+							quid "4D59A07902DB"
+							pos (154,937)
+							quidu "4D59A077002B"
+							label (object ItemLabel
+								quid "4D59A07902DD"
+								pos (163,973)
+								positionBySuperclass FALSE
+								nlines 2
+								max_width 141
+								label "toLog")
+							positionBySuperclass FALSE)
+						(object PortVw ":Structure:toTimer" @119
+							quid "4D59A75C0270"
+							pos (162,676)
+							quidu "4D59A75B0128"
+							label (object ItemLabel
+								quid "4D59A75C0272"
+								pos (171,712)
+								positionBySuperclass FALSE
+								nlines 2
+								max_width 166
+								label "toTimer")
+							positionBySuperclass FALSE)
+						(object PortVw ":Structure:toPhone" @120
+							quid "4D59AB5D03BE"
+							pos (563,1165)
+							quidu "4D59AB5D03BD"
+							label (object ItemLabel
+								quid "4D59AB5D03CC"
+								pos (572,1201)
+								positionBySuperclass FALSE
+								nlines 2
+								max_width 269
+								label "toPhone")
+							positionBySuperclass FALSE)
+						(object ConnectorVw ":Structure:C4D4866380166" @121
 							quid "4D4866370212"
 							stereotype TRUE
 							uses_fill_color FALSE
 							quidu "4D4866380166"
-							label (object SegLabel @17
+							label (object SegLabel @122
 								quid "4D4866380167"
 								pos (1412,1023)
 								max_width 253
 								pctDist 0.494737
 								height 44)
-							client @13
-							supplier @7
+							client @115
+							supplier @107
 							vertices (list Points
 								(1456,1117)
 								(1456,927))
 							line_style 6144)
-						(object ConnectorVw ":Structure:C4D48664C01A5" @18
+						(object ConnectorVw ":Structure:C4D48664C01A5" @123
 							quid "4D48664B029F"
 							stereotype TRUE
 							uses_fill_color FALSE
 							quidu "4D48664C01A5"
-							label (object SegLabel @19
+							label (object SegLabel @124
 								quid "4D48664C01A6"
-								pos (803,1021)
+								pos (1764,2051)
 								max_width 259
-								pctDist 0.500000
-								height 45)
-							client @5
-							supplier @14
+								pctDist 5.656566
+								height 803)
+							client @105
+							supplier @116
 							vertices (list Points
-								(758,922)
-								(758,1120))
+								(961,931)
+								(961,1129))
 							line_style 6144)
-						(object ConnectorVw ":Structure:C4D4866650119" @20
+						(object ConnectorVw ":Structure:C4D4866650119" @125
 							quid "4D4866640177"
 							stereotype TRUE
 							uses_fill_color FALSE
 							quidu "4D4866650119"
-							label (object SegLabel @21
+							label (object SegLabel @126
 								quid "4D4866650128"
 								pos (1322,285)
 								max_width 253
 								pctDist 0.495962
 								height 45)
-							client @15
-							supplier @9
+							client @117
+							supplier @109
 							vertices (list Points
 								(1490,240)
 								(1151,241))
 							line_style 6144)
-						(object ConnectorVw ":Structure:C4D4866D80205" @22
+						(object ConnectorVw ":Structure:C4D4866D80205" @127
 							quid "4D4866D80011"
 							stereotype TRUE
 							uses_fill_color FALSE
 							quidu "4D4866D80205"
-							label (object SegLabel @23
+							label (object SegLabel @128
 								quid "4D4866D80206"
-								pos (209,356)
+								pos (580,706)
 								max_width 259
-								pctDist 0.460993
-								height 44)
-							client @11
-							supplier @12
+								pctDist -2.021277
+								height 209
+								orientation 1)
+							client @111
+							supplier @114
 							vertices (list Points
-								(253,421)
-								(253,280))
+								(371,421)
+								(371,280))
+							line_style 6144)
+						(object ConnectorVw ":Structure:C4D59ABDF0286" @129
+							quid "4D59ABDE01CB"
+							stereotype TRUE
+							uses_fill_color FALSE
+							quidu "4D59ABDF0286"
+							label (object SegLabel @130
+								quid "4D59ABDF0287"
+								pos (607,1030)
+								max_width 266
+								pctDist 0.500000
+								height 45)
+							client @113
+							supplier @120
+							vertices (list Points
+								(562,932)
+								(562,1128))
 							line_style 6144))
 					filterFlags 521))
 			(object Capsule "CellHandler"
@@ -1096,11 +2345,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485B8401C6"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @24
+						(object StateView "Perimeter" "TOP" @131
 							quid "4D485B8401C8"
 							pos (840,615)
 							quidu "4D485B8401C3")
-						(object StateView "StartState" "Initial" @25
+						(object StateView "StartState" "Initial" @132
 							quid "4D485B8401C9"
 							pos (180,180)
 							quidu "4D485B8401C4"))
@@ -1109,12 +2358,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D485B8401CA"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @26
+						(object CapsulePerimeterVw "Structure" @133
 							quid "4D485B8401CC"
 							pos (840,615)
 							quidu "4D485B8401C5"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromSystem" @27
+								(object PortVw ":Structure:fromSystem" @134
 									quid "4D485E6A0093"
 									pos (306,96)
 									quidu "4D485E6A0092"
@@ -1124,7 +2373,7 @@
 										nlines 2
 										max_width 288
 										label "fromSystem"))))
-						(object CapsuleRoleVw ":Structure:alarmR1" @28
+						(object CapsuleRoleVw ":Structure:alarmR1" @135
 							quid "4D4866FE031E"
 							pos (353,853)
 							quidu "4D4867000188"
@@ -1137,7 +2386,7 @@
 								label "alarmR1")
 							positionBySuperclass FALSE
 							boundIcons (list boundIconsList
-								(object ConnectionPtVw ":Structure:alarmR1:fromCell" @29
+								(object ConnectionPtVw ":Structure:alarmR1:fromCell" @136
 									quid "4D486700018A"
 									pos (268,763)
 									label (object ItemLabel
@@ -1148,7 +2397,7 @@
 										max_width 288
 										label "fromCell")
 									positionBySuperclass FALSE)))
-						(object CapsuleRoleVw ":Structure:sensorR1" @30
+						(object CapsuleRoleVw ":Structure:sensorR1" @137
 							quid "4D48670A03DA"
 							pos (1162,844)
 							quidu "4D48670C0205"
@@ -1161,7 +2410,7 @@
 								label "sensorR1")
 							positionBySuperclass FALSE
 							boundIcons (list boundIconsList
-								(object ConnectionPtVw ":Structure:sensorR1:fromCell" @31
+								(object ConnectionPtVw ":Structure:sensorR1:fromCell" @138
 									quid "4D48670C0216"
 									pos (1076,754)
 									label (object ItemLabel
@@ -1172,7 +2421,7 @@
 										max_width 288
 										label "fromCell")
 									positionBySuperclass FALSE)))
-						(object PortVw ":Structure:toAlarms" @32
+						(object PortVw ":Structure:toAlarms" @139
 							quid "4D486074033A"
 							pos (266,455)
 							quidu "4D4860740339"
@@ -1184,7 +2433,7 @@
 								max_width 266
 								label "toAlarms")
 							positionBySuperclass FALSE)
-						(object PortVw ":Structure:toSensors" @33
+						(object PortVw ":Structure:toSensors" @140
 							quid "4D4860A1026D"
 							pos (1076,444)
 							quidu "4D48609E0200"
@@ -1196,36 +2445,36 @@
 								max_width 266
 								label "toSensors")
 							positionBySuperclass FALSE)
-						(object ConnectorVw ":Structure:C4D48672E0021" @34
+						(object ConnectorVw ":Structure:C4D48672E0021" @141
 							quid "4D48672C035D"
 							stereotype TRUE
 							uses_fill_color FALSE
 							quidu "4D48672E0021"
-							label (object SegLabel @35
+							label (object SegLabel @142
 								quid "4D48672E0022"
 								pos (223,621)
 								max_width 256
 								pctDist 0.494822
 								height 44)
-							client @29
-							supplier @32
+							client @136
+							supplier @139
 							vertices (list Points
 								(267,748)
 								(266,491))
 							line_style 6144)
-						(object ConnectorVw ":Structure:C4D486731011B" @36
+						(object ConnectorVw ":Structure:C4D486731011B" @143
 							quid "4D486730009E"
 							stereotype TRUE
 							uses_fill_color FALSE
 							quidu "4D486731011B"
-							label (object SegLabel @37
+							label (object SegLabel @144
 								quid "4D486731011C"
 								pos (1032,608)
 								max_width 256
 								pctDist 0.505791
 								height 44)
-							client @31
-							supplier @33
+							client @138
+							supplier @140
 							vertices (list Points
 								(1076,739)
 								(1076,480))
@@ -1253,11 +2502,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485C410320"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @38
+						(object StateView "Perimeter" "TOP" @145
 							quid "4D485C410322"
 							pos (840,615)
 							quidu "4D485C41031D")
-						(object StateView "StartState" "Initial" @39
+						(object StateView "StartState" "Initial" @146
 							quid "4D485C410323"
 							pos (180,180)
 							quidu "4D485C41031E"))
@@ -1266,12 +2515,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D485C410324"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @40
+						(object CapsulePerimeterVw "Structure" @147
 							quid "4D485C410326"
 							pos (840,615)
 							quidu "4D485C41031F"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @41
+								(object PortVw ":Structure:fromCell" @148
 									quid "4D486123009C"
 									pos (306,96)
 									quidu "4D486123009B"
@@ -1308,11 +2557,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485C4502F2"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @42
+						(object StateView "Perimeter" "TOP" @149
 							quid "4D485C4502F4"
 							pos (840,615)
 							quidu "4D485C4502EF")
-						(object StateView "StartState" "Initial" @43
+						(object StateView "StartState" "Initial" @150
 							quid "4D485C4502F5"
 							pos (180,180)
 							quidu "4D485C4502F0"))
@@ -1321,12 +2570,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D485C4502F6"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @44
+						(object CapsulePerimeterVw "Structure" @151
 							quid "4D485C4502F8"
 							pos (840,615)
 							quidu "4D485C4502F1"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @45
+								(object PortVw ":Structure:fromCell" @152
 									quid "4D48610D02FD"
 									pos (306,96)
 									quidu "4D48610D02FC"
@@ -1334,7 +2583,7 @@
 										quid "4D48610D02FF"
 										pos (315,132)
 										nlines 2
-										max_width 216
+										max_width 288
 										label "fromCell")))))
 					filterFlags 521))
 			(object Capsule "Keypad"
@@ -1358,11 +2607,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485CBB0015"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @46
+						(object StateView "Perimeter" "TOP" @153
 							quid "4D485CBB0017"
 							pos (840,615)
 							quidu "4D485CBB0012")
-						(object StateView "StartState" "Initial" @47
+						(object StateView "StartState" "Initial" @154
 							quid "4D485CBB0018"
 							pos (180,180)
 							quidu "4D485CBB0013"))
@@ -1371,12 +2620,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D485CBB0019"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @48
+						(object CapsulePerimeterVw "Structure" @155
 							quid "4D485CBB001B"
 							pos (840,615)
 							quidu "4D485CBB0014"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromSystem" @49
+								(object PortVw ":Structure:fromSystem" @156
 									quid "4D48635102D6"
 									pos (306,96)
 									quidu "4D48635102D5"
@@ -1408,11 +2657,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485CD402C5"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @50
+						(object StateView "Perimeter" "TOP" @157
 							quid "4D485CD402C7"
 							pos (840,615)
 							quidu "4D485CD402C2")
-						(object StateView "StartState" "Initial" @51
+						(object StateView "StartState" "Initial" @158
 							quid "4D485CD402C8"
 							pos (180,180)
 							quidu "4D485CD402C3"))
@@ -1421,12 +2670,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D485CD402C9"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @52
+						(object CapsulePerimeterVw "Structure" @159
 							quid "4D485CD402CB"
 							pos (840,615)
 							quidu "4D485CD402C4"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:toSystem" @53
+								(object PortVw ":Structure:toSystem" @160
 									quid "4D4863A102B8"
 									pos (315,96)
 									quidu "4D4863A102B7"
@@ -1449,11 +2698,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D4863B50329"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @54
+						(object StateView "Perimeter" "TOP" @161
 							quid "4D4864050278"
 							pos (840,615)
 							quidu "4D485C4502EF")
-						(object StateView "StartState" "Initial" @55
+						(object StateView "StartState" "Initial" @162
 							quid "4D4863B5032C"
 							pos (180,180)
 							quidu "4D485C4502F0"))
@@ -1462,12 +2711,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D4863B5032D"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @56
+						(object CapsulePerimeterVw "Structure" @163
 							quid "4D4864050279"
 							pos (840,615)
 							quidu "4D485C4502F1"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @57
+								(object PortVw ":Structure:fromCell" @164
 									quid "4D486405027A"
 									pos (306,96)
 									quidu "4D48610D02FC"
@@ -1488,11 +2737,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D4863DB02EB"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @58
+						(object StateView "Perimeter" "TOP" @165
 							quid "4D48640300D4"
 							pos (840,615)
 							quidu "4D485C4502EF")
-						(object StateView "StartState" "Initial" @59
+						(object StateView "StartState" "Initial" @166
 							quid "4D4863DB02EE"
 							pos (180,180)
 							quidu "4D485C4502F0"))
@@ -1501,12 +2750,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D4863DB02EF"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @60
+						(object CapsulePerimeterVw "Structure" @167
 							quid "4D48640300D5"
 							pos (840,615)
 							quidu "4D485C4502F1"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @61
+								(object PortVw ":Structure:fromCell" @168
 									quid "4D48640300D6"
 									pos (306,96)
 									quidu "4D48610D02FC"
@@ -1527,11 +2776,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D4863E60184"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @62
+						(object StateView "Perimeter" "TOP" @169
 							quid "4D4864080355"
 							pos (840,615)
 							quidu "4D485C4502EF")
-						(object StateView "StartState" "Initial" @63
+						(object StateView "StartState" "Initial" @170
 							quid "4D4863E60187"
 							pos (180,180)
 							quidu "4D485C4502F0"))
@@ -1540,12 +2789,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D4863E60188"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @64
+						(object CapsulePerimeterVw "Structure" @171
 							quid "4D4864080356"
 							pos (840,615)
 							quidu "4D485C4502F1"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @65
+								(object PortVw ":Structure:fromCell" @172
 									quid "4D4864080357"
 									pos (306,96)
 									quidu "4D48610D02FC"
@@ -1566,11 +2815,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D4863F10194"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @66
+						(object StateView "Perimeter" "TOP" @173
 							quid "4D4863FE0121"
 							pos (840,615)
 							quidu "4D485C41031D")
-						(object StateView "StartState" "Initial" @67
+						(object StateView "StartState" "Initial" @174
 							quid "4D4863F10197"
 							pos (180,180)
 							quidu "4D485C41031E"))
@@ -1579,12 +2828,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D4863F10198"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @68
+						(object CapsulePerimeterVw "Structure" @175
 							quid "4D4863FE0122"
 							pos (840,615)
 							quidu "4D485C41031F"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @69
+								(object PortVw ":Structure:fromCell" @176
 									quid "4D4863FE0123"
 									pos (306,96)
 									quidu "4D486123009B"
@@ -1594,6 +2843,56 @@
 										nlines 2
 										max_width 216
 										label "fromCell")))))
+					filterFlags 521))
+			(object Capsule "PhoneLine"
+				quid "4D59AB0102E1"
+				structure (object CapsuleCollaboration "Structure"
+					quid "4D59AB0102E5"
+					ports (list portsList
+						(object Port "toSystem"
+							quid "4D59AB7A0321"
+							classifier  "Logical View::PhoneProtocol"
+							quidu "4D59AB0D014A"
+							portCardinality  constValue "1"
+							isRelay FALSE)))
+				statemachine (object State_Machine
+					quid "4D59AB0102E2"
+					State (object State "TOP"
+						quid "4D59AB0102E3"
+						states (list States
+							(object InitialPt "Initial"
+								quid "4D59AB0102E4"))))
+				statediagram (object State_Diagram "State Diagram"
+					quid "4D59AB0102E6"
+					items (list diagram_item_list
+						(object StateView "Perimeter" "TOP" @177
+							quid "4D59AB0102E8"
+							pos (840,615)
+							quidu "4D59AB0102E3")
+						(object StateView "StartState" "Initial" @178
+							quid "4D59AB0102E9"
+							pos (180,180)
+							quidu "4D59AB0102E4"))
+					filterFlags 1)
+				language "C++"
+				structureDiagram (object CollaborationDiagram "Structure Diagram"
+					quid "4D59AB0102EA"
+					items (list diagram_item_list
+						(object CapsulePerimeterVw "Structure" @179
+							quid "4D59AB0102EC"
+							pos (840,615)
+							quidu "4D59AB0102E5"
+							boundIcons (list boundIconsList
+								(object PortVw ":Structure:toSystem" @180
+									quid "4D59AB7A0322"
+									pos (306,96)
+									quidu "4D59AB7A0321"
+									label (object ItemLabel
+										quid "4D59AB7A0330"
+										pos (315,132)
+										nlines 2
+										max_width 216
+										label "toSystem")))))
 					filterFlags 521))
 			(object Protocol "HandlerProtocol"
 				quid "4D485CE30148"
@@ -1634,11 +2933,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485CE3014D"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @70
+						(object StateView "Perimeter" "TOP" @181
 							quid "4D485CE3014F"
 							pos (840,615)
 							quidu "4D485CE3014A")
-						(object StateView "StartState" "Initial" @71
+						(object StateView "StartState" "Initial" @182
 							quid "4D485CE30150"
 							pos (180,180)
 							quidu "4D485CE3014B"))
@@ -1660,9 +2959,10 @@
 					(object ProtocolRole "base"
 						quid "4D4862B002E2"
 						outSignals (list outSignalsList
-							(object Signal "num_pressed"
+							(object Signal "password_entered"
 								quid "4D4862B002E1"
-								dataType  "int")
+								dataType  "Logical View::RTClasses::RTString"
+								quidu "37E928FA039F")
 							(object Signal "arm_pressed"
 								quid "4D4862E401F8"
 								dataType  "void")
@@ -1678,11 +2978,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D48628F0363"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @72
+						(object StateView "Perimeter" "TOP" @183
 							quid "4D48628F0365"
 							pos (840,615)
 							quidu "4D48628F0360")
-						(object StateView "StartState" "Initial" @73
+						(object StateView "StartState" "Initial" @184
 							quid "4D48628F0366"
 							pos (180,180)
 							quidu "4D48628F0361"))
@@ -1711,14 +3011,54 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D4862A2018E"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @74
+						(object StateView "Perimeter" "TOP" @185
 							quid "4D4862A20190"
 							pos (840,615)
 							quidu "4D4862A2018B")
-						(object StateView "StartState" "Initial" @75
+						(object StateView "StartState" "Initial" @186
 							quid "4D4862A20191"
 							pos (180,180)
 							quidu "4D4862A2018C"))
+					filterFlags 1)
+				language "C++")
+			(object Protocol "PhoneProtocol"
+				quid "4D59AB0D014A"
+				statemachine (object State_Machine
+					quid "4D59AB0D014B"
+					State (object State "TOP"
+						quid "4D59AB0D014C"
+						states (list States
+							(object InitialPt "Initial"
+								quid "4D59AB0D014D"))))
+				collaborations (list collaborationsList
+					(object Collaboration "Collaboration1"
+						quid "4D59AB0D014E"))
+				protocolRoles (list protocolRolesList
+					(object ProtocolRole "base"
+						quid "4D59AB4600EE"
+						inSignals (list inSignalsList
+							(object Signal "place_call"
+								quid "4D59AB500216"
+								dataType  "Logical View::RTClasses::RTString"
+								quidu "37E928FA039F"))
+						outSignals (list outSignalsList
+							(object Signal "call_placed"
+								quid "4D59AB4600ED"
+								dataType  "void")
+							(object Signal "call_failed"
+								quid "4D59AB4C01F7"
+								dataType  "void"))))
+				statediagram (object State_Diagram "State Diagram"
+					quid "4D59AB0D014F"
+					items (list diagram_item_list
+						(object StateView "Perimeter" "TOP" @187
+							quid "4D59AB0D0151"
+							pos (840,615)
+							quidu "4D59AB0D014C")
+						(object StateView "StartState" "Initial" @188
+							quid "4D59AB0D0152"
+							pos (180,180)
+							quidu "4D59AB0D014D"))
 					filterFlags 1)
 				language "C++")
 			(object Class_Category "RTClasses"
@@ -1731,21 +3071,21 @@
 			(object ClassDiagram "Main"
 				quid "3619364703D4"
 				items (list diagram_item_list
-					(object CapsuleVw "SystemHandler" @76
+					(object CapsuleVw "SystemHandler" @189
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
 						showAggregations TRUE
 						quid "4D485B7E003A"
-						pos (1557,590)
+						pos (1666,590)
 						label (object ItemLabel
 							quid "4D485B7E003B"
-							pos (1260,460)
+							pos (1369,398)
 							max_width 594
 							label "SystemHandler")
 						stereotype (object ItemLabel
 							quid "4D485B7E0075"
-							pos (1260,419)
+							pos (1369,357)
 							anchor 10
 							max_width 594
 							label "<<Capsule>>")
@@ -1753,31 +3093,31 @@
 						quidu "4D485B7E0069"
 						compartment (object Compartment
 							quid "4D485B7E0068"
-							pos (1260,522)
+							pos (1369,460)
 							anchor 2
-							nlines 8
+							nlines 11
 							max_width 600
 							justify 1)
 						width 612
-						height 498
+						height 622
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "CellHandler" @77
+					(object CapsuleVw "CellHandler" @190
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
 						showAggregations TRUE
 						quid "4D485B840182"
-						pos (1586,1164)
+						pos (1738,1270)
 						label (object ItemLabel
 							quid "4D485B840183"
-							pos (1305,1054)
+							pos (1457,1161)
 							max_width 562
 							label "CellHandler")
 						stereotype (object ItemLabel
 							quid "4D485B8401CD"
-							pos (1305,1013)
+							pos (1457,1120)
 							anchor 10
 							max_width 562
 							label "<<Capsule>>")
@@ -1785,17 +3125,17 @@
 						quidu "4D485B8401C1"
 						compartment (object Compartment
 							quid "4D485B8401C0"
-							pos (1305,1112)
+							pos (1457,1223)
 							anchor 2
 							nlines 7
-							max_width 559
+							max_width 568
 							justify 1)
 						width 580
 						height 458
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "Alarm" @78
+					(object CapsuleVw "Alarm" @191
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -1827,7 +3167,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "Sensor" @79
+					(object CapsuleVw "Sensor" @192
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -1849,31 +3189,31 @@
 						quidu "4D485C4502ED"
 						compartment (object Compartment
 							quid "4D485C4502EC"
-							pos (1788,1757)
+							pos (1788,1761)
 							anchor 2
 							nlines 5
-							max_width 506
+							max_width 515
 							justify 1)
 						width 528
 						height 376
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "Keypad" @80
+					(object CapsuleVw "Keypad" @193
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
 						showAggregations TRUE
 						quid "4D485CBA0399"
-						pos (294,557)
+						pos (319,198)
 						label (object ItemLabel
 							quid "4D485CBA039A"
-							pos (25,520)
+							pos (50,161)
 							max_width 538
 							label "Keypad")
 						stereotype (object ItemLabel
 							quid "4D485CBB001C"
-							pos (25,479)
+							pos (50,120)
 							anchor 10
 							max_width 538
 							label "<<Capsule>>")
@@ -1881,7 +3221,7 @@
 						quidu "4D485CBB0010"
 						compartment (object Compartment
 							quid "4D485CBB000F"
-							pos (25,582)
+							pos (50,223)
 							anchor 2
 							nlines 4
 							max_width 543
@@ -1891,7 +3231,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "Display" @81
+					(object CapsuleVw "Display" @194
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -1923,7 +3263,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object ProtocolVw "HandlerProtocol" @82
+					(object ProtocolVw "HandlerProtocol" @195
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -1945,10 +3285,10 @@
 						quidu "4D485CE30148"
 						compartment (object Compartment
 							quid "4D485CE30157"
-							pos (2262,621)
+							pos (2262,625)
 							anchor 2
 							nlines 7
-							max_width 319
+							max_width 328
 							justify 1)
 						width 340
 						height 464
@@ -1956,84 +3296,84 @@
 						autoResize TRUE
 						showInSignals TRUE
 						showOutSignals TRUE)
-					(object PortRelVw ":Structure:toCells" @83
+					(object PortRelVw ":Structure:toCells" @196
 						quid "4D485E6202B4"
 						uses_fill_color FALSE
 						quidu "4D485E6202B5"
-						label (object SegLabel @84
+						label (object SegLabel @197
 							quid "4D485E6202C4"
-							pos (2052,621)
+							pos (2106,623)
 							positionBySuperclass FALSE
 							max_width 97
 							label "toCells"
-							pctDist 0.527176
-							height 37
+							pctDist 0.541725
+							height 36
 							orientation 1)
 						positionBySuperclass FALSE
-						client @82
-						supplier @76
+						client @195
+						supplier @189
 						vertices (list Points
-							(2252,686)
-							(1863,632))
+							(2252,683)
+							(1972,639))
 						line_style 6144
-						label (object SegLabel @85
+						label (object SegLabel @198
 							quid "4D485E6202C6"
-							pos (2245,438)
+							pos (2315,446)
 							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "CellConfiguration::NUMBER_OF_CELLS"
-							pctDist 0.104482
+							pctDist -0.089773
 							height 244
 							orientation 1)
-						label (object SegLabel @86
+						label (object SegLabel @199
 							quid "4D485E6202C5"
-							pos (2039,699)
+							pos (2093,701)
 							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.532654
-							height 42))
-					(object PortRelVw ":Structure:fromSystem" @87
+							pctDist 0.544314
+							height 43))
+					(object PortRelVw ":Structure:fromSystem" @200
 						quid "4D485E6A0091"
 						uses_fill_color FALSE
 						quidu "4D485E6A0092"
-						label (object SegLabel @88
+						label (object SegLabel @201
 							quid "4D485E6A00A1"
-							pos (2044,904)
+							pos (2113,945)
 							positionBySuperclass FALSE
 							max_width 169
 							label "fromSystem"
-							pctDist 0.540630
-							height 10
+							pctDist 0.554802
+							height 13
 							orientation 1)
 						positionBySuperclass FALSE
-						client @82
-						supplier @77
+						client @195
+						supplier @190
 						vertices (list Points
-							(2252,803)
-							(1876,1006))
+							(2252,849)
+							(2016,1040))
 						line_style 6144
-						label (object SegLabel @89
+						label (object SegLabel @202
 							quid "4D485E6A00A3"
-							pos (2205,931)
+							pos (2274,972)
 							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist 0.239100
-							height 90)
-						label (object SegLabel @90
+							pctDist 0.198542
+							height 109)
+						label (object SegLabel @203
 							quid "4D485E6A00A2"
-							pos (2073,945)
+							pos (2142,986)
 							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.526495
-							height 40))
-					(object ClassView "ClassUtility" "Logical View::CellConfiguration" @91
+							pctDist 0.565510
+							height 37))
+					(object ClassView "ClassUtility" "Logical View::CellConfiguration" @204
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -2058,24 +3398,24 @@
 						height 260
 						annotation 8
 						autoResize TRUE)
-					(object PortRelVw ":Structure:fromCell" @92
+					(object PortRelVw ":Structure:fromCell" @205
 						quid "4D48610D02FB"
 						uses_fill_color FALSE
 						quidu "4D48610D02FC"
-						label (object SegLabel @93
+						label (object SegLabel @206
 							quid "4D48610D030B"
 							pos (2322,1149)
 							max_width 116
 							label "fromCell"
 							pctDist 0.293981
 							height 54)
-						client @82
-						supplier @79
+						client @195
+						supplier @192
 						vertices (list Points
 							(2338,944)
 							(2110,1579))
 						line_style 6144
-						label (object SegLabel @94
+						label (object SegLabel @207
 							quid "4D48610D030D"
 							pos (2352,1111)
 							anchor 1
@@ -2083,7 +3423,7 @@
 							label "1"
 							pctDist 0.225947
 							height 70)
-						label (object SegLabel @95
+						label (object SegLabel @208
 							quid "4D48610D030C"
 							pos (2262,1279)
 							anchor 2
@@ -2091,24 +3431,24 @@
 							label "<<Port>>"
 							pctDist 0.505379
 							height 41))
-					(object PortRelVw ":Structure:fromCell" @96
+					(object PortRelVw ":Structure:fromCell" @209
 						quid "4D486123009A"
 						uses_fill_color FALSE
 						quidu "4D486123009B"
-						label (object SegLabel @97
+						label (object SegLabel @210
 							quid "4D48612300AB"
 							pos (2567,1155)
 							max_width 116
 							label "fromCell"
 							pctDist 0.333080
 							height 42)
-						client @82
-						supplier @78
+						client @195
+						supplier @191
 						vertices (list Points
 							(2475,944)
 							(2627,1606))
 						line_style 6144
-						label (object SegLabel @98
+						label (object SegLabel @211
 							quid "4D48612300AD"
 							pos (2570,1115)
 							anchor 1
@@ -2116,7 +3456,7 @@
 							label "1"
 							pctDist 0.276672
 							height 54)
-						label (object SegLabel @99
+						label (object SegLabel @212
 							quid "4D48612300AC"
 							pos (2592,1266)
 							anchor 2
@@ -2124,54 +3464,54 @@
 							label "<<Port>>"
 							pctDist 0.500594
 							height 42))
-					(object ProtocolVw "KeypadProtocol" @100
+					(object ProtocolVw "KeypadProtocol" @213
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
 						showAggregations TRUE
 						quid "4D48628F031F"
-						pos (936,581)
+						pos (824,644)
 						label (object ItemLabel
 							quid "4D48628F0320"
-							pos (738,464)
-							max_width 396
+							pos (582,527)
+							max_width 484
 							label "KeypadProtocol")
 						stereotype (object ItemLabel
 							quid "4D48628F0367"
-							pos (738,423)
+							pos (582,486)
 							anchor 10
-							max_width 396
+							max_width 484
 							label "<<Protocol>>")
 						icon_style "Decoration"
 						quidu "4D48628F035E"
 						compartment (object Compartment
 							quid "4D48628F0368"
-							pos (738,526)
+							pos (582,589)
 							anchor 2
 							nlines 6
-							max_width 406
+							max_width 490
 							justify 1)
-						width 414
+						width 502
 						height 402
 						annotation 8
 						autoResize TRUE
 						showInSignals TRUE
 						showOutSignals TRUE)
-					(object ProtocolVw "DisplayProtocol" @101
+					(object ProtocolVw "DisplayProtocol" @214
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
 						showAggregations TRUE
 						quid "4D4862A2014B"
-						pos (928,1089)
+						pos (931,1114)
 						label (object ItemLabel
 							quid "4D4862A2014C"
-							pos (724,1054)
+							pos (727,1079)
 							max_width 408
 							label "DisplayProtocol")
 						stereotype (object ItemLabel
 							quid "4D4862A20192"
-							pos (724,1013)
+							pos (727,1038)
 							anchor 10
 							max_width 408
 							label "<<Protocol>>")
@@ -2179,7 +3519,7 @@
 						quidu "4D4862A20189"
 						compartment (object Compartment
 							quid "4D4862A20193"
-							pos (724,1116)
+							pos (727,1141)
 							anchor 2
 							nlines 2
 							max_width 415
@@ -2190,142 +3530,158 @@
 						autoResize TRUE
 						showInSignals TRUE
 						showOutSignals TRUE)
-					(object PortRelVw ":Structure:toKeypad" @102
+					(object PortRelVw ":Structure:toKeypad" @215
 						quid "4D48634500C0"
 						uses_fill_color FALSE
 						quidu "4D48634500C1"
-						label (object SegLabel @103
+						label (object SegLabel @216
 							quid "4D48634500D1"
-							pos (1148,543)
+							pos (1242,576)
+							positionBySuperclass FALSE
 							max_width 141
 							label "toKeypad"
-							pctDist 0.039728
+							pctDist 0.596430
 							height 40)
-						client @100
-						supplier @76
+						positionBySuperclass FALSE
+						client @213
+						supplier @189
 						vertices (list Points
-							(1143,583)
-							(1250,585))
+							(1075,626)
+							(1359,609))
 						line_style 6144
-						label (object SegLabel @104
+						label (object SegLabel @217
 							quid "4D48634500E1"
-							pos (1133,531)
+							pos (1115,586)
+							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist -0.102506
-							height 52)
-						label (object SegLabel @105
+							pctDist 0.148743
+							height 37)
+						label (object SegLabel @218
 							quid "4D48634500E0"
-							pos (1196,543)
+							pos (1227,520)
+							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.488169
-							height 41))
-					(object PortRelVw ":Structure:fromSystem" @106
+							pctDist 0.555562
+							height 97))
+					(object PortRelVw ":Structure:fromSystem" @219
 						quid "4D48635102D4"
 						uses_fill_color FALSE
 						quidu "4D48635102D5"
-						label (object SegLabel @107
+						label (object SegLabel @220
 							quid "4D48635102D9"
-							pos (636,528)
+							pos (714,416)
+							positionBySuperclass FALSE
 							max_width 169
 							label "fromSystem"
-							pctDist 0.599705
-							height 40
+							pctDist -0.542314
+							height 97
 							orientation 1)
-						client @100
-						supplier @80
+						positionBySuperclass FALSE
+						client @213
+						supplier @193
 						vertices (list Points
-							(728,572)
-							(572,566))
+							(596,442)
+							(497,355))
 						line_style 6144
-						label (object SegLabel @108
+						label (object SegLabel @221
 							quid "4D48635102E3"
-							pos (632,516)
+							pos (413,361)
+							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist 0.628262
-							height 52
-							orientation 1)
-						label (object SegLabel @109
+							pctDist 1.448705
+							height 60)
+						label (object SegLabel @222
 							quid "4D48635102DA"
-							pos (650,528)
+							pos (677,372)
+							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.510094
-							height 41
+							pctDist -0.111054
+							height 106
 							orientation 1))
-					(object PortRelVw ":Structure:toDisplay" @110
+					(object PortRelVw ":Structure:toDisplay" @223
 						quid "4D48636D03CE"
 						uses_fill_color FALSE
 						quidu "4D48636D03CF"
-						label (object SegLabel @111
+						label (object SegLabel @224
 							quid "4D48636D03DF"
-							pos (1036,944)
+							pos (1153,928)
+							positionBySuperclass FALSE
 							max_width 134
 							label "toDisplay"
-							pctDist -0.074388
-							height 45)
-						client @101
-						supplier @76
+							pctDist 0.260720
+							height 21)
+						positionBySuperclass FALSE
+						client @214
+						supplier @189
 						vertices (list Points
-							(1077,969)
-							(1250,831))
+							(1097,994)
+							(1359,807))
 						line_style 6144
-						label (object SegLabel @112
+						label (object SegLabel @225
 							quid "4D48636D03E1"
-							pos (995,960)
+							pos (1059,960)
+							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist -0.264309
-							height 58)
-						label (object SegLabel @113
+							pctDist -0.034725
+							height 49)
+						label (object SegLabel @226
 							quid "4D48636D03E0"
-							pos (1140,867)
+							pos (1204,867)
+							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.509975
-							height 41))
-					(object PortRelVw ":Structure:toSystem" @114
+							pctDist 0.499773
+							height 42))
+					(object PortRelVw ":Structure:toSystem" @227
 						quid "4D4863A102B6"
 						uses_fill_color FALSE
 						quidu "4D4863A102B7"
-						label (object SegLabel @115
+						label (object SegLabel @228
 							quid "4D4863A102C6"
-							pos (658,1137)
+							pos (640,1215)
+							positionBySuperclass FALSE
 							max_width 134
 							label "toSystem"
-							pctDist 0.370807
-							height 43)
-						client @101
-						supplier @81
+							pctDist 0.477492
+							height 106)
+						positionBySuperclass FALSE
+						client @214
+						supplier @194
 						vertices (list Points
-							(714,1093)
-							(560,1097))
+							(717,1110)
+							(560,1107))
 						line_style 6144
-						label (object SegLabel @116
+						label (object SegLabel @229
 							quid "4D4863A102C8"
-							pos (665,1149)
+							pos (694,1078)
+							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist 0.327406
-							height 55)
-						label (object SegLabel @117
+							pctDist 0.150337
+							height 32
+							orientation 1)
+						label (object SegLabel @230
 							quid "4D4863A102C7"
-							pos (637,1137)
+							pos (641,1159)
+							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.507079
-							height 42))
-					(object CapsuleVw "HeatSensor" @118
+							pctDist 0.477938
+							height 50))
+					(object CapsuleVw "HeatSensor" @231
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -2350,7 +3706,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "BreakInSensor" @119
+					(object CapsuleVw "BreakInSensor" @232
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -2375,7 +3731,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "MovementSensor" @120
+					(object CapsuleVw "MovementSensor" @233
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -2400,7 +3756,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "SoundAlarm" @121
+					(object CapsuleVw "SoundAlarm" @234
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -2425,67 +3781,67 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object InheritView "" @122
+					(object InheritView "" @235
 						quid "4D4863FB0269"
 						stereotype TRUE
 						uses_fill_color FALSE
 						quidu "4D4863FE0111"
-						client @121
-						supplier @78
+						client @234
+						supplier @191
 						vertices (list Points
 							(2677,2073)
 							(2670,1921))
 						line_style 6144)
-					(object InheritView "" @123
+					(object InheritView "" @236
 						quid "4D48640101EC"
 						stereotype TRUE
 						uses_fill_color FALSE
 						quidu "4D48640300D2"
-						client @119
-						supplier @79
+						client @232
+						supplier @192
 						vertices (list Points
 							(2071,2067)
 							(2061,1956))
 						line_style 6144)
-					(object InheritView "" @124
+					(object InheritView "" @237
 						quid "4D4864040353"
 						stereotype TRUE
 						uses_fill_color FALSE
 						quidu "4D4864050269"
-						client @118
-						supplier @79
+						client @231
+						supplier @192
 						vertices (list Points
 							(1839,2070)
 							(1915,1956))
 						line_style 6144)
-					(object InheritView "" @125
+					(object InheritView "" @238
 						quid "4D4864070344"
 						stereotype TRUE
 						uses_fill_color FALSE
 						quidu "4D4864080353"
-						client @120
-						supplier @79
+						client @233
+						supplier @192
 						vertices (list Points
 							(1570,2092)
 							(1778,1949))
 						line_style 6144)
-					(object ClassView "Class" "Logical View::UserConfiguration" @126
+					(object ClassView "Class" "Logical View::UserConfiguration" @239
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
 						showAggregations TRUE
 						quid "4D4864590112"
-						pos (829,1722)
+						pos (3029,760)
 						label (object ItemLabel
 							quid "4D4864590113"
-							pos (508,1623)
+							pos (2708,661)
 							max_width 643
 							label "UserConfiguration")
 						icon_style "Decoration"
 						quidu "4D4864590141"
 						compartment (object Compartment
 							quid "4D4864590142"
-							pos (508,1685)
+							pos (2708,723)
 							anchor 2
 							nlines 4
 							max_width 625
@@ -2493,1022 +3849,148 @@
 						width 661
 						height 218
 						annotation 24
-						autoResize TRUE)))
-			(object UseCaseDiagram "ProjectUseCases"
-				quid "4D3F30A503B2"
-				items (list diagram_item_list
-					(object UseCaseView "Logical View::Enter Password" @127
-						quid "4D3F315B00D6"
-						pos (1393,719)
-						label (object ItemLabel
-							quid "4D3F315B00F6"
-							pos (1393,852)
-							nlines 2
-							max_width 633
-							label "Enter Password")
-						icon_style "Icon"
-						quidu "4D3F315B00F5"
-						width 222
-						height 117
 						autoResize TRUE)
-					(object UseCaseView "Logical View::Run Self Test" @128
-						quid "4D3F317E025D"
-						pos (1740,883)
-						label (object ItemLabel
-							quid "4D3F317E028D"
-							pos (1740,1016)
-							nlines 2
-							max_width 633
-							label "Run Self Test")
-						icon_style "Icon"
-						quidu "4D3F317E028C"
-						width 222
-						height 117
-						autoResize TRUE)
-					(object UseCaseView "Logical View::Notify Break-In" @129
-						quid "4D3F3176020F"
-						pos (1744,1584)
-						label (object ItemLabel
-							quid "4D3F3176023F"
-							pos (1744,1717)
-							nlines 2
-							max_width 633
-							label "Notify Break-In")
-						icon_style "Icon"
-						quidu "4D3F3176023E"
-						width 222
-						height 117
-						autoResize TRUE)
-					(object ClassView "Class" "Logical View::DisplayActor" @130
+					(object CapsuleVw "PhoneLine" @240
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
-						quid "4D3F31AB01C1"
-						pos (2293,1581)
+						showAggregations TRUE
+						quid "4D59AB010291"
+						pos (265,1616)
 						label (object ItemLabel
-							quid "4D3F31AB01C2"
-							pos (2293,1737)
-							nlines 2
-							max_width 230
-							label "DisplayActor")
-						icon "Actor"
-						icon_style "Icon"
-						quidu "4D3F31AB01D1"
-						width 120
-						height 162
+							quid "4D59AB010292"
+							pos (21,1579)
+							max_width 488
+							label "PhoneLine")
+						stereotype (object ItemLabel
+							quid "4D59AB0102ED"
+							pos (21,1538)
+							anchor 10
+							max_width 488
+							label "<<Capsule>>")
+						icon_style "Decoration"
+						quidu "4D59AB0102E1"
+						compartment (object Compartment
+							quid "4D59AB0102E0"
+							pos (21,1641)
+							anchor 2
+							nlines 4
+							max_width 493
+							justify 1)
+						width 506
+						height 314
 						annotation 8
-						autoResize TRUE)
-					(object AssocVw "$UNNAMED$40" @131
-						quid "4D3F332E01F7"
-						pos (2042,1581)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F332F01D8"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$41" @132
-								quid "4D3F332E01F8"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F332F01DA"
-								client @131
-								supplier @130
-								vertices (list Points
-									(2042,1581)
-									(2236,1581))
-								line_style 6144)
-							(object RoleView "$UNNAMED$15" @133
-								quid "4D3F332F01D7"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F332F01D9"
-								client @131
-								supplier @129
-								vertices (list Points
-									(2042,1581)
-									(1849,1581))
-								line_style 6144)))
-					(object ClassView "Class" "Logical View::Timer" @134
+						autoResize TRUE
+						showPorts TRUE)
+					(object ProtocolVw "PhoneProtocol" @241
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
-						quid "4D3F31BE003B"
-						pos (2283,563)
+						showAggregations TRUE
+						quid "4D59AB0D010B"
+						pos (947,1616)
 						label (object ItemLabel
-							quid "4D3F31BE003C"
-							pos (2283,719)
-							nlines 2
-							max_width 230
-							label "Timer")
-						icon "Actor"
-						icon_style "Icon"
-						quidu "4D3F31B200C7"
-						width 120
-						height 162
+							quid "4D59AB0D010C"
+							pos (766,1530)
+							max_width 362
+							label "PhoneProtocol")
+						stereotype (object ItemLabel
+							quid "4D59AB0D0153"
+							pos (766,1489)
+							anchor 10
+							max_width 362
+							label "<<Protocol>>")
+						icon_style "Decoration"
+						quidu "4D59AB0D014A"
+						compartment (object Compartment
+							quid "4D59AB0D0154"
+							pos (766,1592)
+							anchor 2
+							nlines 4
+							max_width 368
+							justify 1)
+						width 380
+						height 340
 						annotation 8
-						autoResize TRUE)
-					(object AssocVw "$UNNAMED$16" @135
-						quid "4D3F329A0177"
-						pos (2025,711)
-						label (object SegLabel @136
-							quid "4D3F32CA00DB"
-							pos (2025,711)
-							font (object Font
-								italics TRUE)
-							hidden TRUE
-							anchor 1
-							max_width 232
-							label ""
-							pctDist 0.500000
-							height 0
-							orientation 1)
-						stereotype (object SegLabel @137
-							quid "4D3F32CE034D"
-							pos (2108,712)
+						autoResize TRUE
+						showInSignals TRUE
+						showOutSignals TRUE)
+					(object PortRelVw ":Structure:toPhone" @242
+						quid "4D59AB5D03BC"
+						uses_fill_color FALSE
+						quidu "4D59AB5D03BD"
+						label (object SegLabel @243
+							quid "4D59AB5D03DB"
+							pos (1112,1298)
 							positionBySuperclass FALSE
-							anchor 10
-							max_width 203
-							label "<< initiates >>"
-							pctDist 1.883333
-							height 1
-							orientation 1)
-						uses_fill_color FALSE
-						quidu "4D3F329A037B"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$18" @138
-								quid "4D3F329A0178"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F329A037D"
-								client @135
-								supplier @128
-								vertices (list Points
-									(2025,711)
-									(1825,829))
-								line_style 6144)
-							(object RoleView "$UNNAMED$17" @139
-								quid "4D3F329A037A"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F329A037C"
-								client @135
-								supplier @134
-								vertices (list Points
-									(2025,711)
-									(2226,594))
-								line_style 6144)))
-					(object UseCaseView "Logical View::Enable System" @140
-						quid "4D3F30FD01AF"
-						pos (812,159)
-						label (object ItemLabel
-							quid "4D3F30FD01B0"
-							pos (812,292)
-							nlines 2
-							max_width 633
-							label "Enable System")
-						icon_style "Icon"
-						quidu "4D3F30DA0076"
-						width 222
-						height 117
-						autoResize TRUE)
-					(object UseCaseView "Logical View::Disable System" @141
-						quid "4D3F314C0143"
-						pos (768,397)
-						label (object ItemLabel
-							quid "4D3F314C0163"
-							pos (768,530)
-							nlines 2
-							max_width 633
-							label "Disable System")
-						icon_style "Icon"
-						quidu "4D3F314C0162"
-						width 222
-						height 117
-						autoResize TRUE)
-					(object ClassView "Class" "Logical View::KeypadActor" @142
-						ShowCompartmentStereotypes TRUE
-						IncludeAttribute TRUE
-						IncludeOperation TRUE
-						quid "4D3F31A403D4"
-						pos (254,696)
-						label (object ItemLabel
-							quid "4D3F31A403D5"
-							pos (254,852)
-							nlines 2
-							max_width 230
-							label "KeypadActor")
-						icon "Actor"
-						icon_style "Icon"
-						quidu "4D3F31A5002B"
-						width 120
-						height 162
-						annotation 8
-						autoResize TRUE)
-					(object AssocVw "$UNNAMED$0" @143
-						quid "4D3F338D01AA"
-						pos (502,456)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F338D0313"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$2" @144
-								quid "4D3F338D01AB"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F338D0315"
-								client @143
-								supplier @140
-								vertices (list Points
-									(502,456)
-									(696,270))
-								line_style 6144)
-							(object RoleView "$UNNAMED$1" @145
-								quid "4D3F338D0312"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F338D0314"
-								client @143
-								supplier @142
-								vertices (list Points
-									(502,456)
-									(308,642))
-								line_style 6144)))
-					(object AssocVw "$UNNAMED$3" @146
-						quid "4D3F339203AE"
-						pos (478,563)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F339301BB"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$5" @147
-								quid "4D3F339203AF"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F339301BD"
-								client @146
-								supplier @141
-								vertices (list Points
-									(478,563)
-									(649,465))
-								line_style 6144)
-							(object RoleView "$UNNAMED$4" @148
-								quid "4D3F339301BA"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F339301BC"
-								client @146
-								supplier @142
-								vertices (list Points
-									(478,563)
-									(308,661))
-								line_style 6144)))
-					(object UseCaseView "Logical View::Invalidate Break-In" @149
-						quid "4D3F31640318"
-						pos (755,694)
-						label (object ItemLabel
-							quid "4D3F31640348"
-							pos (755,827)
-							nlines 2
-							max_width 633
-							label "Invalidate Break-In")
-						icon_style "Icon"
-						quidu "4D3F31640347"
-						width 222
-						height 117
-						autoResize TRUE)
-					(object AssocVw "$UNNAMED$12" @150
-						quid "4D3F33AF03DD"
-						pos (477,694)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F33B002D5"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$14" @151
-								quid "4D3F33AF03DE"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F33B002D7"
-								client @150
-								supplier @149
-								vertices (list Points
-									(477,694)
-									(647,694))
-								line_style 6144)
-							(object RoleView "$UNNAMED$13" @152
-								quid "4D3F33B002D4"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F33B002D6"
-								client @150
-								supplier @142
-								vertices (list Points
-									(477,694)
-									(308,694))
-								line_style 6144)))
-					(object UseCaseView "Logical View::Handle Break-In" @153
-						quid "4D3F31900182"
-						pos (1738,561)
-						label (object ItemLabel
-							quid "4D3F319001A3"
-							pos (1738,694)
-							nlines 2
-							max_width 633
-							label "Handle Break-In")
-						icon_style "Icon"
-						quidu "4D3F319001A2"
-						width 222
-						height 117
-						autoResize TRUE)
-					(object AssocVw "$UNNAMED$19" @154
-						quid "4D3F3358036E"
-						pos (2034,561)
-						label (object SegLabel @155
-							quid "4D3F33610032"
-							pos (2034,561)
-							font (object Font
-								italics TRUE)
-							hidden TRUE
-							anchor 1
-							max_width 232
-							label ""
-							pctDist 0.500000
-							height 0
-							orientation 1)
-						stereotype (object SegLabel @156
-							quid "4D3F3364036F"
-							pos (2048,535)
-							positionBySuperclass FALSE
-							anchor 10
-							max_width 203
-							label "<< initiates >>"
-							pctDist 0.733333
-							height 26)
-						uses_fill_color FALSE
-						quidu "4D3F33590266"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$21" @157
-								quid "4D3F3358036F"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F33590268"
-								client @154
-								supplier @153
-								vertices (list Points
-									(2034,561)
-									(1843,561))
-								line_style 6144)
-							(object RoleView "$UNNAMED$20" @158
-								quid "4D3F33590265"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F33590267"
-								client @154
-								supplier @134
-								vertices (list Points
-									(2034,561)
-									(2226,561))
-								line_style 6144)))
-					(object ClassView "Class" "Logical View::Phone Line" @159
-						ShowCompartmentStereotypes TRUE
-						IncludeAttribute TRUE
-						IncludeOperation TRUE
-						quid "4D3F31E003A6"
-						pos (2277,204)
-						label (object ItemLabel
-							quid "4D3F31E003A7"
-							pos (2277,360)
-							nlines 2
-							max_width 230
-							label "Phone Line")
-						icon "Actor"
-						icon_style "Icon"
-						quidu "4D3F31E003E5"
-						width 120
-						height 162
-						annotation 8
-						autoResize TRUE)
-					(object AssocVw "$UNNAMED$52" @160
-						quid "4D3F33CF0332"
-						pos (2017,373)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F33D0021A"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$53" @161
-								quid "4D3F33CF0333"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F33D0021C"
-								client @160
-								supplier @159
-								vertices (list Points
-									(2017,373)
-									(2220,239))
-								line_style 6144)
-							(object RoleView "$UNNAMED$31" @162
-								quid "4D3F33D00219"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F33D0021B"
-								client @160
-								supplier @153
-								vertices (list Points
-									(2017,373)
-									(1814,507))
-								line_style 6144)))
-					(object UsesView "" @163
-						quid "4D3F33FE0064"
-						stereotype (object SegLabel @164
-							quid "4D3F34060287"
-							pos (1166,410)
-							font (object Font
-								size 10)
-							anchor 10
-							max_width 241
-							label "<< include >>"
-							pctDist 0.475770
-							height 65
-							orientation 1)
-						uses_fill_color FALSE
-						quidu "4D3F33FE0239"
-						label (object SegLabel @165
-							quid "4D3F34020101"
-							pos (1166,440)
-							hidden TRUE
-							max_width 207
-							label ""
-							pctDist 0.512602
-							height 43)
-						client @140
-						supplier @127
-						vertices (list Points
-							(927,270)
-							(1334,663))
-						line_style 6144)
-					(object UsesView "" @166
-						quid "4D3F34080314"
-						stereotype (object SegLabel @167
-							quid "4D3F341401FB"
-							pos (1113,494)
-							font (object Font
-								size 10)
-							anchor 10
-							max_width 241
-							label "<< include >>"
-							pctDist 0.481641
-							height 71
-							orientation 1)
-						uses_fill_color FALSE
-						quidu "4D3F340900B3"
-						label (object SegLabel @168
-							quid "4D3F341102B6"
-							pos (1113,524)
-							hidden TRUE
-							max_width 207
-							label ""
-							pctDist 0.511946
-							height 44)
-						client @141
-						supplier @127
-						vertices (list Points
-							(886,456)
-							(1290,665))
-						line_style 6144)
-					(object UsesView "" @169
-						quid "4D3F340F021A"
-						stereotype (object SegLabel @170
-							quid "4D3F342102D6"
-							pos (1046,641)
-							font (object Font
-								size 10)
-							anchor 10
-							max_width 241
-							label "<< include >>"
-							pctDist 0.431780
-							height 62
-							orientation 1)
-						uses_fill_color FALSE
-						quidu "4D3F34100065"
-						label (object SegLabel @171
-							quid "4D3F341F0055"
-							pos (1046,671)
-							hidden TRUE
-							max_width 207
-							label ""
-							pctDist 0.434599
-							height 32)
-						client @149
-						supplier @127
-						vertices (list Points
-							(860,696)
-							(1285,713))
-						line_style 6144)
-					(object UsesView "" @172
-						quid "4D3F3441021B"
-						stereotype (object SegLabel @173
-							quid "4D3F34480160"
-							pos (1607,1271)
-							font (object Font
-								size 10)
-							positionBySuperclass FALSE
-							anchor 10
-							max_width 231
-							label "<< extend >>"
-							pctDist 0.476124
-							height 133
-							orientation 1)
-						uses_fill_color FALSE
-						quidu "4D3F34420160"
-						label (object SegLabel @174
-							quid "4D3F344400B4"
-							pos (1785,1282)
-							hidden TRUE
-							positionBySuperclass FALSE
-							max_width 200
-							label ""
-							pctDist 0.499169
+							max_width 125
+							label "toPhone"
+							pctDist 0.222478
 							height 45)
 						positionBySuperclass FALSE
-						client @128
-						supplier @129
+						client @241
+						supplier @189
 						vertices (list Points
-							(1740,1036)
-							(1741,1529))
-						line_style 6144)
-					(object ClassView "Class" "Logical View::SensorActor" @175
-						ShowCompartmentStereotypes TRUE
-						IncludeAttribute TRUE
-						IncludeOperation TRUE
-						quid "4D3F31D7031A"
-						pos (2294,1248)
-						label (object ItemLabel
-							quid "4D3F31D7031B"
-							pos (2294,1404)
-							nlines 2
-							max_width 230
-							label "SensorActor")
-						icon "Actor"
-						icon_style "Icon"
-						quidu "4D3F31D70358"
-						width 120
-						height 162
-						annotation 8
-						autoResize TRUE)
-					(object AssocVw "$UNNAMED$47" @176
-						quid "4D3F32AD005E"
-						pos (2042,1080)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F32AD02EF"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$48" @177
-								quid "4D3F32AD005F"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F32AD02F1"
-								client @176
-								supplier @175
-								vertices (list Points
-									(2042,1080)
-									(2237,1209))
-								line_style 6144)
-							(object RoleView "$UNNAMED$28" @178
-								quid "4D3F32AD02EE"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F32AD02F0"
-								client @176
-								supplier @128
-								vertices (list Points
-									(2042,1080)
-									(1847,952))
-								line_style 6144)))
-					(object AssocVw "$UNNAMED$25" @179
-						quid "4D3F32E1012A"
-						pos (2031,1405)
-						label (object SegLabel @180
-							quid "4D3F3335034E"
-							pos (2031,1405)
-							font (object Font
-								italics TRUE)
-							hidden TRUE
-							anchor 1
-							max_width 232
-							label ""
-							pctDist 0.500000
-							height 0
-							orientation 1)
-						stereotype (object SegLabel @181
-							quid "4D3F333901E7"
-							pos (2063,1458)
+							(1064,1445)
+							(1446,901))
+						line_style 6144
+						label (object SegLabel @244
+							quid "4D59AB5D03DD"
+							pos (1067,1340)
 							positionBySuperclass FALSE
-							anchor 10
-							max_width 203
-							label "<< initiates >>"
-							pctDist 1.033333
-							height 53
-							orientation 1)
-						uses_fill_color FALSE
-						quidu "4D3F32E20215"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$27" @182
-								quid "4D3F32E1012B"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F32E20217"
-								client @179
-								supplier @129
-								vertices (list Points
-									(2031,1405)
-									(1825,1530))
-								line_style 6144)
-							(object RoleView "$UNNAMED$26" @183
-								quid "4D3F32E20214"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F32E20216"
-								client @179
-								supplier @175
-								vertices (list Points
-									(2031,1405)
-									(2237,1280))
-								line_style 6144)))
-					(object UseCaseView "Logical View::Arm System" @184
-						quid "4D3F315100B7"
-						pos (797,1482)
-						label (object ItemLabel
-							quid "4D3F315100E6"
-							pos (797,1615)
-							nlines 2
-							max_width 633
-							label "Arm System")
-						icon_style "Icon"
-						quidu "4D3F315100E5"
-						width 222
-						height 117
-						autoResize TRUE)
-					(object AssocVw "$UNNAMED$6" @185
-						quid "4D3F339502F3"
-						pos (566,1148)
-						label (object SegLabel @186
-							quid "4D3F3697034C"
-							pos (566,1089)
-							font (object Font
-								italics TRUE)
-							hidden TRUE
 							anchor 1
-							max_width 232
-							label ""
-							pctDist 0.500000
-							height 59)
-						stereotype (object SegLabel @187
-							quid "4D3F369D008D"
-							pos (560,1159)
+							max_width 15
+							label "1"
+							pctDist 0.131865
+							height 57)
+						label (object SegLabel @245
+							quid "4D59AB5D03DC"
+							pos (1184,1349)
 							positionBySuperclass FALSE
-							anchor 10
-							max_width 203
-							label "<< initiates >>"
-							pctDist 0.400000
-							height 11
-							orientation 1)
+							anchor 2
+							max_width 134
+							label "<<Port>>"
+							pctDist 0.221935
+							height 43
+							orientation 1))
+					(object PortRelVw ":Structure:toSystem" @246
+						quid "4D59AB7A0320"
 						uses_fill_color FALSE
-						quidu "4D3F339602A5"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$8" @188
-								quid "4D3F339502F4"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F339602A7"
-								client @185
-								supplier @184
-								vertices (list Points
-									(566,1148)
-									(758,1427))
-								line_style 6144)
-							(object RoleView "$UNNAMED$7" @189
-								quid "4D3F339602A4"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F339602A6"
-								client @185
-								supplier @142
-								vertices (list Points
-									(566,1148)
-									(374,870))
-								line_style 6144)))
-					(object UsesView "" @190
-						quid "4D3F340B0130"
-						stereotype (object SegLabel @191
-							quid "4D3F34190074"
-							pos (1054,1076)
-							font (object Font
-								size 10)
-							anchor 10
-							max_width 241
-							label "<< include >>"
-							pctDist 0.582127
-							height 46
-							orientation 1)
-						uses_fill_color FALSE
-						quidu "4D3F340B0287"
-						label (object SegLabel @192
-							quid "4D3F3415022A"
-							pos (1054,1106)
-							hidden TRUE
-							max_width 207
-							label ""
-							pctDist 0.548832
-							height 27)
-						client @184
-						supplier @127
+						quidu "4D59AB7A0321"
+						label (object SegLabel @247
+							quid "4D59AB7A0331"
+							pos (630,1749)
+							positionBySuperclass FALSE
+							max_width 134
+							label "toSystem"
+							pctDist 0.529412
+							height 133)
+						positionBySuperclass FALSE
+						client @241
+						supplier @240
 						vertices (list Points
-							(835,1428)
-							(1273,872))
-						line_style 6144)
-					(object AssocVw "$UNNAMED$32" @193
-						quid "4D3F36110118"
-						pos (1570,1359)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F3614001F"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$33" @194
-								quid "4D3F36110119"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F36140021"
-								client @193
-								supplier @175
-								vertices (list Points
-									(1570,1359)
-									(2238,1254))
-								line_style 6144)
-							(object RoleView "$UNNAMED$29" @195
-								quid "4D3F3614001E"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F36140020"
-								client @193
-								supplier @184
-								vertices (list Points
-									(1570,1359)
-									(902,1464))
-								line_style 6144)))
-					(object UseCaseView "Logical View::Disarm System" @196
-						quid "4D3F31560337"
-						pos (802,1174)
-						label (object ItemLabel
-							quid "4D3F31560367"
-							pos (802,1307)
-							nlines 2
-							max_width 633
-							label "Disarm System")
-						icon_style "Icon"
-						quidu "4D3F31560366"
-						width 222
-						height 117
-						autoResize TRUE)
-					(object AssocVw "$UNNAMED$9" @197
-						quid "4D3F3399017C"
-						pos (557,960)
-						label (object SegLabel @198
-							quid "4D3F36930149"
-							pos (557,901)
-							font (object Font
-								italics TRUE)
-							hidden TRUE
-							anchor 1
-							max_width 232
-							label ""
-							pctDist 0.500000
-							height 59)
-						stereotype (object SegLabel @199
-							quid "4D3F3695034C"
-							pos (622,1000)
+							(756,1616)
+							(518,1616))
+						line_style 6144
+						label (object SegLabel @248
+							quid "4D59AB7A0333"
+							pos (711,1574)
 							positionBySuperclass FALSE
-							anchor 10
-							max_width 203
-							label "<< initiates >>"
-							pctDist 1.583333
-							height 40
+							anchor 1
+							max_width 15
+							label "1"
+							pctDist 0.189076
+							height 42
 							orientation 1)
-						uses_fill_color FALSE
-						quidu "4D3F339A01AC"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$11" @200
-								quid "4D3F3399017D"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F339A01AE"
-								client @197
-								supplier @196
-								vertices (list Points
-									(557,960)
-									(740,1120))
-								line_style 6144)
-							(object RoleView "$UNNAMED$10" @201
-								quid "4D3F339A01AB"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F339A01AD"
-								client @197
-								supplier @142
-								vertices (list Points
-									(557,960)
-									(375,801))
-								line_style 6144)))
-					(object UsesView "" @202
-						quid "4D3F340D00C2"
-						stereotype (object SegLabel @203
-							quid "4D3F341D0259"
-							pos (1052,896)
-							font (object Font
-								size 10)
-							anchor 10
-							max_width 241
-							label "<< include >>"
-							pctDist 0.556850
-							height 66
-							orientation 1)
-						uses_fill_color FALSE
-						quidu "4D3F340D02A7"
-						label (object SegLabel @204
-							quid "4D3F341A0046"
-							pos (1052,926)
-							hidden TRUE
-							max_width 207
-							label ""
-							pctDist 0.520966
-							height 43)
-						client @196
-						supplier @127
-						vertices (list Points
-							(868,1120)
-							(1271,813))
-						line_style 6144)
-					(object AssocVw "$UNNAMED$36" @205
-						quid "4D3F361D009B"
-						pos (1572,1210)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F361F032C"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$37" @206
-								quid "4D3F361D009C"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F361F032E"
-								client @205
-								supplier @175
-								vertices (list Points
-									(1572,1210)
-									(2238,1243))
-								line_style 6144)
-							(object RoleView "$UNNAMED$30" @207
-								quid "4D3F361F032B"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F361F032D"
-								client @205
-								supplier @196
-								vertices (list Points
-									(1572,1210)
-									(907,1177))
-								line_style 6144)))
-					(object ClassView "Class" "Logical View::AlarmActor" @208
-						ShowCompartmentStereotypes TRUE
-						IncludeAttribute TRUE
-						IncludeOperation TRUE
-						quid "4D3F31CF01D1"
-						pos (2279,984)
-						label (object ItemLabel
-							quid "4D3F31CF01D2"
-							pos (2279,1140)
-							nlines 2
-							max_width 230
-							label "AlarmActor")
-						icon "Actor"
-						icon_style "Icon"
-						quidu "4D3F31CF0200"
-						width 120
-						height 162
-						annotation 8
-						autoResize TRUE)
-					(object AssocVw "$UNNAMED$45" @209
-						quid "4D3F32A9037B"
-						pos (2033,935)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F32AA0253"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$46" @210
-								quid "4D3F32A9037C"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F32AA0255"
-								client @209
-								supplier @208
-								vertices (list Points
-									(2033,935)
-									(2222,969))
-								line_style 6144)
-							(object RoleView "$UNNAMED$22" @211
-								quid "4D3F32AA0252"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F32AA0254"
-								client @209
-								supplier @128
-								vertices (list Points
-									(2033,935)
-									(1845,901))
-								line_style 6144)))
-					(object AssocVw "$UNNAMED$49" @212
-						quid "4D3F337F039E"
-						pos (2043,798)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F338100E0"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$51" @213
-								quid "4D3F337F039F"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F338100E2"
-								client @212
-								supplier @208
-								vertices (list Points
-									(2043,798)
-									(2222,938))
-								line_style 6144)
-							(object RoleView "$UNNAMED$50" @214
-								quid "4D3F338100DF"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F338100E1"
-								client @212
-								supplier @153
-								vertices (list Points
-									(2043,798)
-									(1864,659))
-								line_style 6144)))
-					(object AssocVw "$UNNAMED$34" @215
-						quid "4D3F363302ED"
-						pos (1563,1222)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F3635010A"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$35" @216
-								quid "4D3F363302EE"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F3635010C"
-								client @215
-								supplier @208
-								vertices (list Points
-									(1563,1222)
-									(2224,1000))
-								line_style 6144)
-							(object RoleView "$UNNAMED$23" @217
-								quid "4D3F36350109"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F3635010B"
-								client @215
-								supplier @184
-								vertices (list Points
-									(1563,1222)
-									(902,1445))
-								line_style 6144)))
-					(object AssocVw "$UNNAMED$38" @218
-						quid "4D3F36370232"
-						pos (1564,1073)
-						stereotype TRUE
-						uses_fill_color FALSE
-						quidu "4D3F36380197"
-						roleview_list (list RoleViews
-							(object RoleView "$UNNAMED$39" @219
-								quid "4D3F36370233"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F36380199"
-								client @218
-								supplier @208
-								vertices (list Points
-									(1564,1073)
-									(2222,988))
-								line_style 6144)
-							(object RoleView "$UNNAMED$24" @220
-								quid "4D3F36380196"
-								stereotype TRUE
-								uses_fill_color FALSE
-								quidu "4D3F36380198"
-								client @218
-								supplier @196
-								vertices (list Points
-									(1564,1073)
-									(907,1159))
-								line_style 6144)))))))
+						label (object SegLabel @249
+							quid "4D59AB7A0332"
+							pos (635,1704)
+							positionBySuperclass FALSE
+							anchor 2
+							max_width 134
+							label "<<Port>>"
+							pctDist 0.508403
+							height 88))))))
 	root_subsystem (object SubSystem "Component View"
 		quid "4D3F309C0386"
 		physical_models (list unit_reference_list
