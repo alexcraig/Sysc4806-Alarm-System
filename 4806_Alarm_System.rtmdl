@@ -2347,6 +2347,14 @@
 							portCardinality  constClass  "Logical View::CellConfiguration::SENSORS_PER_CELL"
 							quidu "4D485F4C0305"
 							isRelay FALSE
+							visibility "Protected")
+						(object Port "toTimer"
+							quid "4D5AE6F7010D"
+							classifier  "Logical View::RTClasses::Timing"
+							quidu "37E9292C018C"
+							portCardinality  constValue "1"
+							isRelay FALSE
+							isWired FALSE
 							visibility "Protected"))
 					connectors (list connectorsList
 						(object Connector "C4D48672E0021"
@@ -2477,12 +2485,22 @@
 								max_width 266
 								label "toSensors")
 							positionBySuperclass FALSE)
-						(object ConnectorVw ":Structure:C4D48672E0021" @141
+						(object PortVw ":Structure:toTimer" @141
+							quid "4D5AE6F90301"
+							pos (846,138)
+							quidu "4D5AE6F7010D"
+							label (object ItemLabel
+								quid "4D5AE6F90303"
+								pos (855,174)
+								nlines 2
+								max_width 216
+								label "toTimer"))
+						(object ConnectorVw ":Structure:C4D48672E0021" @142
 							quid "4D48672C035D"
 							stereotype TRUE
 							uses_fill_color FALSE
 							quidu "4D48672E0021"
-							label (object SegLabel @142
+							label (object SegLabel @143
 								quid "4D48672E0022"
 								pos (223,621)
 								max_width 256
@@ -2494,12 +2512,12 @@
 								(267,748)
 								(266,491))
 							line_style 6144)
-						(object ConnectorVw ":Structure:C4D486731011B" @143
+						(object ConnectorVw ":Structure:C4D486731011B" @144
 							quid "4D486730009E"
 							stereotype TRUE
 							uses_fill_color FALSE
 							quidu "4D486731011B"
-							label (object SegLabel @144
+							label (object SegLabel @145
 								quid "4D486731011C"
 								pos (1032,608)
 								max_width 256
@@ -2534,11 +2552,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485C410320"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @145
+						(object StateView "Perimeter" "TOP" @146
 							quid "4D485C410322"
 							pos (840,615)
 							quidu "4D485C41031D")
-						(object StateView "StartState" "Initial" @146
+						(object StateView "StartState" "Initial" @147
 							quid "4D485C410323"
 							pos (180,180)
 							quidu "4D485C41031E"))
@@ -2547,12 +2565,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D485C410324"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @147
+						(object CapsulePerimeterVw "Structure" @148
 							quid "4D485C410326"
 							pos (840,615)
 							quidu "4D485C41031F"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @148
+								(object PortVw ":Structure:fromCell" @149
 									quid "4D486123009C"
 									pos (306,96)
 									quidu "4D486123009B"
@@ -2589,11 +2607,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485C4502F2"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @149
+						(object StateView "Perimeter" "TOP" @150
 							quid "4D485C4502F4"
 							pos (840,615)
 							quidu "4D485C4502EF")
-						(object StateView "StartState" "Initial" @150
+						(object StateView "StartState" "Initial" @151
 							quid "4D485C4502F5"
 							pos (180,180)
 							quidu "4D485C4502F0"))
@@ -2602,12 +2620,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D485C4502F6"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @151
+						(object CapsulePerimeterVw "Structure" @152
 							quid "4D485C4502F8"
 							pos (840,615)
 							quidu "4D485C4502F1"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @152
+								(object PortVw ":Structure:fromCell" @153
 									quid "4D48610D02FD"
 									pos (306,96)
 									quidu "4D48610D02FC"
@@ -2639,11 +2657,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485CBB0015"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @153
+						(object StateView "Perimeter" "TOP" @154
 							quid "4D485CBB0017"
 							pos (840,615)
 							quidu "4D485CBB0012")
-						(object StateView "StartState" "Initial" @154
+						(object StateView "StartState" "Initial" @155
 							quid "4D485CBB0018"
 							pos (180,180)
 							quidu "4D485CBB0013"))
@@ -2652,12 +2670,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D485CBB0019"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @155
+						(object CapsulePerimeterVw "Structure" @156
 							quid "4D485CBB001B"
 							pos (840,615)
 							quidu "4D485CBB0014"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromSystem" @156
+								(object PortVw ":Structure:fromSystem" @157
 									quid "4D48635102D6"
 									pos (306,96)
 									quidu "4D48635102D5"
@@ -2689,11 +2707,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485CD402C5"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @157
+						(object StateView "Perimeter" "TOP" @158
 							quid "4D485CD402C7"
 							pos (840,615)
 							quidu "4D485CD402C2")
-						(object StateView "StartState" "Initial" @158
+						(object StateView "StartState" "Initial" @159
 							quid "4D485CD402C8"
 							pos (180,180)
 							quidu "4D485CD402C3"))
@@ -2702,12 +2720,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D485CD402C9"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @159
+						(object CapsulePerimeterVw "Structure" @160
 							quid "4D485CD402CB"
 							pos (840,615)
 							quidu "4D485CD402C4"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:toSystem" @160
+								(object PortVw ":Structure:toSystem" @161
 									quid "4D4863A102B8"
 									pos (315,96)
 									quidu "4D4863A102B7"
@@ -2730,11 +2748,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D4863B50329"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @161
+						(object StateView "Perimeter" "TOP" @162
 							quid "4D4864050278"
 							pos (840,615)
 							quidu "4D485C4502EF")
-						(object StateView "StartState" "Initial" @162
+						(object StateView "StartState" "Initial" @163
 							quid "4D4863B5032C"
 							pos (180,180)
 							quidu "4D485C4502F0"))
@@ -2743,12 +2761,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D4863B5032D"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @163
+						(object CapsulePerimeterVw "Structure" @164
 							quid "4D4864050279"
 							pos (840,615)
 							quidu "4D485C4502F1"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @164
+								(object PortVw ":Structure:fromCell" @165
 									quid "4D486405027A"
 									pos (306,96)
 									quidu "4D48610D02FC"
@@ -2769,11 +2787,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D4863DB02EB"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @165
+						(object StateView "Perimeter" "TOP" @166
 							quid "4D48640300D4"
 							pos (840,615)
 							quidu "4D485C4502EF")
-						(object StateView "StartState" "Initial" @166
+						(object StateView "StartState" "Initial" @167
 							quid "4D4863DB02EE"
 							pos (180,180)
 							quidu "4D485C4502F0"))
@@ -2782,12 +2800,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D4863DB02EF"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @167
+						(object CapsulePerimeterVw "Structure" @168
 							quid "4D48640300D5"
 							pos (840,615)
 							quidu "4D485C4502F1"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @168
+								(object PortVw ":Structure:fromCell" @169
 									quid "4D48640300D6"
 									pos (306,96)
 									quidu "4D48610D02FC"
@@ -2808,11 +2826,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D4863E60184"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @169
+						(object StateView "Perimeter" "TOP" @170
 							quid "4D4864080355"
 							pos (840,615)
 							quidu "4D485C4502EF")
-						(object StateView "StartState" "Initial" @170
+						(object StateView "StartState" "Initial" @171
 							quid "4D4863E60187"
 							pos (180,180)
 							quidu "4D485C4502F0"))
@@ -2821,12 +2839,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D4863E60188"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @171
+						(object CapsulePerimeterVw "Structure" @172
 							quid "4D4864080356"
 							pos (840,615)
 							quidu "4D485C4502F1"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @172
+								(object PortVw ":Structure:fromCell" @173
 									quid "4D4864080357"
 									pos (306,96)
 									quidu "4D48610D02FC"
@@ -2847,11 +2865,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D4863F10194"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @173
+						(object StateView "Perimeter" "TOP" @174
 							quid "4D4863FE0121"
 							pos (840,615)
 							quidu "4D485C41031D")
-						(object StateView "StartState" "Initial" @174
+						(object StateView "StartState" "Initial" @175
 							quid "4D4863F10197"
 							pos (180,180)
 							quidu "4D485C41031E"))
@@ -2860,12 +2878,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D4863F10198"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @175
+						(object CapsulePerimeterVw "Structure" @176
 							quid "4D4863FE0122"
 							pos (840,615)
 							quidu "4D485C41031F"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:fromCell" @176
+								(object PortVw ":Structure:fromCell" @177
 									quid "4D4863FE0123"
 									pos (306,96)
 									quidu "4D486123009B"
@@ -2897,11 +2915,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D59AB0102E6"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @177
+						(object StateView "Perimeter" "TOP" @178
 							quid "4D59AB0102E8"
 							pos (840,615)
 							quidu "4D59AB0102E3")
-						(object StateView "StartState" "Initial" @178
+						(object StateView "StartState" "Initial" @179
 							quid "4D59AB0102E9"
 							pos (180,180)
 							quidu "4D59AB0102E4"))
@@ -2910,12 +2928,12 @@
 				structureDiagram (object CollaborationDiagram "Structure Diagram"
 					quid "4D59AB0102EA"
 					items (list diagram_item_list
-						(object CapsulePerimeterVw "Structure" @179
+						(object CapsulePerimeterVw "Structure" @180
 							quid "4D59AB0102EC"
 							pos (840,615)
 							quidu "4D59AB0102E5"
 							boundIcons (list boundIconsList
-								(object PortVw ":Structure:toSystem" @180
+								(object PortVw ":Structure:toSystem" @181
 									quid "4D59AB7A0322"
 									pos (306,96)
 									quidu "4D59AB7A0321"
@@ -2965,11 +2983,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D485CE3014D"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @181
+						(object StateView "Perimeter" "TOP" @182
 							quid "4D485CE3014F"
 							pos (840,615)
 							quidu "4D485CE3014A")
-						(object StateView "StartState" "Initial" @182
+						(object StateView "StartState" "Initial" @183
 							quid "4D485CE30150"
 							pos (180,180)
 							quidu "4D485CE3014B"))
@@ -3010,11 +3028,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D48628F0363"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @183
+						(object StateView "Perimeter" "TOP" @184
 							quid "4D48628F0365"
 							pos (840,615)
 							quidu "4D48628F0360")
-						(object StateView "StartState" "Initial" @184
+						(object StateView "StartState" "Initial" @185
 							quid "4D48628F0366"
 							pos (180,180)
 							quidu "4D48628F0361"))
@@ -3043,11 +3061,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D4862A2018E"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @185
+						(object StateView "Perimeter" "TOP" @186
 							quid "4D4862A20190"
 							pos (840,615)
 							quidu "4D4862A2018B")
-						(object StateView "StartState" "Initial" @186
+						(object StateView "StartState" "Initial" @187
 							quid "4D4862A20191"
 							pos (180,180)
 							quidu "4D4862A2018C"))
@@ -3083,11 +3101,11 @@
 				statediagram (object State_Diagram "State Diagram"
 					quid "4D59AB0D014F"
 					items (list diagram_item_list
-						(object StateView "Perimeter" "TOP" @187
+						(object StateView "Perimeter" "TOP" @188
 							quid "4D59AB0D0151"
 							pos (840,615)
 							quidu "4D59AB0D014C")
-						(object StateView "StartState" "Initial" @188
+						(object StateView "StartState" "Initial" @189
 							quid "4D59AB0D0152"
 							pos (180,180)
 							quidu "4D59AB0D014D"))
@@ -3103,7 +3121,7 @@
 			(object ClassDiagram "Main"
 				quid "3619364703D4"
 				items (list diagram_item_list
-					(object CapsuleVw "SystemHandler" @189
+					(object CapsuleVw "SystemHandler" @190
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3125,31 +3143,31 @@
 						quidu "4D485B7E0069"
 						compartment (object Compartment
 							quid "4D485B7E0068"
-							pos (1369,405)
+							pos (1369,409)
 							anchor 2
 							nlines 13
-							max_width 591
+							max_width 600
 							justify 1)
 						width 612
 						height 724
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "CellHandler" @190
+					(object CapsuleVw "CellHandler" @191
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
 						showAggregations TRUE
 						quid "4D485B840182"
-						pos (1726,1261)
+						pos (1704,1283)
 						label (object ItemLabel
 							quid "4D485B840183"
-							pos (1445,1152)
+							pos (1423,1154)
 							max_width 562
 							label "CellHandler")
 						stereotype (object ItemLabel
 							quid "4D485B8401CD"
-							pos (1445,1111)
+							pos (1423,1113)
 							anchor 10
 							max_width 562
 							label "<<Capsule>>")
@@ -3157,17 +3175,17 @@
 						quidu "4D485B8401C1"
 						compartment (object Compartment
 							quid "4D485B8401C0"
-							pos (1445,1214)
+							pos (1423,1216)
 							anchor 2
-							nlines 7
-							max_width 568
+							nlines 8
+							max_width 559
 							justify 1)
 						width 580
-						height 458
+						height 498
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "Alarm" @191
+					(object CapsuleVw "Alarm" @192
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3199,7 +3217,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "Sensor" @192
+					(object CapsuleVw "Sensor" @193
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3231,7 +3249,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "Keypad" @193
+					(object CapsuleVw "Keypad" @194
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3263,7 +3281,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "Display" @194
+					(object CapsuleVw "Display" @195
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3295,7 +3313,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object ProtocolVw "HandlerProtocol" @195
+					(object ProtocolVw "HandlerProtocol" @196
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3328,11 +3346,11 @@
 						autoResize TRUE
 						showInSignals TRUE
 						showOutSignals TRUE)
-					(object PortRelVw ":Structure:toCells" @196
+					(object PortRelVw ":Structure:toCells" @197
 						quid "4D485E6202B4"
 						uses_fill_color FALSE
 						quidu "4D485E6202B5"
-						label (object SegLabel @197
+						label (object SegLabel @198
 							quid "4D485E6202C4"
 							pos (2106,623)
 							positionBySuperclass FALSE
@@ -3342,13 +3360,13 @@
 							height 36
 							orientation 1)
 						positionBySuperclass FALSE
-						client @195
-						supplier @189
+						client @196
+						supplier @190
 						vertices (list Points
 							(2252,683)
 							(1972,639))
 						line_style 6144
-						label (object SegLabel @198
+						label (object SegLabel @199
 							quid "4D485E6202C6"
 							pos (2315,446)
 							positionBySuperclass FALSE
@@ -3358,7 +3376,7 @@
 							pctDist -0.089773
 							height 244
 							orientation 1)
-						label (object SegLabel @199
+						label (object SegLabel @200
 							quid "4D485E6202C5"
 							pos (2093,701)
 							positionBySuperclass FALSE
@@ -3367,45 +3385,45 @@
 							label "<<Port>>"
 							pctDist 0.544314
 							height 43))
-					(object PortRelVw ":Structure:fromSystem" @200
+					(object PortRelVw ":Structure:fromSystem" @201
 						quid "4D485E6A0091"
 						uses_fill_color FALSE
 						quidu "4D485E6A0092"
-						label (object SegLabel @201
+						label (object SegLabel @202
 							quid "4D485E6A00A1"
-							pos (2112,937)
+							pos (2102,948)
 							positionBySuperclass FALSE
 							max_width 169
 							label "fromSystem"
-							pctDist 0.553535
-							height 14
+							pctDist 0.550083
+							height 13
 							orientation 1)
 						positionBySuperclass FALSE
-						client @195
-						supplier @190
+						client @196
+						supplier @191
 						vertices (list Points
-							(2252,844)
-							(2014,1031))
+							(2252,846)
+							(1994,1050))
 						line_style 6144
-						label (object SegLabel @202
+						label (object SegLabel @203
 							quid "4D485E6A00A3"
-							pos (2273,964)
+							pos (2263,975)
 							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist 0.190388
-							height 107)
-						label (object SegLabel @203
+							pctDist 0.217027
+							height 108)
+						label (object SegLabel @204
 							quid "4D485E6A00A2"
-							pos (2141,978)
+							pos (2131,989)
 							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.561885
+							pctDist 0.558236
 							height 37))
-					(object ClassView "ClassUtility" "Logical View::CellConfiguration" @204
+					(object ClassView "ClassUtility" "Logical View::CellConfiguration" @205
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3430,24 +3448,24 @@
 						height 260
 						annotation 8
 						autoResize TRUE)
-					(object PortRelVw ":Structure:fromCell" @205
+					(object PortRelVw ":Structure:fromCell" @206
 						quid "4D48610D02FB"
 						uses_fill_color FALSE
 						quidu "4D48610D02FC"
-						label (object SegLabel @206
+						label (object SegLabel @207
 							quid "4D48610D030B"
 							pos (2322,1149)
 							max_width 116
 							label "fromCell"
 							pctDist 0.293981
 							height 54)
-						client @195
-						supplier @192
+						client @196
+						supplier @193
 						vertices (list Points
 							(2338,944)
 							(2110,1579))
 						line_style 6144
-						label (object SegLabel @207
+						label (object SegLabel @208
 							quid "4D48610D030D"
 							pos (2352,1111)
 							anchor 1
@@ -3455,7 +3473,7 @@
 							label "1"
 							pctDist 0.225947
 							height 70)
-						label (object SegLabel @208
+						label (object SegLabel @209
 							quid "4D48610D030C"
 							pos (2262,1279)
 							anchor 2
@@ -3463,24 +3481,24 @@
 							label "<<Port>>"
 							pctDist 0.505379
 							height 41))
-					(object PortRelVw ":Structure:fromCell" @209
+					(object PortRelVw ":Structure:fromCell" @210
 						quid "4D486123009A"
 						uses_fill_color FALSE
 						quidu "4D486123009B"
-						label (object SegLabel @210
+						label (object SegLabel @211
 							quid "4D48612300AB"
 							pos (2567,1155)
 							max_width 116
 							label "fromCell"
 							pctDist 0.333080
 							height 42)
-						client @195
-						supplier @191
+						client @196
+						supplier @192
 						vertices (list Points
 							(2475,944)
 							(2627,1606))
 						line_style 6144
-						label (object SegLabel @211
+						label (object SegLabel @212
 							quid "4D48612300AD"
 							pos (2570,1115)
 							anchor 1
@@ -3488,7 +3506,7 @@
 							label "1"
 							pctDist 0.276672
 							height 54)
-						label (object SegLabel @212
+						label (object SegLabel @213
 							quid "4D48612300AC"
 							pos (2592,1266)
 							anchor 2
@@ -3496,7 +3514,7 @@
 							label "<<Port>>"
 							pctDist 0.500594
 							height 42))
-					(object ProtocolVw "KeypadProtocol" @213
+					(object ProtocolVw "KeypadProtocol" @214
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3529,7 +3547,7 @@
 						autoResize TRUE
 						showInSignals TRUE
 						showOutSignals TRUE)
-					(object ProtocolVw "DisplayProtocol" @214
+					(object ProtocolVw "DisplayProtocol" @215
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3562,11 +3580,11 @@
 						autoResize TRUE
 						showInSignals TRUE
 						showOutSignals TRUE)
-					(object PortRelVw ":Structure:toKeypad" @215
+					(object PortRelVw ":Structure:toKeypad" @216
 						quid "4D48634500C0"
 						uses_fill_color FALSE
 						quidu "4D48634500C1"
-						label (object SegLabel @216
+						label (object SegLabel @217
 							quid "4D48634500D1"
 							pos (1242,576)
 							positionBySuperclass FALSE
@@ -3575,13 +3593,13 @@
 							pctDist 0.596430
 							height 40)
 						positionBySuperclass FALSE
-						client @213
-						supplier @189
+						client @214
+						supplier @190
 						vertices (list Points
 							(1075,626)
 							(1359,609))
 						line_style 6144
-						label (object SegLabel @217
+						label (object SegLabel @218
 							quid "4D48634500E1"
 							pos (1115,586)
 							positionBySuperclass FALSE
@@ -3590,7 +3608,7 @@
 							label "1"
 							pctDist 0.148743
 							height 37)
-						label (object SegLabel @218
+						label (object SegLabel @219
 							quid "4D48634500E0"
 							pos (1227,520)
 							positionBySuperclass FALSE
@@ -3599,11 +3617,11 @@
 							label "<<Port>>"
 							pctDist 0.555562
 							height 97))
-					(object PortRelVw ":Structure:fromSystem" @219
+					(object PortRelVw ":Structure:fromSystem" @220
 						quid "4D48635102D4"
 						uses_fill_color FALSE
 						quidu "4D48635102D5"
-						label (object SegLabel @220
+						label (object SegLabel @221
 							quid "4D48635102D9"
 							pos (714,416)
 							positionBySuperclass FALSE
@@ -3613,13 +3631,13 @@
 							height 97
 							orientation 1)
 						positionBySuperclass FALSE
-						client @213
-						supplier @193
+						client @214
+						supplier @194
 						vertices (list Points
 							(596,442)
 							(497,355))
 						line_style 6144
-						label (object SegLabel @221
+						label (object SegLabel @222
 							quid "4D48635102E3"
 							pos (448,373)
 							positionBySuperclass FALSE
@@ -3628,7 +3646,7 @@
 							label "1"
 							pctDist 1.189119
 							height 45)
-						label (object SegLabel @222
+						label (object SegLabel @223
 							quid "4D48635102DA"
 							pos (677,372)
 							positionBySuperclass FALSE
@@ -3638,11 +3656,11 @@
 							pctDist -0.111054
 							height 106
 							orientation 1))
-					(object PortRelVw ":Structure:toDisplay" @223
+					(object PortRelVw ":Structure:toDisplay" @224
 						quid "4D48636D03CE"
 						uses_fill_color FALSE
 						quidu "4D48636D03CF"
-						label (object SegLabel @224
+						label (object SegLabel @225
 							quid "4D48636D03DF"
 							pos (1153,928)
 							positionBySuperclass FALSE
@@ -3651,13 +3669,13 @@
 							pctDist 0.260720
 							height 21)
 						positionBySuperclass FALSE
-						client @214
-						supplier @189
+						client @215
+						supplier @190
 						vertices (list Points
 							(1097,994)
 							(1359,807))
 						line_style 6144
-						label (object SegLabel @225
+						label (object SegLabel @226
 							quid "4D48636D03E1"
 							pos (1059,960)
 							positionBySuperclass FALSE
@@ -3666,7 +3684,7 @@
 							label "1"
 							pctDist -0.034725
 							height 49)
-						label (object SegLabel @226
+						label (object SegLabel @227
 							quid "4D48636D03E0"
 							pos (1204,867)
 							positionBySuperclass FALSE
@@ -3675,11 +3693,11 @@
 							label "<<Port>>"
 							pctDist 0.499773
 							height 42))
-					(object PortRelVw ":Structure:toSystem" @227
+					(object PortRelVw ":Structure:toSystem" @228
 						quid "4D4863A102B6"
 						uses_fill_color FALSE
 						quidu "4D4863A102B7"
-						label (object SegLabel @228
+						label (object SegLabel @229
 							quid "4D4863A102C6"
 							pos (640,1215)
 							positionBySuperclass FALSE
@@ -3688,13 +3706,13 @@
 							pctDist 0.477492
 							height 106)
 						positionBySuperclass FALSE
-						client @214
-						supplier @194
+						client @215
+						supplier @195
 						vertices (list Points
 							(717,1110)
 							(560,1107))
 						line_style 6144
-						label (object SegLabel @229
+						label (object SegLabel @230
 							quid "4D4863A102C8"
 							pos (694,1078)
 							positionBySuperclass FALSE
@@ -3704,7 +3722,7 @@
 							pctDist 0.150337
 							height 32
 							orientation 1)
-						label (object SegLabel @230
+						label (object SegLabel @231
 							quid "4D4863A102C7"
 							pos (641,1159)
 							positionBySuperclass FALSE
@@ -3713,7 +3731,7 @@
 							label "<<Port>>"
 							pctDist 0.477938
 							height 50))
-					(object CapsuleVw "HeatSensor" @231
+					(object CapsuleVw "HeatSensor" @232
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3738,7 +3756,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "BreakInSensor" @232
+					(object CapsuleVw "BreakInSensor" @233
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3763,7 +3781,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "MovementSensor" @233
+					(object CapsuleVw "MovementSensor" @234
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3788,7 +3806,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object CapsuleVw "SoundAlarm" @234
+					(object CapsuleVw "SoundAlarm" @235
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3813,51 +3831,51 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object InheritView "" @235
+					(object InheritView "" @236
 						quid "4D4863FB0269"
 						stereotype TRUE
 						uses_fill_color FALSE
 						quidu "4D4863FE0111"
-						client @234
-						supplier @191
+						client @235
+						supplier @192
 						vertices (list Points
 							(2677,2073)
 							(2670,1921))
 						line_style 6144)
-					(object InheritView "" @236
+					(object InheritView "" @237
 						quid "4D48640101EC"
 						stereotype TRUE
 						uses_fill_color FALSE
 						quidu "4D48640300D2"
-						client @232
-						supplier @192
+						client @233
+						supplier @193
 						vertices (list Points
 							(2071,2067)
 							(2061,1956))
 						line_style 6144)
-					(object InheritView "" @237
+					(object InheritView "" @238
 						quid "4D4864040353"
 						stereotype TRUE
 						uses_fill_color FALSE
 						quidu "4D4864050269"
-						client @231
-						supplier @192
+						client @232
+						supplier @193
 						vertices (list Points
 							(1839,2070)
 							(1915,1956))
 						line_style 6144)
-					(object InheritView "" @238
+					(object InheritView "" @239
 						quid "4D4864070344"
 						stereotype TRUE
 						uses_fill_color FALSE
 						quidu "4D4864080353"
-						client @233
-						supplier @192
+						client @234
+						supplier @193
 						vertices (list Points
 							(1570,2092)
 							(1778,1949))
 						line_style 6144)
-					(object ClassView "Class" "Logical View::UserConfiguration" @239
+					(object ClassView "Class" "Logical View::UserConfiguration" @240
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3873,16 +3891,16 @@
 						quidu "4D4864590141"
 						compartment (object Compartment
 							quid "4D4864590142"
-							pos (2713,715)
+							pos (2713,719)
 							anchor 2
 							nlines 9
-							max_width 513
+							max_width 521
 							justify 1)
 						width 534
 						height 446
 						annotation 8
 						autoResize TRUE)
-					(object CapsuleVw "PhoneLine" @240
+					(object CapsuleVw "PhoneLine" @241
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3914,7 +3932,7 @@
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
-					(object ProtocolVw "PhoneProtocol" @241
+					(object ProtocolVw "PhoneProtocol" @242
 						ShowCompartmentStereotypes TRUE
 						IncludeAttribute TRUE
 						IncludeOperation TRUE
@@ -3947,11 +3965,11 @@
 						autoResize TRUE
 						showInSignals TRUE
 						showOutSignals TRUE)
-					(object PortRelVw ":Structure:toPhone" @242
+					(object PortRelVw ":Structure:toPhone" @243
 						quid "4D59AB5D03BC"
 						uses_fill_color FALSE
 						quidu "4D59AB5D03BD"
-						label (object SegLabel @243
+						label (object SegLabel @244
 							quid "4D59AB5D03DB"
 							pos (1094,1324)
 							positionBySuperclass FALSE
@@ -3960,13 +3978,13 @@
 							pctDist 0.193053
 							height 45)
 						positionBySuperclass FALSE
-						client @241
-						supplier @189
+						client @242
+						supplier @190
 						vertices (list Points
 							(1064,1445)
 							(1410,952))
 						line_style 6144
-						label (object SegLabel @244
+						label (object SegLabel @245
 							quid "4D59AB5D03DD"
 							pos (1049,1366)
 							positionBySuperclass FALSE
@@ -3975,7 +3993,7 @@
 							label "1"
 							pctDist 0.093055
 							height 57)
-						label (object SegLabel @245
+						label (object SegLabel @246
 							quid "4D59AB5D03DC"
 							pos (1166,1375)
 							positionBySuperclass FALSE
@@ -3985,11 +4003,11 @@
 							pctDist 0.192417
 							height 43
 							orientation 1))
-					(object PortRelVw ":Structure:toSystem" @246
+					(object PortRelVw ":Structure:toSystem" @247
 						quid "4D59AB7A0320"
 						uses_fill_color FALSE
 						quidu "4D59AB7A0321"
-						label (object SegLabel @247
+						label (object SegLabel @248
 							quid "4D59AB7A0331"
 							pos (630,1749)
 							positionBySuperclass FALSE
@@ -3998,13 +4016,13 @@
 							pctDist 0.529412
 							height 133)
 						positionBySuperclass FALSE
-						client @241
-						supplier @240
+						client @242
+						supplier @241
 						vertices (list Points
 							(756,1616)
 							(518,1616))
 						line_style 6144
-						label (object SegLabel @248
+						label (object SegLabel @249
 							quid "4D59AB7A0333"
 							pos (711,1574)
 							positionBySuperclass FALSE
@@ -4014,7 +4032,7 @@
 							pctDist 0.189076
 							height 42
 							orientation 1)
-						label (object SegLabel @249
+						label (object SegLabel @250
 							quid "4D59AB7A0332"
 							pos (635,1704)
 							positionBySuperclass FALSE
