@@ -915,13 +915,13 @@
 							orientation 1)
 						stereotype (object SegLabel @19
 							quid "4D3F3364036F"
-							pos (2063,553)
+							pos (2060,544)
 							positionBySuperclass FALSE
 							anchor 10
 							max_width 203
 							label "<< initiates >>"
-							pctDist 0.983333
-							height 8)
+							pctDist 0.933333
+							height 17)
 						uses_fill_color FALSE
 						quidu "4D3F33590266"
 						roleview_list (list RoleViews
@@ -1820,10 +1820,31 @@
 						quid "4D4864B100A6"
 						initv "1234"
 						type "RTString")
-					(object ClassAttribute "defaultPhoneNumber"
+					(object ClassAttribute "phoneNumber"
 						quid "4D4864D2029A"
 						initv "911"
 						type "RTString"))
+				operations (list Operations
+					(object Operation "getPassword"
+						quid "4D5AE4B0022E"
+						result "RTString")
+					(object Operation "setPassword"
+						quid "4D5AE4C90182"
+						parameters (list Parameters
+							(object Parameter "password"
+								quid "4D5AE4D402EA"
+								type "RTString")))
+					(object Operation "getPhoneNumber"
+						quid "4D5AE4E4020F"
+						result "RTString")
+					(object Operation "setPhoneNumber"
+						quid "4D5AE4FF00A9"
+						parameters (list Parameters
+							(object Parameter "phoneNumber"
+								quid "4D5AE5050349"
+								type "RTString")))
+					(object Operation "init"
+						quid "4D5AE53101A4"))
 				language "C++")
 			(object Capsule "SystemHandler"
 				quid "4D485B7E0069"
@@ -1951,7 +1972,18 @@
 				class_attributes (list class_attribute_list
 					(object ClassAttribute "config"
 						quid "4D486508028B"
-						type "UserConfiguration"))
+						type "UserConfiguration")
+					(object ClassAttribute "enabled"
+						quid "4D5AE54D0194"
+						type "bool"))
+				operations (list Operations
+					(object Operation "setEnabled"
+						quid "4D5AE55E01D3"
+						parameters (list Parameters
+							(object Parameter "enabled"
+								quid "4D5AE56600AA"
+								type "bool"))
+						visibility "Protected"))
 				statemachine (object State_Machine
 					quid "4D485B7E006A"
 					State (object State "TOP"
@@ -3080,12 +3112,12 @@
 						pos (1666,590)
 						label (object ItemLabel
 							quid "4D485B7E003B"
-							pos (1369,398)
+							pos (1369,347)
 							max_width 594
 							label "SystemHandler")
 						stereotype (object ItemLabel
 							quid "4D485B7E0075"
-							pos (1369,357)
+							pos (1369,306)
 							anchor 10
 							max_width 594
 							label "<<Capsule>>")
@@ -3093,13 +3125,13 @@
 						quidu "4D485B7E0069"
 						compartment (object Compartment
 							quid "4D485B7E0068"
-							pos (1369,460)
+							pos (1369,405)
 							anchor 2
-							nlines 11
-							max_width 600
+							nlines 13
+							max_width 591
 							justify 1)
 						width 612
-						height 622
+						height 724
 						annotation 8
 						autoResize TRUE
 						showPorts TRUE)
@@ -3109,15 +3141,15 @@
 						IncludeOperation TRUE
 						showAggregations TRUE
 						quid "4D485B840182"
-						pos (1738,1270)
+						pos (1726,1261)
 						label (object ItemLabel
 							quid "4D485B840183"
-							pos (1457,1161)
+							pos (1445,1152)
 							max_width 562
 							label "CellHandler")
 						stereotype (object ItemLabel
 							quid "4D485B8401CD"
-							pos (1457,1120)
+							pos (1445,1111)
 							anchor 10
 							max_width 562
 							label "<<Capsule>>")
@@ -3125,7 +3157,7 @@
 						quidu "4D485B8401C1"
 						compartment (object Compartment
 							quid "4D485B8401C0"
-							pos (1457,1223)
+							pos (1445,1214)
 							anchor 2
 							nlines 7
 							max_width 568
@@ -3341,37 +3373,37 @@
 						quidu "4D485E6A0092"
 						label (object SegLabel @201
 							quid "4D485E6A00A1"
-							pos (2113,945)
+							pos (2112,937)
 							positionBySuperclass FALSE
 							max_width 169
 							label "fromSystem"
-							pctDist 0.554802
-							height 13
+							pctDist 0.553535
+							height 14
 							orientation 1)
 						positionBySuperclass FALSE
 						client @195
 						supplier @190
 						vertices (list Points
-							(2252,849)
-							(2016,1040))
+							(2252,844)
+							(2014,1031))
 						line_style 6144
 						label (object SegLabel @202
 							quid "4D485E6A00A3"
-							pos (2274,972)
+							pos (2273,964)
 							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist 0.198542
-							height 109)
+							pctDist 0.190388
+							height 107)
 						label (object SegLabel @203
 							quid "4D485E6A00A2"
-							pos (2142,986)
+							pos (2141,978)
 							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.565510
+							pctDist 0.561885
 							height 37))
 					(object ClassView "ClassUtility" "Logical View::CellConfiguration" @204
 						ShowCompartmentStereotypes TRUE
@@ -3589,13 +3621,13 @@
 						line_style 6144
 						label (object SegLabel @221
 							quid "4D48635102E3"
-							pos (413,361)
+							pos (448,373)
 							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist 1.448705
-							height 60)
+							pctDist 1.189119
+							height 45)
 						label (object SegLabel @222
 							quid "4D48635102DA"
 							pos (677,372)
@@ -3831,24 +3863,24 @@
 						IncludeOperation TRUE
 						showAggregations TRUE
 						quid "4D4864590112"
-						pos (3029,760)
+						pos (2971,871)
 						label (object ItemLabel
 							quid "4D4864590113"
-							pos (2708,661)
-							max_width 643
+							pos (2713,657)
+							max_width 516
 							label "UserConfiguration")
 						icon_style "Decoration"
 						quidu "4D4864590141"
 						compartment (object Compartment
 							quid "4D4864590142"
-							pos (2708,723)
+							pos (2713,715)
 							anchor 2
-							nlines 4
-							max_width 625
+							nlines 9
+							max_width 513
 							justify 1)
-						width 661
-						height 218
-						annotation 24
+						width 534
+						height 446
+						annotation 8
 						autoResize TRUE)
 					(object CapsuleVw "PhoneLine" @240
 						ShowCompartmentStereotypes TRUE
@@ -3921,36 +3953,36 @@
 						quidu "4D59AB5D03BD"
 						label (object SegLabel @243
 							quid "4D59AB5D03DB"
-							pos (1112,1298)
+							pos (1094,1324)
 							positionBySuperclass FALSE
 							max_width 125
 							label "toPhone"
-							pctDist 0.222478
+							pctDist 0.193053
 							height 45)
 						positionBySuperclass FALSE
 						client @241
 						supplier @189
 						vertices (list Points
 							(1064,1445)
-							(1446,901))
+							(1410,952))
 						line_style 6144
 						label (object SegLabel @244
 							quid "4D59AB5D03DD"
-							pos (1067,1340)
+							pos (1049,1366)
 							positionBySuperclass FALSE
 							anchor 1
 							max_width 15
 							label "1"
-							pctDist 0.131865
+							pctDist 0.093055
 							height 57)
 						label (object SegLabel @245
 							quid "4D59AB5D03DC"
-							pos (1184,1349)
+							pos (1166,1375)
 							positionBySuperclass FALSE
 							anchor 2
 							max_width 134
 							label "<<Port>>"
-							pctDist 0.221935
+							pctDist 0.192417
 							height 43
 							orientation 1))
 					(object PortRelVw ":Structure:toSystem" @246
