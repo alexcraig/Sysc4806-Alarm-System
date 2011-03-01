@@ -1,0 +1,4 @@
+PeripheralIdentifier_DEPS = \
+	../src/PeripheralIdentifier.cpp \
+	../src/RTSystem/TopLevelTesting.h \
+	../src/PeripheralIdentifier.h

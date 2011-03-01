@@ -1,5 +1,7 @@
-HandlerProtocol_DEPS = \
-	../src/HandlerProtocol.cpp \
+Alarm_DEPS = \
+	../src/Alarm.cpp \
 	../src/RTSystem/TopLevelTesting.h \
+	../src/Alarm.h \
 	../src/HandlerProtocol.h \
+	../src/PeripheralTest.h \
 	../src/PeripheralIdentifier.h

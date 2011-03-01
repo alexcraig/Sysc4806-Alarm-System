@@ -8,6 +8,7 @@
 #endif
 
 #include <RTSystem/TopLevelTesting.h>
+#include <PeripheralIdentifier.h>
 
 struct HandlerProtocol
 {
@@ -20,18 +21,21 @@ struct HandlerProtocol
 		{
 			rti_heartbeat = rtiLast_RTRootProtocol + 1
 		  , rti_breakin
+		  , rti_failed
 		};
 
 	protected:
-		enum { rtiLast_HandlerProtocol = rti_breakin };
+		enum { rtiLast_HandlerProtocol = rti_failed };
 
 	public:
 		inline RTInSignal heartbeat( void );
 		inline RTInSignal breakin( void );
+		inline RTInSignal failed( void );
 		inline RTOutSignal arm( void );
 		inline RTOutSignal disarm( void );
 		inline RTOutSignal selftest( void );
 		inline RTOutSignal trigger( void );
+		inline RTOutSignal set_cell_index( const int & data );
 		static const RTProtocolDescriptor rt_class;
 
 	private:
@@ -48,18 +52,21 @@ struct HandlerProtocol
 		  , rti_disarm
 		  , rti_selftest
 		  , rti_trigger
+		  , rti_set_cell_index
 		};
 
 	protected:
-		enum { rtiLast_HandlerProtocol = rti_trigger };
+		enum { rtiLast_HandlerProtocol = rti_set_cell_index };
 
 	public:
 		inline RTInSignal arm( void );
 		inline RTInSignal disarm( void );
 		inline RTInSignal selftest( void );
 		inline RTInSignal trigger( void );
+		inline RTInSignal set_cell_index( void );
 		inline RTOutSignal heartbeat( void );
-		inline RTOutSignal breakin( void );
+		inline RTOutSignal breakin( const RTTypedValue_PeripheralIdentifier & data );
+		inline RTOutSignal failed( const RTTypedValue_PeripheralIdentifier & data );
 		static const RTProtocolDescriptor rt_class;
 
 	private:
@@ -86,6 +93,11 @@ inline RTInSignal HandlerProtocol::Base::breakin( void )
 	return RTInSignal( this, rti_breakin );
 }
 
+inline RTInSignal HandlerProtocol::Base::failed( void )
+{
+	return RTInSignal( this, rti_failed );
+}
+
 inline RTOutSignal HandlerProtocol::Base::arm( void )
 {
 	return RTOutSignal( this, Conjugate::rti_arm, (const void *)0, &RTType_void );
@@ -104,6 +116,11 @@ inline RTOutSignal HandlerProtocol::Base::selftest( void )
 inline RTOutSignal HandlerProtocol::Base::trigger( void )
 {
 	return RTOutSignal( this, Conjugate::rti_trigger, (const void *)0, &RTType_void );
+}
+
+inline RTOutSignal HandlerProtocol::Base::set_cell_index( const int & data )
+{
+	return RTOutSignal( this, Conjugate::rti_set_cell_index, &data, &RTType_int );
 }
 
 inline HandlerProtocol::Conjugate::Conjugate( void )
@@ -135,14 +152,24 @@ inline RTInSignal HandlerProtocol::Conjugate::trigger( void )
 	return RTInSignal( this, rti_trigger );
 }
 
+inline RTInSignal HandlerProtocol::Conjugate::set_cell_index( void )
+{
+	return RTInSignal( this, rti_set_cell_index );
+}
+
 inline RTOutSignal HandlerProtocol::Conjugate::heartbeat( void )
 {
 	return RTOutSignal( this, Base::rti_heartbeat, (const void *)0, &RTType_void );
 }
 
-inline RTOutSignal HandlerProtocol::Conjugate::breakin( void )
+inline RTOutSignal HandlerProtocol::Conjugate::breakin( const RTTypedValue_PeripheralIdentifier & data )
 {
-	return RTOutSignal( this, Base::rti_breakin, (const void *)0, &RTType_void );
+	return RTOutSignal( this, Base::rti_breakin, data.data, data.type );
+}
+
+inline RTOutSignal HandlerProtocol::Conjugate::failed( const RTTypedValue_PeripheralIdentifier & data )
+{
+	return RTOutSignal( this, Base::rti_failed, data.data, data.type );
 }
 
 #endif /* HandlerProtocol_H */

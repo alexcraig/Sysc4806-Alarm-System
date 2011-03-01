@@ -13,7 +13,7 @@ const RTProtocolDescriptor HandlerProtocol::Base::rt_class =
   , &HandlerProtocol::Conjugate::rt_class
   , "HandlerProtocol"
   , 0
-  , 4
+  , 5
   , HandlerProtocol::Base::rt_signals
 #if RTRUNTIMEBC
   , &RTProtocolDescriptor::getUnknownGlobalSignal, &RTProtocolDescriptor::getUnknownLocalSignal
@@ -24,8 +24,13 @@ const RTSignalDescriptor HandlerProtocol::Base::rt_signals[] =
 {
 	{
 		"breakin"
-	  , &RTType_void
+	  , &RTType_PeripheralIdentifier
 	  , HandlerProtocol::Base::rti_breakin
+	}
+  , {
+		"failed"
+	  , &RTType_PeripheralIdentifier
+	  , HandlerProtocol::Base::rti_failed
 	}
   , {
 		"heartbeat"
@@ -50,7 +55,7 @@ const RTProtocolDescriptor HandlerProtocol::Conjugate::rt_class =
   , &HandlerProtocol::Base::rt_class
   , "HandlerProtocol"
   , 0
-  , 6
+  , 7
   , HandlerProtocol::Conjugate::rt_signals
 #if RTRUNTIMEBC
   , &RTProtocolDescriptor::getUnknownGlobalSignal, &RTProtocolDescriptor::getUnknownLocalSignal
@@ -83,6 +88,11 @@ const RTSignalDescriptor HandlerProtocol::Conjugate::rt_signals[] =
 		"selftest"
 	  , &RTType_void
 	  , HandlerProtocol::Conjugate::rti_selftest
+	}
+  , {
+		"set_cell_index"
+	  , &RTType_int
+	  , HandlerProtocol::Conjugate::rti_set_cell_index
 	}
   , {
 		"trigger"

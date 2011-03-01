@@ -1,0 +1,4 @@
+DisplayProtocol_DEPS = \
+	../src/DisplayProtocol.cpp \
+	../src/RTSystem/TopLevelTesting.h \
+	../src/DisplayProtocol.h

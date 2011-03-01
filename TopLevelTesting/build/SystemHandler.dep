@@ -2,4 +2,9 @@ SystemHandler_DEPS = \
 	../src/SystemHandler.cpp \
 	../src/RTSystem/TopLevelTesting.h \
 	../src/SystemHandler.h \
-	../src/HandlerProtocol.h
+	../src/CellConfiguration.h \
+	../src/DisplayProtocol.h \
+	../src/HandlerProtocol.h \
+	../src/KeypadProtocol.h \
+	../src/PhoneProtocol.h \
+	../src/PeripheralIdentifier.h

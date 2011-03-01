@@ -8,8 +8,36 @@ TopLevelTesting_SYSTARGET_CS = RTSystem/TopLevelTesting.dep
 TopLevelTesting_SYSDEPS_CS = \
 	RTSystem/TopLevelTesting.cpp \
 	RTSystem/TopLevelTesting.h \
+	Alarm.cpp \
+	Alarm.h \
+	CellConfiguration.cpp \
+	CellConfiguration.h \
+	CellHandler.cpp \
+	CellHandler.h \
+	Display.cpp \
+	Display.h \
+	DisplayProtocol.cpp \
+	DisplayProtocol.h \
 	HandlerProtocol.cpp \
 	HandlerProtocol.h \
+	Keypad.cpp \
+	Keypad.h \
+	KeypadProtocol.cpp \
+	KeypadProtocol.h \
+	PeripheralIdentifier.cpp \
+	PeripheralIdentifier.h \
+	PeripheralTest.cpp \
+	PeripheralTest.h \
+	PhoneLine.cpp \
+	PhoneLine.h \
+	PhoneProtocol.cpp \
+	PhoneProtocol.h \
+	PhoneTest.cpp \
+	PhoneTest.h \
+	Sensor.cpp \
+	Sensor.h \
+	SoundAlarm.cpp \
+	SoundAlarm.h \
 	SystemHandler.cpp \
 	SystemHandler.h
 
