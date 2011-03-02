@@ -127,7 +127,7 @@ INLINE_METHODS void Keypad_Actor::transition5_DisabledPressed( const void * rtda
 INLINE_METHODS void Keypad_Actor::transition6_PasswordEntered( const RTString * rtdata, KeypadProtocol::Conjugate * rtport )
 {
 	// {{{USR
-	const RTString & password = *rtdata;
+	const String & password = *rtdata;
 	toSystem.password_entered(password).send();
 	// }}}USR
 }

@@ -78,17 +78,29 @@ protected:
 	// {{{RME transition ':TOP:Failed:J4D6D44CC0099:RecoverArmed' guard '1'
 	INLINE_METHODS int guard9_RecoverArmed_event1( const void * rtdata, PeripheralTest::Base * rtport );
 	// }}}RME
+	// {{{RME transition ':TOP:Disarmed:J4D6E867901BB:SelfTestDisarmed'
+	INLINE_METHODS void transition11_SelfTestDisarmed( const void * rtdata, HandlerProtocol::Conjugate * rtport );
+	// }}}RME
+	// {{{RME transition ':TOP:Armed:J4D6E86C40093:SelfTestArmed'
+	INLINE_METHODS void transition12_SelfTestArmed( const void * rtdata, HandlerProtocol::Conjugate * rtport );
+	// }}}RME
+	// {{{RME transition ':TOP:Triggered:J4D6E86EB0287:SelfTestTriggered'
+	INLINE_METHODS void transition13_SelfTestTriggered( const void * rtdata, HandlerProtocol::Conjugate * rtport );
+	// }}}RME
 
 private:
 	INLINE_CHAINS void chain1_Initial( void );
 	INLINE_CHAINS void chain3_DisarmAlarm( void );
+	INLINE_CHAINS void chain12_SelfTestArmed( void );
 	INLINE_CHAINS void chain4_TriggerAlarm( void );
 	INLINE_CHAINS void chain7_FailArmed( void );
 	INLINE_CHAINS void chain2_ArmAlarm( void );
+	INLINE_CHAINS void chain11_SelfTestDisarmed( void );
 	INLINE_CHAINS void chain6_FailDisarmed( void );
 	INLINE_CHAINS void chain8_RecoverDisarmed( void );
 	INLINE_CHAINS void chain9_RecoverArmed( void );
 	INLINE_CHAINS void chain5_DisarmTriggeredAlarm( void );
+	INLINE_CHAINS void chain13_SelfTestTriggered( void );
 	INLINE_CHAINS void chain10_FailTriggered( void );
 
 public:

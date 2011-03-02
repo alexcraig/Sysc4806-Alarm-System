@@ -50,13 +50,16 @@ public:
 private:
 	INLINE_CHAINS void chain1_Initial( void );
 	INLINE_CHAINS void chain3_DisarmAlarm( void );
+	INLINE_CHAINS void chain12_SelfTestArmed( void );
 	INLINE_CHAINS void chain4_TriggerAlarm( void );
 	INLINE_CHAINS void chain7_FailArmed( void );
 	INLINE_CHAINS void chain2_ArmAlarm( void );
+	INLINE_CHAINS void chain11_SelfTestDisarmed( void );
 	INLINE_CHAINS void chain6_FailDisarmed( void );
 	INLINE_CHAINS void chain8_RecoverDisarmed( void );
 	INLINE_CHAINS void chain9_RecoverArmed( void );
 	INLINE_CHAINS void chain5_DisarmTriggeredAlarm( void );
+	INLINE_CHAINS void chain13_SelfTestTriggered( void );
 	INLINE_CHAINS void chain10_FailTriggered( void );
 
 public:

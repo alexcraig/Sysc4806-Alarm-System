@@ -34,6 +34,7 @@ ALL_OBJS = \
 	Sensor$(OBJ_EXT) \
 	SoundAlarm$(OBJ_EXT) \
 	SystemHandler$(OBJ_EXT) \
+	UserConfiguration$(OBJ_EXT) \
 	RTSystem/TopLevelTesting$(OBJ_EXT)
 
 ALL_OBJS_LISTFILE = ALL_OBJS.olist
@@ -60,6 +61,7 @@ include <PhoneTest.dep>
 include <Sensor.dep>
 include <SoundAlarm.dep>
 include <SystemHandler.dep>
+include <UserConfiguration.dep>
 include <RTSystem/TopLevelTesting.dep>
 include <$(RTS_HOME)/codegen/ms_nmake.mk>
 
@@ -174,6 +176,12 @@ SystemHandler$(OBJ_EXT) : $(SystemHandler_DEPS) $(RTCOMPILE_DAT)
 		-component $(RTCOMPONENT) -src SystemHandler $(SOURCE_DIR)/SystemHandler.cpp -- \
 		$(USER_CC) $(CC_HEAD) $(USER_CCFLAGS) $(USER_INCPATHS) \
 		 $(SOURCE_DIR)/SystemHandler.cpp $(CC_TAIL)
+
+UserConfiguration$(OBJ_EXT) : $(UserConfiguration_DEPS) $(RTCOMPILE_DAT)
+	$(RTCOMP) -vendor $(VENDOR) $(SPACEDEPS) $(USER_DEPPATHS) \
+		-component $(RTCOMPONENT) -src UserConfiguration $(SOURCE_DIR)/UserConfiguration.cpp -- \
+		$(USER_CC) $(CC_HEAD) $(USER_CCFLAGS) $(USER_INCPATHS) \
+		 $(SOURCE_DIR)/UserConfiguration.cpp $(CC_TAIL)
 
 RTSystem/TopLevelTesting$(OBJ_EXT) : $(TopLevelTesting_SYSDEPS) $(RTCOMPILE_DAT)
 	$(RTCOMP) -vendor $(VENDOR) $(SPACEDEPS) $(USER_DEPPATHS) \

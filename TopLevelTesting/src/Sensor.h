@@ -79,12 +79,20 @@ protected:
 	// {{{RME transition ':TOP:Failed:J4D6D41150272:RecoverArmed' guard '1'
 	INLINE_METHODS int guard6_RecoverArmed_event1( const void * rtdata, PeripheralTest::Base * rtport );
 	// }}}RME
+	// {{{RME transition ':TOP:Disarmed:J4D6E871202B6:SelfTestDisarmed'
+	INLINE_METHODS void transition9_SelfTestDisarmed( const void * rtdata, HandlerProtocol::Conjugate * rtport );
+	// }}}RME
+	// {{{RME transition ':TOP:Armed:J4D6E872801AD:SelfTestArmed'
+	INLINE_METHODS void transition10_SelfTestArmed( const void * rtdata, HandlerProtocol::Conjugate * rtport );
+	// }}}RME
 
 private:
 	INLINE_CHAINS void chain1_Initial( void );
 	INLINE_CHAINS void chain2_ArmSensor( void );
+	INLINE_CHAINS void chain9_SelfTestDisarmed( void );
 	INLINE_CHAINS void chain8_FailDisarmed( void );
 	INLINE_CHAINS void chain3_DisarmSensor( void );
+	INLINE_CHAINS void chain10_SelfTestArmed( void );
 	INLINE_CHAINS void chain7_FailArmed( void );
 	INLINE_CHAINS void chain4_DetectBreakin( void );
 	INLINE_CHAINS void chain5_RecoverDisarmed( void );

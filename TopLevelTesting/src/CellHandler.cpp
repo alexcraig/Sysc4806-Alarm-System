@@ -200,7 +200,6 @@ INLINE_METHODS void CellHandler_Actor::transition3_Initial( const void * rtdata,
 	// {{{USR
 	int i;
 
-	this->armedState = false;
 	this->cellIndex = 0;
 
 	for(i = 0; i < ALARMS_PER_CELL; i++) {
@@ -560,7 +559,7 @@ const RTActor_class CellHandler_Actor::rtg_class =
   , CellHandler_Actor::rtg_ports
   , 0
   , (const RTLocalBindingDescriptor *)0
-  , 4
+  , 3
   , CellHandler_Actor::rtg_CellHandler_fields
 };
 
@@ -648,18 +647,6 @@ const RTFieldDescriptor CellHandler_Actor::rtg_CellHandler_fields[] =
 	  , RTOffsetOf( CellHandler_Actor, cellIndex )
 		// {{{RME tool 'OT::CppTargetRTS' property 'TypeDescriptor'
 	  , &RTType_int
-		// }}}RME
-		// {{{RME tool 'OT::CppTargetRTS' property 'GenerateTypeModifier'
-	  , (const RTTypeModifier *)0
-		// }}}RME
-	}
-	// }}}RME
-	// {{{RME classAttribute 'armedState'
-  , {
-		"armedState"
-	  , RTOffsetOf( CellHandler_Actor, armedState )
-		// {{{RME tool 'OT::CppTargetRTS' property 'TypeDescriptor'
-	  , &RTType_bool
 		// }}}RME
 		// {{{RME tool 'OT::CppTargetRTS' property 'GenerateTypeModifier'
 	  , (const RTTypeModifier *)0

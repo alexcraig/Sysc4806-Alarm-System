@@ -43,6 +43,14 @@
 #define TYPE_SENSOR 1
 // }}}RME
 
+// {{{RME classAttribute 'SYSTEM_SELFTEST_INTERVAL'
+#define SYSTEM_SELFTEST_INTERVAL 20
+// }}}RME
+
+// {{{RME classAttribute 'SYSTEM_BREAKIN_TIMEOUT'
+#define SYSTEM_BREAKIN_TIMEOUT 10
+// }}}RME
+
 class CellConfiguration
 {
 public:

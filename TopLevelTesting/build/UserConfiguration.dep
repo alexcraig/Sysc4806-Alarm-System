@@ -1,0 +1,4 @@
+UserConfiguration_DEPS = \
+	../src/UserConfiguration.cpp \
+	../src/RTSystem/TopLevelTesting.h \
+	../src/UserConfiguration.h

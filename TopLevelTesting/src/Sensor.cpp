@@ -152,6 +152,24 @@ INLINE_METHODS int Sensor_Actor::guard6_RecoverArmed_event1( const void * rtdata
 }
 // }}}RME
 
+// {{{RME transition ':TOP:Disarmed:J4D6E871202B6:SelfTestDisarmed'
+INLINE_METHODS void Sensor_Actor::transition9_SelfTestDisarmed( const void * rtdata, HandlerProtocol::Conjugate * rtport )
+{
+	// {{{USR
+	fromCell.heartbeat().send();
+	// }}}USR
+}
+// }}}RME
+
+// {{{RME transition ':TOP:Armed:J4D6E872801AD:SelfTestArmed'
+INLINE_METHODS void Sensor_Actor::transition10_SelfTestArmed( const void * rtdata, HandlerProtocol::Conjugate * rtport )
+{
+	// {{{USR
+	fromCell.heartbeat().send();
+	// }}}USR
+}
+// }}}RME
+
 INLINE_CHAINS void Sensor_Actor::chain1_Initial( void )
 {
 	// transition ':TOP:Initial:Initial'
@@ -173,6 +191,17 @@ INLINE_CHAINS void Sensor_Actor::chain2_ArmSensor( void )
 	enterState( 3 );
 }
 
+INLINE_CHAINS void Sensor_Actor::chain9_SelfTestDisarmed( void )
+{
+	// transition ':TOP:Disarmed:J4D6E871202B6:SelfTestDisarmed'
+	rtgChainBegin( 2, "SelfTestDisarmed" );
+	exitState( rtg_parent_state );
+	rtgTransitionBegin();
+	transition9_SelfTestDisarmed( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
+	rtgTransitionEnd();
+	enterState( 2 );
+}
+
 INLINE_CHAINS void Sensor_Actor::chain8_FailDisarmed( void )
 {
 	// transition ':TOP:Disarmed:J4D6D431903E6:FailDisarmed'
@@ -192,6 +221,17 @@ INLINE_CHAINS void Sensor_Actor::chain3_DisarmSensor( void )
 	transition3_DisarmSensor( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
 	rtgTransitionEnd();
 	enterState( 2 );
+}
+
+INLINE_CHAINS void Sensor_Actor::chain10_SelfTestArmed( void )
+{
+	// transition ':TOP:Armed:J4D6E872801AD:SelfTestArmed'
+	rtgChainBegin( 3, "SelfTestArmed" );
+	exitState( rtg_parent_state );
+	rtgTransitionBegin();
+	transition10_SelfTestArmed( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
+	rtgTransitionEnd();
+	enterState( 3 );
 }
 
 INLINE_CHAINS void Sensor_Actor::chain7_FailArmed( void )
@@ -280,6 +320,9 @@ void Sensor_Actor::rtsBehavior( int signalIndex, int portIndex )
 				case HandlerProtocol::Conjugate::rti_arm:
 					chain2_ArmSensor();
 					return;
+				case HandlerProtocol::Conjugate::rti_selftest:
+					chain9_SelfTestDisarmed();
+					return;
 				default:
 					break;
 				}
@@ -321,6 +364,9 @@ void Sensor_Actor::rtsBehavior( int signalIndex, int portIndex )
 				{
 				case HandlerProtocol::Conjugate::rti_disarm:
 					chain3_DisarmSensor();
+					return;
+				case HandlerProtocol::Conjugate::rti_selftest:
+					chain10_SelfTestArmed();
 					return;
 				default:
 					break;

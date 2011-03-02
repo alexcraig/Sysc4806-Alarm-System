@@ -77,7 +77,21 @@ int Display_Actor::_followInV( RTBindingEnd & rtg_end, int rtg_portId, int rtg_r
 INLINE_METHODS void Display_Actor::transition2_DisplayText( const RTString * rtdata, DisplayProtocol::Base * rtport )
 {
 	// {{{USR
-	const RTString * displayString = rtdata;
+	int i, j;
+
+	const RTString & signalString = *rtdata;
+
+	char displayBuffer[256] = "DISPLAY: ";
+	i = 9;
+	j = 0;
+
+	while(signalString[j] != 0) {
+		displayBuffer[i] = signalString[j];
+		i++;
+		j++;
+	}
+
+	String displayString = displayBuffer;
 	screenDisplay.log(displayString);
 
 	// }}}USR

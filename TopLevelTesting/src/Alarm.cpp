@@ -144,6 +144,33 @@ INLINE_METHODS int Alarm_Actor::guard9_RecoverArmed_event1( const void * rtdata,
 }
 // }}}RME
 
+// {{{RME transition ':TOP:Disarmed:J4D6E867901BB:SelfTestDisarmed'
+INLINE_METHODS void Alarm_Actor::transition11_SelfTestDisarmed( const void * rtdata, HandlerProtocol::Conjugate * rtport )
+{
+	// {{{USR
+	fromCell.heartbeat().send();
+	// }}}USR
+}
+// }}}RME
+
+// {{{RME transition ':TOP:Armed:J4D6E86C40093:SelfTestArmed'
+INLINE_METHODS void Alarm_Actor::transition12_SelfTestArmed( const void * rtdata, HandlerProtocol::Conjugate * rtport )
+{
+	// {{{USR
+	fromCell.heartbeat().send();
+	// }}}USR
+}
+// }}}RME
+
+// {{{RME transition ':TOP:Triggered:J4D6E86EB0287:SelfTestTriggered'
+INLINE_METHODS void Alarm_Actor::transition13_SelfTestTriggered( const void * rtdata, HandlerProtocol::Conjugate * rtport )
+{
+	// {{{USR
+	fromCell.heartbeat().send();
+	// }}}USR
+}
+// }}}RME
+
 INLINE_CHAINS void Alarm_Actor::chain1_Initial( void )
 {
 	// transition ':TOP:Initial:Initial'
@@ -163,6 +190,17 @@ INLINE_CHAINS void Alarm_Actor::chain3_DisarmAlarm( void )
 	transition3_DisarmAlarm( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
 	rtgTransitionEnd();
 	enterState( 3 );
+}
+
+INLINE_CHAINS void Alarm_Actor::chain12_SelfTestArmed( void )
+{
+	// transition ':TOP:Armed:J4D6E86C40093:SelfTestArmed'
+	rtgChainBegin( 2, "SelfTestArmed" );
+	exitState( rtg_parent_state );
+	rtgTransitionBegin();
+	transition12_SelfTestArmed( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
+	rtgTransitionEnd();
+	enterState( 2 );
 }
 
 INLINE_CHAINS void Alarm_Actor::chain4_TriggerAlarm( void )
@@ -194,6 +232,17 @@ INLINE_CHAINS void Alarm_Actor::chain2_ArmAlarm( void )
 	transition2_ArmAlarm( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
 	rtgTransitionEnd();
 	enterState( 2 );
+}
+
+INLINE_CHAINS void Alarm_Actor::chain11_SelfTestDisarmed( void )
+{
+	// transition ':TOP:Disarmed:J4D6E867901BB:SelfTestDisarmed'
+	rtgChainBegin( 3, "SelfTestDisarmed" );
+	exitState( rtg_parent_state );
+	rtgTransitionBegin();
+	transition11_SelfTestDisarmed( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
+	rtgTransitionEnd();
+	enterState( 3 );
 }
 
 INLINE_CHAINS void Alarm_Actor::chain6_FailDisarmed( void )
@@ -235,6 +284,17 @@ INLINE_CHAINS void Alarm_Actor::chain5_DisarmTriggeredAlarm( void )
 	transition5_DisarmTriggeredAlarm( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
 	rtgTransitionEnd();
 	enterState( 3 );
+}
+
+INLINE_CHAINS void Alarm_Actor::chain13_SelfTestTriggered( void )
+{
+	// transition ':TOP:Triggered:J4D6E86EB0287:SelfTestTriggered'
+	rtgChainBegin( 5, "SelfTestTriggered" );
+	exitState( rtg_parent_state );
+	rtgTransitionBegin();
+	transition13_SelfTestTriggered( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
+	rtgTransitionEnd();
+	enterState( 5 );
 }
 
 INLINE_CHAINS void Alarm_Actor::chain10_FailTriggered( void )
@@ -292,6 +352,9 @@ void Alarm_Actor::rtsBehavior( int signalIndex, int portIndex )
 				case HandlerProtocol::Conjugate::rti_disarm:
 					chain3_DisarmAlarm();
 					return;
+				case HandlerProtocol::Conjugate::rti_selftest:
+					chain12_SelfTestArmed();
+					return;
 				case HandlerProtocol::Conjugate::rti_trigger:
 					chain4_TriggerAlarm();
 					return;
@@ -339,6 +402,9 @@ void Alarm_Actor::rtsBehavior( int signalIndex, int portIndex )
 				{
 				case HandlerProtocol::Conjugate::rti_arm:
 					chain2_ArmAlarm();
+					return;
+				case HandlerProtocol::Conjugate::rti_selftest:
+					chain11_SelfTestDisarmed();
 					return;
 				default:
 					break;
@@ -420,6 +486,9 @@ void Alarm_Actor::rtsBehavior( int signalIndex, int portIndex )
 				{
 				case HandlerProtocol::Conjugate::rti_disarm:
 					chain5_DisarmTriggeredAlarm();
+					return;
+				case HandlerProtocol::Conjugate::rti_selftest:
+					chain13_SelfTestTriggered();
 					return;
 				default:
 					break;

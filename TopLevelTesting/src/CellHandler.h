@@ -46,9 +46,6 @@ private:
 	// {{{RME classAttribute 'cellIndex'
 	int cellIndex;
 	// }}}RME
-	// {{{RME classAttribute 'armedState'
-	bool armedState;
-	// }}}RME
 	// {{{RME classAttribute 'alarmResponded'
 	mutable bool alarmResponded[ ALARMS_PER_CELL ];
 	// }}}RME

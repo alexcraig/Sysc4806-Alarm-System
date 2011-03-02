@@ -7,4 +7,5 @@ SystemHandler_DEPS = \
 	../src/HandlerProtocol.h \
 	../src/KeypadProtocol.h \
 	../src/PhoneProtocol.h \
+	../src/UserConfiguration.h \
 	../src/PeripheralIdentifier.h

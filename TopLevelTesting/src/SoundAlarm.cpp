@@ -111,6 +111,17 @@ INLINE_CHAINS void SoundAlarm_Actor::chain3_DisarmAlarm( void )
 	enterState( 3 );
 }
 
+INLINE_CHAINS void SoundAlarm_Actor::chain12_SelfTestArmed( void )
+{
+	// classifier 'Logical View::Alarm' transition ':TOP:Armed:J4D6E86C40093:SelfTestArmed'
+	rtgChainBegin( 2, "SelfTestArmed" );
+	exitState( rtg_parent_state );
+	rtgTransitionBegin();
+	transition12_SelfTestArmed( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
+	rtgTransitionEnd();
+	enterState( 2 );
+}
+
 INLINE_CHAINS void SoundAlarm_Actor::chain4_TriggerAlarm( void )
 {
 	// classifier 'Logical View::Alarm' transition ':TOP:Armed:J4D6D43EA0218:TriggerAlarm'
@@ -140,6 +151,17 @@ INLINE_CHAINS void SoundAlarm_Actor::chain2_ArmAlarm( void )
 	transition2_ArmAlarm( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
 	rtgTransitionEnd();
 	enterState( 2 );
+}
+
+INLINE_CHAINS void SoundAlarm_Actor::chain11_SelfTestDisarmed( void )
+{
+	// classifier 'Logical View::Alarm' transition ':TOP:Disarmed:J4D6E867901BB:SelfTestDisarmed'
+	rtgChainBegin( 3, "SelfTestDisarmed" );
+	exitState( rtg_parent_state );
+	rtgTransitionBegin();
+	transition11_SelfTestDisarmed( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
+	rtgTransitionEnd();
+	enterState( 3 );
 }
 
 INLINE_CHAINS void SoundAlarm_Actor::chain6_FailDisarmed( void )
@@ -181,6 +203,17 @@ INLINE_CHAINS void SoundAlarm_Actor::chain5_DisarmTriggeredAlarm( void )
 	transition5_DisarmTriggeredAlarm( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
 	rtgTransitionEnd();
 	enterState( 3 );
+}
+
+INLINE_CHAINS void SoundAlarm_Actor::chain13_SelfTestTriggered( void )
+{
+	// classifier 'Logical View::Alarm' transition ':TOP:Triggered:J4D6E86EB0287:SelfTestTriggered'
+	rtgChainBegin( 5, "SelfTestTriggered" );
+	exitState( rtg_parent_state );
+	rtgTransitionBegin();
+	transition13_SelfTestTriggered( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
+	rtgTransitionEnd();
+	enterState( 5 );
 }
 
 INLINE_CHAINS void SoundAlarm_Actor::chain10_FailTriggered( void )
@@ -238,6 +271,9 @@ void SoundAlarm_Actor::rtsBehavior( int signalIndex, int portIndex )
 				case HandlerProtocol::Conjugate::rti_disarm:
 					chain3_DisarmAlarm();
 					return;
+				case HandlerProtocol::Conjugate::rti_selftest:
+					chain12_SelfTestArmed();
+					return;
 				case HandlerProtocol::Conjugate::rti_trigger:
 					chain4_TriggerAlarm();
 					return;
@@ -285,6 +321,9 @@ void SoundAlarm_Actor::rtsBehavior( int signalIndex, int portIndex )
 				{
 				case HandlerProtocol::Conjugate::rti_arm:
 					chain2_ArmAlarm();
+					return;
+				case HandlerProtocol::Conjugate::rti_selftest:
+					chain11_SelfTestDisarmed();
 					return;
 				default:
 					break;
@@ -366,6 +405,9 @@ void SoundAlarm_Actor::rtsBehavior( int signalIndex, int portIndex )
 				{
 				case HandlerProtocol::Conjugate::rti_disarm:
 					chain5_DisarmTriggeredAlarm();
+					return;
+				case HandlerProtocol::Conjugate::rti_selftest:
+					chain13_SelfTestTriggered();
 					return;
 				default:
 					break;

@@ -39,5 +39,7 @@ TopLevelTesting_SYSDEPS_CS = \
 	SoundAlarm.cpp \
 	SoundAlarm.h \
 	SystemHandler.cpp \
-	SystemHandler.h
+	SystemHandler.h \
+	UserConfiguration.cpp \
+	UserConfiguration.h
 
