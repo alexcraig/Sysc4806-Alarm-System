@@ -1,0 +1,4 @@
+PhoneProtocol_DEPS = \
+	../src/PhoneProtocol.cpp \
+	../src/RTSystem/TestSystemHandler.h \
+	../src/PhoneProtocol.h

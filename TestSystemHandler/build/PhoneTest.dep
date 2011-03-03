@@ -1,0 +1,4 @@
+PhoneTest_DEPS = \
+	../src/PhoneTest.cpp \
+	../src/RTSystem/TestSystemHandler.h \
+	../src/PhoneTest.h

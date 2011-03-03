@@ -1,0 +1,7 @@
+TestSystemHandler_DEPS = \
+	../src/TestSystemHandler.cpp \
+	../src/RTSystem/TestSystemHandler.h \
+	../src/TestSystemHandler.h \
+	../src/HandlerProtocol.h \
+	../src/TestProtocol.h \
+	../src/PeripheralIdentifier.h

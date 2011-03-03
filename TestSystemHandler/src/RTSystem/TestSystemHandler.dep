@@ -1,0 +1,49 @@
+TestSystemHandler_SYSTARGET = RTSystem/TestSystemHandler.dep
+TestSystemHandler_SYSDEPS = \
+	M:/Sysc4806-Alarm-System/4806_Alarm_System.rtmdl \
+	"C:/Program Files/Rational/Rose RealTime/C++/RTComponents.rtcmppkg" \
+	"C:/Program Files/Rational/Rose RealTime/C++/RTClasses.rtlogpkg"
+
+TestSystemHandler_SYSTARGET_CS = RTSystem/TestSystemHandler.dep
+TestSystemHandler_SYSDEPS_CS = \
+	RTSystem/TestSystemHandler.cpp \
+	RTSystem/TestSystemHandler.h \
+	Alarm.cpp \
+	Alarm.h \
+	CellConfiguration.cpp \
+	CellConfiguration.h \
+	CellHandler.cpp \
+	CellHandler.h \
+	Display.cpp \
+	Display.h \
+	DisplayProtocol.cpp \
+	DisplayProtocol.h \
+	HandlerProtocol.cpp \
+	HandlerProtocol.h \
+	Keypad.cpp \
+	Keypad.h \
+	KeypadProtocol.cpp \
+	KeypadProtocol.h \
+	PeripheralIdentifier.cpp \
+	PeripheralIdentifier.h \
+	PeripheralTest.cpp \
+	PeripheralTest.h \
+	PhoneLine.cpp \
+	PhoneLine.h \
+	PhoneProtocol.cpp \
+	PhoneProtocol.h \
+	PhoneTest.cpp \
+	PhoneTest.h \
+	Sensor.cpp \
+	Sensor.h \
+	SoundAlarm.cpp \
+	SoundAlarm.h \
+	SystemHandler.cpp \
+	SystemHandler.h \
+	TestProtocol.cpp \
+	TestProtocol.h \
+	TestSystemHandler.cpp \
+	TestSystemHandler.h \
+	UserConfiguration.cpp \
+	UserConfiguration.h
+

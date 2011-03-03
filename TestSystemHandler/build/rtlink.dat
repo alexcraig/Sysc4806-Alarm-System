@@ -1,0 +1,10 @@
+# This file is not read by the Makefile,
+# but changing its contents triggers a relink.
+TOP_CAPSULE = TestSystemHandler
+BUILD_TARGET = TestSystemHandler$(EXEC_EXT)
+USER_LD = $(LD)
+USER_LDFLAGS =
+USER_OBJS =
+USER_LIBS =
+RTCOMPONENT_LIBS =
+RTCOMPONENT_LIBS_DEP = $(RTCOMPONENT_LIBS)
