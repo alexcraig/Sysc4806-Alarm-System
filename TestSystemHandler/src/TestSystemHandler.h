@@ -8,6 +8,7 @@
 #endif
 
 #include <RTSystem/TestSystemHandler.h>
+#include <DisplayProtocol.h>
 #include <HandlerProtocol.h>
 #include <TestProtocol.h>
 
@@ -49,10 +50,16 @@ private:
 	// {{{RME classAttribute 'breakin'
 	int breakin;
 	// }}}RME
+	// {{{RME classAttribute 'passFail'
+	int passFail;
+	// }}}RME
 
 protected:
 	// {{{RME capsuleRole 'systemHandlerR1'
 	RTActorRef systemHandlerR1;
+	// }}}RME
+	// {{{RME capsuleRole 'display'
+	RTActorRef display;
 	// }}}RME
 	// {{{RME port 'testSystem'
 	TestProtocol::Base testSystem;
@@ -62,6 +69,9 @@ protected:
 	// }}}RME
 	// {{{RME port 'selftestTimeout'
 	Timing::Base selftestTimeout;
+	// }}}RME
+	// {{{RME port 'toDisplay'
+	DisplayProtocol::Conjugate toDisplay;
 	// }}}RME
 
 public:
@@ -82,34 +92,37 @@ protected:
 	// {{{RME transition ':TOP:CP1:True'
 	INLINE_METHODS void transition5_True( const void * rtdata, Timing::Base * rtport );
 	// }}}RME
-	// {{{RME transition ':TOP:disarm:J4D700FA10224:reset'
-	INLINE_METHODS void transition6_reset( const void * rtdata, Timing::Base * rtport );
-	// }}}RME
 	// {{{RME transition ':TOP:enable:J4D700892013E:arm'
-	INLINE_METHODS void transition7_arm( const void * rtdata, Timing::Base * rtport );
+	INLINE_METHODS void transition6_arm( const void * rtdata, Timing::Base * rtport );
 	// }}}RME
 	// {{{RME transition ':TOP:initializing:J4D7008B601EA:enable'
-	INLINE_METHODS void transition8_enable( const void * rtdata, Timing::Base * rtport );
+	INLINE_METHODS void transition7_enable( const void * rtdata, Timing::Base * rtport );
 	// }}}RME
 	// {{{RME transition ':TOP:CP2:True'
-	INLINE_METHODS void transition10_True( const void * rtdata, Timing::Base * rtport );
+	INLINE_METHODS void transition9_True( const void * rtdata, Timing::Base * rtport );
 	// }}}RME
 	// {{{RME transition ':TOP:CP1_0:False'
-	INLINE_METHODS void transition12_False( const void * rtdata, Timing::Base * rtport );
+	INLINE_METHODS void transition11_False( const void * rtdata, Timing::Base * rtport );
 	// }}}RME
 	// {{{RME transition ':TOP:CP1_0:True'
-	INLINE_METHODS void transition13_True( const void * rtdata, Timing::Base * rtport );
+	INLINE_METHODS void transition12_True( const void * rtdata, Timing::Base * rtport );
 	// }}}RME
 	// {{{RME transition ':TOP:CP2:False'
-	INLINE_METHODS void transition14_False( const void * rtdata, Timing::Base * rtport );
+	INLINE_METHODS void transition13_False( const void * rtdata, Timing::Base * rtport );
 	// }}}RME
 	// {{{RME transition ':TOP:failTimeout:J4D700D02031A:t1'
-	INLINE_METHODS void transition15_t1( const void * rtdata, Timing::Base * rtport );
+	INLINE_METHODS void transition14_t1( const void * rtdata, Timing::Base * rtport );
+	// }}}RME
+	// {{{RME transition ':TOP:CP3:True'
+	INLINE_METHODS void transition15_True( const void * rtdata, Timing::Base * rtport );
+	// }}}RME
+	// {{{RME transition ':TOP:CP3:False'
+	INLINE_METHODS void transition16_False( const void * rtdata, Timing::Base * rtport );
 	// }}}RME
 
 private:
 	INLINE_CHAINS void chain1_Initial( void );
-	INLINE_CHAINS void chain9_failTest( void );
+	INLINE_CHAINS void chain8_failTest( void );
 
 protected:
 	// {{{RME choicePoint ':TOP:CP2'
@@ -117,9 +130,9 @@ protected:
 	// }}}RME
 
 private:
-	INLINE_CHAINS void chain10_True( void );
-	INLINE_CHAINS void chain14_False( void );
-	INLINE_CHAINS void chain8_enable( void );
+	INLINE_CHAINS void chain9_True( void );
+	INLINE_CHAINS void chain13_False( void );
+	INLINE_CHAINS void chain7_enable( void );
 	INLINE_CHAINS void chain3_t1( void );
 
 protected:
@@ -130,10 +143,19 @@ protected:
 private:
 	INLINE_CHAINS void chain5_True( void );
 	INLINE_CHAINS void chain4_False( void );
-	INLINE_CHAINS void chain6_reset( void );
+	INLINE_CHAINS void chain17_reset( void );
+
+protected:
+	// {{{RME choicePoint ':TOP:CP3'
+	INLINE_METHODS int choicePoint4_CP3( const void * rtdata, Timing::Base * rtport );
+	// }}}RME
+
+private:
+	INLINE_CHAINS void chain15_True( void );
+	INLINE_CHAINS void chain16_False( void );
 	INLINE_CHAINS void chain2_disarm( void );
-	INLINE_CHAINS void chain7_arm( void );
-	INLINE_CHAINS void chain11_t1( void );
+	INLINE_CHAINS void chain6_arm( void );
+	INLINE_CHAINS void chain10_t1( void );
 
 protected:
 	// {{{RME choicePoint ':TOP:CP1_0'
@@ -141,9 +163,9 @@ protected:
 	// }}}RME
 
 private:
-	INLINE_CHAINS void chain13_True( void );
-	INLINE_CHAINS void chain12_False( void );
-	INLINE_CHAINS void chain15_t1( void );
+	INLINE_CHAINS void chain12_True( void );
+	INLINE_CHAINS void chain11_False( void );
+	INLINE_CHAINS void chain14_t1( void );
 
 public:
 	virtual void rtsBehavior( int signalIndex, int portIndex );

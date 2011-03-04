@@ -107,9 +107,6 @@ protected:
 	// {{{RME port 'setAlarms'
 	HandlerProtocol::Conjugate setAlarms;
 	// }}}RME
-	// {{{RME port 'fromTester'
-	TestProtocol::Base fromTester;
-	// }}}RME
 
 public:
 	SystemHandler_Actor( RTController * rtg_rts, RTActorRef * rtg_ref );
@@ -173,7 +170,7 @@ protected:
 	INLINE_METHODS void transition23_False( const RTString * rtdata, RTProtocol * rtport );
 	// }}}RME
 	// {{{RME transition ':TOP:Initialized:Enabled:Disarmed:J4D6E7F6F029A:DisarmedFailure'
-	INLINE_METHODS void transition25_DisarmedFailure( const PeripheralIdentifier * rtdata, HandlerProtocol::Base * rtport );
+	INLINE_METHODS void transition25_DisarmedFailure( const PeripheralIdentifier * rtdata, RTProtocol * rtport );
 	// }}}RME
 	// {{{RME transition ':TOP:Initialized:Enabled:Armed:J4D6E88EA022D:ArmedFailure'
 	INLINE_METHODS void transition26_ArmedFailure( const PeripheralIdentifier * rtdata, RTProtocol * rtport );

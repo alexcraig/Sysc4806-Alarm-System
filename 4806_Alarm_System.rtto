@@ -6,21 +6,314 @@
 
 (list toUnit
 	capsulePaths (list capsulePathsList
-		(object CapsulePath "/cellHandlerR1:1/sensorR1:1"
+		(object CapsulePath "/phoneLineR1:0"
 			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B202EB"
+			quid "4D6E92630017"
 			classifier  "Logical View::SystemHandler"
 			quidu "4D485B7E0069"
 			capsulePaths (list capsulePathsList
 				(object CapsulePathElement ""
-					quid "4D6E93B202EC"
+					quid "4D6E9263001A"
+					classifier  "Logical View::PhoneLine"
+					quidu "4D59AB0102E1"
+					capsuleRole  ":Structure:phoneLineR1"
+					quidu "4D59ABA402F2"
+					capsuleRoleCardinality 0))
+			capsulePathString "0/phoneLineR1:PhoneLine")
+		(object CapsulePath "/cellHandlerR1:0/alarmR1:1"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E8FC30034"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E8FC30035"
 					classifier  "Logical View::CellHandler"
 					quidu "4D485B8401C1"
 					capsuleRole  ":Structure:cellHandlerR1"
 					quidu "4D486680003E"
-					capsuleRoleCardinality 1)
+					capsuleRoleCardinality 0)
 				(object CapsulePathElement ""
-					quid "4D6E93B202ED"
+					quid "4D6E8FC30036"
+					classifier  "Logical View::Alarm"
+					quidu "4D485C41031B"
+					capsuleRole  ":Structure:alarmR1"
+					quidu "4D4867000188"
+					capsuleRoleCardinality 1))
+			capsulePathString "1/alarmR1:Alarm")
+		(object CapsulePath "/soundAlarmR1:0"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E8FC203E2"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E8FC203E3"
+					classifier  "Logical View::SoundAlarm"
+					quidu "4D4863F1018F"
+					capsuleRole  ":Structure:soundAlarmR1"
+					quidu "4D4865F70369"
+					capsuleRoleCardinality 0))
+			capsulePathString "0/soundAlarmR1:SoundAlarm")
+		(object CapsulePath "/cellHandlerR1:0/alarmR1:0"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E860B0245"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E860B0249"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:cellHandlerR1"
+					quidu "4D486680003E"
+					capsuleRoleCardinality 0)
+				(object CapsulePathElement ""
+					quid "4D6E860B024A"
+					classifier  "Logical View::Alarm"
+					quidu "4D485C41031B"
+					capsuleRole  ":Structure:alarmR1"
+					quidu "4D4867000188"
+					capsuleRoleCardinality 0))
+			capsulePathString "0/alarmR1:Alarm")
+		(object CapsulePath "/cellHandlerR1:0"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E8602035E"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E86020361"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:cellHandlerR1"
+					quidu "4D486680003E"
+					capsuleRoleCardinality 0))
+			capsulePathString "0/cellHandlerR1:CellHandler")
+		(object CapsulePath "/keypadR1:0"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E7405033F"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E74050340"
+					classifier  "Logical View::Keypad"
+					quidu "4D485CBB0010"
+					capsuleRole  ":Structure:keypadR1"
+					quidu "4D4865EA007B"
+					capsuleRoleCardinality 0))
+			capsulePathString "0/keypadR1:Keypad")
+		(object CapsulePath "/"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E6C620364"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePathString ":SystemHandler")
+		(object CapsulePath "/displayR1"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B003D3"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B003D4"
+					classifier  "Logical View::SystemHandler"
+					quidu "4D485B7E0069"
+					capsuleRole  ":Structure:displayR1"
+					quidu "4D4865DD0156"))
+			capsulePathString "displayR1(1)")
+		(object CapsulePath "/keypadR1"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B003D5"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B003D6"
+					classifier  "Logical View::SystemHandler"
+					quidu "4D485B7E0069"
+					capsuleRole  ":Structure:keypadR1"
+					quidu "4D4865EA007B"))
+			capsulePathString "keypadR1(1)")
+		(object CapsulePath "/soundAlarmR1"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B003D7"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B003D8"
+					classifier  "Logical View::SystemHandler"
+					quidu "4D485B7E0069"
+					capsuleRole  ":Structure:soundAlarmR1"
+					quidu "4D4865F70369"))
+			capsulePathString "soundAlarmR1(1)")
+		(object CapsulePath "/cellHandlerR1"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B003D9"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B003DA"
+					classifier  "Logical View::SystemHandler"
+					quidu "4D485B7E0069"
+					capsuleRole  ":Structure:cellHandlerR1"
+					quidu "4D486680003E"))
+			capsulePathString "cellHandlerR1(CellConfiguration::NUMBER_OF_CELLS)")
+		(object CapsulePath "/phoneLineR1"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B003DB"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B003DC"
+					classifier  "Logical View::SystemHandler"
+					quidu "4D485B7E0069"
+					capsuleRole  ":Structure:phoneLineR1"
+					quidu "4D59ABA402F2"))
+			capsulePathString "phoneLineR1(1)")
+		(object CapsulePath "/cellHandlerR1:0/alarmR1"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B003DD"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B003DE"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:cellHandlerR1"
+					quidu "4D486680003E"
+					capsuleRoleCardinality 0)
+				(object CapsulePathElement ""
+					quid "4D6E93B003DF"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:alarmR1"
+					quidu "4D4867000188"))
+			capsulePathString "alarmR1(CellConfiguration::ALARMS_PER_CELL)")
+		(object CapsulePath "/cellHandlerR1:0/sensorR1"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B003E0"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B003E1"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:cellHandlerR1"
+					quidu "4D486680003E"
+					capsuleRoleCardinality 0)
+				(object CapsulePathElement ""
+					quid "4D6E93B003E2"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:sensorR1"
+					quidu "4D48670C0205"))
+			capsulePathString "sensorR1(CellConfiguration::SENSORS_PER_CELL)")
+		(object CapsulePath "/displayR1:0"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B10033"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B10034"
+					classifier  "Logical View::Display"
+					quidu "4D485CD402C0"
+					capsuleRole  ":Structure:displayR1"
+					quidu "4D4865DD0156"
+					capsuleRoleCardinality 0))
+			capsulePathString "0/displayR1:Display")
+		(object CapsulePath "/cellHandlerR1:1"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B10068"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B10069"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:cellHandlerR1"
+					quidu "4D486680003E"
+					capsuleRoleCardinality 1))
+			capsulePathString "1/cellHandlerR1:CellHandler")
+		(object CapsulePath "/cellHandlerR1:2"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B1006A"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B1006B"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:cellHandlerR1"
+					quidu "4D486680003E"
+					capsuleRoleCardinality 2))
+			capsulePathString "2/cellHandlerR1:CellHandler")
+		(object CapsulePath "/cellHandlerR1:0/alarmR1:2"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B1006C"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B1006D"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:cellHandlerR1"
+					quidu "4D486680003E"
+					capsuleRoleCardinality 0)
+				(object CapsulePathElement ""
+					quid "4D6E93B1006E"
+					classifier  "Logical View::Alarm"
+					quidu "4D485C41031B"
+					capsuleRole  ":Structure:alarmR1"
+					quidu "4D4867000188"
+					capsuleRoleCardinality 2))
+			capsulePathString "2/alarmR1:Alarm")
+		(object CapsulePath "/cellHandlerR1:0/sensorR1:0"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B1006F"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B10070"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:cellHandlerR1"
+					quidu "4D486680003E"
+					capsuleRoleCardinality 0)
+				(object CapsulePathElement ""
+					quid "4D6E93B10071"
+					classifier  "Logical View::Sensor"
+					quidu "4D485C4502ED"
+					capsuleRole  ":Structure:sensorR1"
+					quidu "4D48670C0205"
+					capsuleRoleCardinality 0))
+			capsulePathString "0/sensorR1:Sensor")
+		(object CapsulePath "/cellHandlerR1:0/sensorR1:1"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E93B10072"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D6E93B10073"
+					classifier  "Logical View::CellHandler"
+					quidu "4D485B8401C1"
+					capsuleRole  ":Structure:cellHandlerR1"
+					quidu "4D486680003E"
+					capsuleRoleCardinality 0)
+				(object CapsulePathElement ""
+					quid "4D6E93B10074"
 					classifier  "Logical View::Sensor"
 					quidu "4D485C4502ED"
 					capsuleRole  ":Structure:sensorR1"
@@ -48,320 +341,27 @@
 					quidu "4D48670C0205"
 					capsuleRoleCardinality 2))
 			capsulePathString "2/sensorR1:Sensor")
-		(object CapsulePath "/cellHandlerR1:0/sensorR1:1"
+		(object CapsulePath "/cellHandlerR1:1/sensorR1:1"
 			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B10072"
+			quid "4D6E93B202EB"
 			classifier  "Logical View::SystemHandler"
 			quidu "4D485B7E0069"
 			capsulePaths (list capsulePathsList
 				(object CapsulePathElement ""
-					quid "4D6E93B10073"
+					quid "4D6E93B202EC"
 					classifier  "Logical View::CellHandler"
 					quidu "4D485B8401C1"
 					capsuleRole  ":Structure:cellHandlerR1"
 					quidu "4D486680003E"
-					capsuleRoleCardinality 0)
+					capsuleRoleCardinality 1)
 				(object CapsulePathElement ""
-					quid "4D6E93B10074"
+					quid "4D6E93B202ED"
 					classifier  "Logical View::Sensor"
 					quidu "4D485C4502ED"
 					capsuleRole  ":Structure:sensorR1"
 					quidu "4D48670C0205"
 					capsuleRoleCardinality 1))
 			capsulePathString "1/sensorR1:Sensor")
-		(object CapsulePath "/cellHandlerR1:0/sensorR1:0"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B1006F"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B10070"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:cellHandlerR1"
-					quidu "4D486680003E"
-					capsuleRoleCardinality 0)
-				(object CapsulePathElement ""
-					quid "4D6E93B10071"
-					classifier  "Logical View::Sensor"
-					quidu "4D485C4502ED"
-					capsuleRole  ":Structure:sensorR1"
-					quidu "4D48670C0205"
-					capsuleRoleCardinality 0))
-			capsulePathString "0/sensorR1:Sensor")
-		(object CapsulePath "/cellHandlerR1:0/alarmR1:2"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B1006C"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B1006D"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:cellHandlerR1"
-					quidu "4D486680003E"
-					capsuleRoleCardinality 0)
-				(object CapsulePathElement ""
-					quid "4D6E93B1006E"
-					classifier  "Logical View::Alarm"
-					quidu "4D485C41031B"
-					capsuleRole  ":Structure:alarmR1"
-					quidu "4D4867000188"
-					capsuleRoleCardinality 2))
-			capsulePathString "2/alarmR1:Alarm")
-		(object CapsulePath "/cellHandlerR1:2"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B1006A"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B1006B"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:cellHandlerR1"
-					quidu "4D486680003E"
-					capsuleRoleCardinality 2))
-			capsulePathString "2/cellHandlerR1:CellHandler")
-		(object CapsulePath "/cellHandlerR1:1"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B10068"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B10069"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:cellHandlerR1"
-					quidu "4D486680003E"
-					capsuleRoleCardinality 1))
-			capsulePathString "1/cellHandlerR1:CellHandler")
-		(object CapsulePath "/displayR1:0"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B10033"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B10034"
-					classifier  "Logical View::Display"
-					quidu "4D485CD402C0"
-					capsuleRole  ":Structure:displayR1"
-					quidu "4D4865DD0156"
-					capsuleRoleCardinality 0))
-			capsulePathString "0/displayR1:Display")
-		(object CapsulePath "/cellHandlerR1:0/sensorR1"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B003E0"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B003E1"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:cellHandlerR1"
-					quidu "4D486680003E"
-					capsuleRoleCardinality 0)
-				(object CapsulePathElement ""
-					quid "4D6E93B003E2"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:sensorR1"
-					quidu "4D48670C0205"))
-			capsulePathString "sensorR1(CellConfiguration::SENSORS_PER_CELL)")
-		(object CapsulePath "/cellHandlerR1:0/alarmR1"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B003DD"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B003DE"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:cellHandlerR1"
-					quidu "4D486680003E"
-					capsuleRoleCardinality 0)
-				(object CapsulePathElement ""
-					quid "4D6E93B003DF"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:alarmR1"
-					quidu "4D4867000188"))
-			capsulePathString "alarmR1(CellConfiguration::ALARMS_PER_CELL)")
-		(object CapsulePath "/phoneLineR1"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B003DB"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B003DC"
-					classifier  "Logical View::SystemHandler"
-					quidu "4D485B7E0069"
-					capsuleRole  ":Structure:phoneLineR1"
-					quidu "4D59ABA402F2"))
-			capsulePathString "phoneLineR1(1)")
-		(object CapsulePath "/cellHandlerR1"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B003D9"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B003DA"
-					classifier  "Logical View::SystemHandler"
-					quidu "4D485B7E0069"
-					capsuleRole  ":Structure:cellHandlerR1"
-					quidu "4D486680003E"))
-			capsulePathString "cellHandlerR1(CellConfiguration::NUMBER_OF_CELLS)")
-		(object CapsulePath "/soundAlarmR1"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B003D7"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B003D8"
-					classifier  "Logical View::SystemHandler"
-					quidu "4D485B7E0069"
-					capsuleRole  ":Structure:soundAlarmR1"
-					quidu "4D4865F70369"))
-			capsulePathString "soundAlarmR1(1)")
-		(object CapsulePath "/keypadR1"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B003D5"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B003D6"
-					classifier  "Logical View::SystemHandler"
-					quidu "4D485B7E0069"
-					capsuleRole  ":Structure:keypadR1"
-					quidu "4D4865EA007B"))
-			capsulePathString "keypadR1(1)")
-		(object CapsulePath "/displayR1"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B003D3"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E93B003D4"
-					classifier  "Logical View::SystemHandler"
-					quidu "4D485B7E0069"
-					capsuleRole  ":Structure:displayR1"
-					quidu "4D4865DD0156"))
-			capsulePathString "displayR1(1)")
-		(object CapsulePath "/"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E6C620364"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePathString ":SystemHandler")
-		(object CapsulePath "/keypadR1:0"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E7405033F"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E74050340"
-					classifier  "Logical View::Keypad"
-					quidu "4D485CBB0010"
-					capsuleRole  ":Structure:keypadR1"
-					quidu "4D4865EA007B"
-					capsuleRoleCardinality 0))
-			capsulePathString "0/keypadR1:Keypad")
-		(object CapsulePath "/cellHandlerR1:0"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E8602035E"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E86020361"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:cellHandlerR1"
-					quidu "4D486680003E"
-					capsuleRoleCardinality 0))
-			capsulePathString "0/cellHandlerR1:CellHandler")
-		(object CapsulePath "/cellHandlerR1:0/alarmR1:0"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E860B0245"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E860B0249"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:cellHandlerR1"
-					quidu "4D486680003E"
-					capsuleRoleCardinality 0)
-				(object CapsulePathElement ""
-					quid "4D6E860B024A"
-					classifier  "Logical View::Alarm"
-					quidu "4D485C41031B"
-					capsuleRole  ":Structure:alarmR1"
-					quidu "4D4867000188"
-					capsuleRoleCardinality 0))
-			capsulePathString "0/alarmR1:Alarm")
-		(object CapsulePath "/soundAlarmR1:0"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E8FC203E2"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E8FC203E3"
-					classifier  "Logical View::SoundAlarm"
-					quidu "4D4863F1018F"
-					capsuleRole  ":Structure:soundAlarmR1"
-					quidu "4D4865F70369"
-					capsuleRoleCardinality 0))
-			capsulePathString "0/soundAlarmR1:SoundAlarm")
-		(object CapsulePath "/cellHandlerR1:0/alarmR1:1"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E8FC30034"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E8FC30035"
-					classifier  "Logical View::CellHandler"
-					quidu "4D485B8401C1"
-					capsuleRole  ":Structure:cellHandlerR1"
-					quidu "4D486680003E"
-					capsuleRoleCardinality 0)
-				(object CapsulePathElement ""
-					quid "4D6E8FC30036"
-					classifier  "Logical View::Alarm"
-					quidu "4D485C41031B"
-					capsuleRole  ":Structure:alarmR1"
-					quidu "4D4867000188"
-					capsuleRoleCardinality 1))
-			capsulePathString "1/alarmR1:Alarm")
-		(object CapsulePath "/phoneLineR1:0"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E92630017"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D6E9263001A"
-					classifier  "Logical View::PhoneLine"
-					quidu "4D59AB0102E1"
-					capsuleRole  ":Structure:phoneLineR1"
-					quidu "4D59ABA402F2"
-					capsuleRoleCardinality 0))
-			capsulePathString "0/phoneLineR1:PhoneLine")
 		(object CapsulePath "/systemHandlerR1:0"
 			capsulePathProcess "Deployment View::x86Processor::TestSystemHandlerInstance"
 			quid "4D6FF4D700D3"
@@ -377,24 +377,69 @@
 					capsuleRoleCardinality 0))
 			capsulePathString "0/systemHandlerR1:SystemHandler"))
 	daemons (list daemonsList
-		(object PortDaemon "*/testPort/cellHandlerR1:1/sensorR1:1_Probe"
+		(object PortDaemon "*/testPort/phoneLineR1:0_Probe"
 			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E93B90346"
-			capsuleInstance  "/cellHandlerR1:1/sensorR1:1"
-			quidu "4D6E93B202EB"
-			classifier  "Logical View::Sensor"
-			quidu "4D485C4502ED"
+			quid "4D6E9263001B"
+			capsuleInstance  "/phoneLineR1:0"
+			quidu "4D6E92630017"
+			classifier  "Logical View::PhoneLine"
+			quidu "4D59AB0102E1"
 			port  ":Structure:testPort"
-			quidu "4D6D3E210363"
+			quidu "4D6D4ADC00CB"
 			portCardinality -1
 			injectMessages (list injectMessagesList
-				(object InjectMessage "testPort/trigger"
-					quid "4D6E93C00336"
-					msgSignal  ":base:trigger"
-					quidu "4D6D3DD5038F"
+				(object InjectMessage "testPort/fail"
+					quid "4D6E92690017"
+					msgSignal  ":base:fail"
+					quidu "4D6D4AD100E8"
 					msgPriority "General"
 					msgData "void"
 					msgDirection 1)))
+		(object MSCDaemon "Trace10"
+			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E89F60152"
+			capsuleInstance  "/"
+			quidu "4D6E6C620364"
+			daemonTracingFlag TRUE
+			capsulePaths (list capsulePathsList
+				capsulePaths  "/"
+				quidu "4D6E6C620364"
+				capsulePaths  "/cellHandlerR1:0"
+				quidu "4D6E8602035E"))
+		(object PortDaemon "*/testPort/cellHandlerR1:0/alarmR1:0_Probe"
+			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E860B024B"
+			capsuleInstance  "/cellHandlerR1:0/alarmR1:0"
+			quidu "4D6E860B0245"
+			classifier  "Logical View::Alarm"
+			quidu "4D485C41031B"
+			port  ":Structure:testPort"
+			quidu "4D6D3E350085"
+			portCardinality -1
+			injectMessages (list injectMessagesList
+				(object InjectMessage "testPort/fail"
+					quid "4D6E861103CC"
+					msgSignal  ":base:fail"
+					quidu "4D6D3DB902B4"
+					msgPriority "General"
+					msgData "void"
+					msgDirection 1)))
+		(object StructureDaemon "0/cellHandlerR1:CellHandler"
+			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E86020362"
+			capsuleInstance  "/cellHandlerR1:0"
+			quidu "4D6E8602035E")
+		(object MSCDaemon "Trace9"
+			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D6E7B7803CA"
+			capsuleInstance  "/"
+			quidu "4D6E6C620364"
+			daemonTracingFlag TRUE
+			capsulePaths (list capsulePathsList
+				capsulePaths  "/"
+				quidu "4D6E6C620364"
+				capsulePaths  "/keypadR1:0"
+				quidu "4D6E7405033F"))
 		(object PortDaemon "*/testPort/keypadR1:0_Probe"
 			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
 			quid "4D6E742A03BE"
@@ -452,93 +497,39 @@
 					msgPriority "General"
 					msgData "void"
 					msgDirection 1)))
-		(object MSCDaemon "Trace9"
+		(object PortDaemon "*/testPort/cellHandlerR1:1/sensorR1:1_Probe"
 			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E7B7803CA"
-			capsuleInstance  "/"
-			quidu "4D6E6C620364"
-			daemonTracingFlag TRUE
-			capsulePaths (list capsulePathsList
-				capsulePaths  "/"
-				quidu "4D6E6C620364"
-				capsulePaths  "/keypadR1:0"
-				quidu "4D6E7405033F"))
-		(object StructureDaemon "0/cellHandlerR1:CellHandler"
-			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E86020362"
-			capsuleInstance  "/cellHandlerR1:0"
-			quidu "4D6E8602035E")
-		(object PortDaemon "*/testPort/cellHandlerR1:0/alarmR1:0_Probe"
-			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E860B024B"
-			capsuleInstance  "/cellHandlerR1:0/alarmR1:0"
-			quidu "4D6E860B0245"
-			classifier  "Logical View::Alarm"
-			quidu "4D485C41031B"
+			quid "4D6E93B90346"
+			capsuleInstance  "/cellHandlerR1:1/sensorR1:1"
+			quidu "4D6E93B202EB"
+			classifier  "Logical View::Sensor"
+			quidu "4D485C4502ED"
 			port  ":Structure:testPort"
-			quidu "4D6D3E350085"
+			quidu "4D6D3E210363"
 			portCardinality -1
 			injectMessages (list injectMessagesList
-				(object InjectMessage "testPort/fail"
-					quid "4D6E861103CC"
-					msgSignal  ":base:fail"
-					quidu "4D6D3DB902B4"
+				(object InjectMessage "testPort/trigger"
+					quid "4D6E93C00336"
+					msgSignal  ":base:trigger"
+					quidu "4D6D3DD5038F"
 					msgPriority "General"
 					msgData "void"
 					msgDirection 1)))
-		(object MSCDaemon "Trace10"
-			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E89F60152"
-			capsuleInstance  "/"
-			quidu "4D6E6C620364"
-			daemonTracingFlag TRUE
-			capsulePaths (list capsulePathsList
-				capsulePaths  "/"
-				quidu "4D6E6C620364"
-				capsulePaths  "/cellHandlerR1:0"
-				quidu "4D6E8602035E"))
-		(object PortDaemon "*/testPort/phoneLineR1:0_Probe"
-			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D6E9263001B"
-			capsuleInstance  "/phoneLineR1:0"
-			quidu "4D6E92630017"
-			classifier  "Logical View::PhoneLine"
-			quidu "4D59AB0102E1"
-			port  ":Structure:testPort"
-			quidu "4D6D4ADC00CB"
-			portCardinality -1
-			injectMessages (list injectMessagesList
-				(object InjectMessage "testPort/fail"
-					quid "4D6E92690017"
-					msgSignal  ":base:fail"
-					quidu "4D6D4AD100E8"
-					msgPriority "General"
-					msgData "void"
-					msgDirection 1)))
-		(object MSCDaemon "Trace1"
+		(object BehaviorDaemon "0/systemHandlerR1:SystemHandler-Enabled"
 			daemonProcess "Deployment View::x86Processor::TestSystemHandlerInstance"
-			quid "4D6FF4F002D3"
-			capsuleInstance  "/"
-			quidu "4D6FF4D40302"
-			daemonTracingFlag TRUE
-			capsulePaths (list capsulePathsList
-				capsulePaths  "/systemHandlerR1:0"
-				quidu "4D6FF4D700D3"))
-		(object BehaviorDaemon "0/systemHandlerR1:SystemHandler-TOP"
-			daemonProcess "Deployment View::x86Processor::TestSystemHandlerInstance"
-			quid "4D700516005D"
+			quid "4D7005190251"
 			capsuleInstance  "/systemHandlerR1:0"
 			quidu "4D6FF4D700D3"
-			State  ":TOP")
+			State  ":TOP:Initialized:Enabled")
 		(object BehaviorDaemon "0/systemHandlerR1:SystemHandler-Initialized"
 			daemonProcess "Deployment View::x86Processor::TestSystemHandlerInstance"
 			quid "4D70051800BB"
 			capsuleInstance  "/systemHandlerR1:0"
 			quidu "4D6FF4D700D3"
 			State  ":TOP:Initialized")
-		(object BehaviorDaemon "0/systemHandlerR1:SystemHandler-Enabled"
+		(object BehaviorDaemon "0/systemHandlerR1:SystemHandler-TOP"
 			daemonProcess "Deployment View::x86Processor::TestSystemHandlerInstance"
-			quid "4D7005190251"
+			quid "4D700516005D"
 			capsuleInstance  "/systemHandlerR1:0"
 			quidu "4D6FF4D700D3"
-			State  ":TOP:Initialized:Enabled")))
+			State  ":TOP")))

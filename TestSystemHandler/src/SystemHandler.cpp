@@ -30,11 +30,6 @@ static const RTRelayDescriptor rtg_relays[] =
 	  , &HandlerProtocol::Conjugate::rt_class
 	  , 1 // cardinality
 	}
-  , {
-		"fromTester"
-	  , &TestProtocol::Base::rt_class
-	  , 1 // cardinality
-	}
 };
 
 static RTActor * new_SystemHandler_Actor( RTController * _rts, RTActorRef * _ref )
@@ -47,7 +42,7 @@ const RTActorClass SystemHandler =
 	(const RTActorClass *)0
   , "SystemHandler"
   , (RTVersionId)0
-  , 3
+  , 2
   , rtg_relays
   , new_SystemHandler_Actor
 };
@@ -199,15 +194,6 @@ int SystemHandler_Actor::_followInV( RTBindingEnd & rtg_end, int rtg_portId, int
 		if( rtg_repIndex < 1 )
 		{
 			rtg_end.port = &setAlarms;
-			rtg_end.index = rtg_repIndex;
-			return 1;
-		}
-		break;
-	case 2:
-		// fromTester
-		if( rtg_repIndex < 1 )
-		{
-			rtg_end.port = &fromTester;
 			rtg_end.index = rtg_repIndex;
 			return 1;
 		}
@@ -529,7 +515,7 @@ INLINE_METHODS void SystemHandler_Actor::transition23_False( const RTString * rt
 // }}}RME
 
 // {{{RME transition ':TOP:Initialized:Enabled:Disarmed:J4D6E7F6F029A:DisarmedFailure'
-INLINE_METHODS void SystemHandler_Actor::transition25_DisarmedFailure( const PeripheralIdentifier * rtdata, HandlerProtocol::Base * rtport )
+INLINE_METHODS void SystemHandler_Actor::transition25_DisarmedFailure( const PeripheralIdentifier * rtdata, RTProtocol * rtport )
 {
 	// {{{USR
 	const PeripheralIdentifier & failInfo = *rtdata;
@@ -775,7 +761,7 @@ INLINE_CHAINS void SystemHandler_Actor::chain25_DisarmedFailure( void )
 	rtgChainBegin( 6, "DisarmedFailure" );
 	exitState( rtg_parent_state );
 	rtgTransitionBegin();
-	transition25_DisarmedFailure( (const PeripheralIdentifier *)msg->data, (HandlerProtocol::Base *)msg->sap() );
+	transition25_DisarmedFailure( (const PeripheralIdentifier *)msg->data, msg->sap() );
 	rtgTransitionEnd();
 	enterState( 6 );
 }
@@ -1288,6 +1274,9 @@ void SystemHandler_Actor::rtsBehavior( int signalIndex, int portIndex )
 				case TestProtocol::Conjugate::rti_arm_pressed:
 					chain16_ArmPressed();
 					return;
+				case TestProtocol::Conjugate::rti_failed:
+					chain25_DisarmedFailure();
+					return;
 				default:
 					break;
 				}
@@ -1579,7 +1568,7 @@ const RTActor_class SystemHandler_Actor::rtg_class =
   , &SystemHandler
   , 5
   , SystemHandler_Actor::rtg_capsule_roles
-  , 12
+  , 11
   , SystemHandler_Actor::rtg_ports
   , 0
   , (const RTLocalBindingDescriptor *)0
@@ -1770,15 +1759,6 @@ const RTPortDescriptor SystemHandler_Actor::rtg_ports[] =
 	  , RTOffsetOf( SystemHandler_Actor, SystemHandler_Actor::setAlarms )
 	  , 1 // cardinality
 	  , 11
-	  , RTPortDescriptor::KindWired + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityPublic
-	}
-  , {
-		"fromTester"
-	  , (const char *)0
-	  , &TestProtocol::Base::rt_class
-	  , RTOffsetOf( SystemHandler_Actor, SystemHandler_Actor::fromTester )
-	  , 1 // cardinality
-	  , 12
 	  , RTPortDescriptor::KindWired + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityPublic
 	}
 };
