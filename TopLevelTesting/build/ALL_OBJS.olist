@@ -14,5 +14,6 @@ PhoneTest
 Sensor
 SoundAlarm
 SystemHandler
+TestProtocol
 UserConfiguration
 RTSystem/TopLevelTesting

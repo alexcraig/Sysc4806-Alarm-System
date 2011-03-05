@@ -575,3 +575,15 @@ ItemDiagramPair33BrowserCount=1
 ItemDiagramPair33Browser0Data=1 0 0 567 990 31
 [History]
 NumSpecHistEntries=0
+[RTSDiagrams]
+TestSystemHandlerInstance:Behavior:0/systemHandlerR1:SystemHandler-TOP:/systemHandlerR1:0=70 70 758 541 100 0 0 0 -1 1 -1 -1 0
+TestSystemHandlerInstance:Behavior:0/systemHandlerR1:SystemHandler-Initialized:/systemHandlerR1:0=26 26 778 569 100 0 0 0 -1 1 -1 -1 0
+TestSystemHandlerInstance:Behavior:0/systemHandlerR1:SystemHandler-Enabled:/systemHandlerR1:0=57 57 985 696 100 0 0 0 -1 1 -1 -1 0
+TestSystemHandlerInstance:Behavior:0/display:Display-TOP:/display:0=50 50 738 521 100 0 0 0 -1 1 -1 -1 0
+TestSystemHandlerInstance:Behavior:0/systemHandlerR1:SystemHandler-Disarmed:/systemHandlerR1:0=80 80 768 551 100 0 0 0 -1 1 -1 -1 0
+TestSystemHandlerInstance:Behavior::TestSystemHandler-TOP:/=50 50 906 680 100 0 0 0 -1 3 -1 -1 0
+TopLevelTestingInstance:Trace:/=66 87 688 555 0 0 0 0 -1 1 -1 -1 0
+TopLevelTestingInstance:Structure:/cellHandlerR1:0=100 100 788 571 100 0 0 0 -1 1 -1 -1 0
+TopLevelTestingInstance:Behavior::SystemHandler-TOP:/=50 50 738 521 100 0 0 0 -1 1 -1 -1 0
+TopLevelTestingInstance:Behavior::SystemHandler-Initialized:/=24 24 776 567 100 0 0 0 -1 1 -1 -1 0
+TopLevelTestingInstance:Behavior::SystemHandler-Disabled:/=0 0 688 471 100 0 0 0 -1 3 -1 -1 0

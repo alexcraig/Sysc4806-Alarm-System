@@ -3,7 +3,7 @@ include <$(RTS_HOME)/codegen/rtgen.mk>
 PERL = rtperl
 IN = $(PERL) "$(ROSERT_HOME)/codegen/chdir_run.pl"
 NOP = $(PERL) "$(ROSERT_HOME)/codegen/nop.pl"
-MODEL = M:/SYSC4806/Sysc4806-Alarm-System/4806_Alarm_System.rtmdl
+MODEL = M:/SYSC4805/Sysc4806-Alarm-System/4806_Alarm_System.rtmdl
 COMPONENT = Component View::TopLevelTesting
 RTcompile : RTgenerate
 	$(IN) build rtperl -S rtsetup.pl nmake -nologo -k -s RTcompile
