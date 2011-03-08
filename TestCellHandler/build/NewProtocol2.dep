@@ -1,0 +1,4 @@
+NewProtocol2_DEPS = \
+	../src/NewProtocol2.cpp \
+	../src/RTSystem/TestCellHandler.h \
+	../src/NewProtocol2.h

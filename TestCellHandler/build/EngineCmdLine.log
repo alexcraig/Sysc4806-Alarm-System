@@ -1,0 +1,5 @@
+File: M:\SYSC4805\Sysc4806-Alarm-System\TestCellHandler\build\TestCellHandler.EXE
+Time: March 08, 2011 02:12:31 PM
+Command:
+  "C:\Program Files\Rational\PurifyPlus\purifye.exe" -purify -purify_home="C:\Program Files\Rational\PurifyPlus" /pwq-instance=0 /AllocCallStackLength=10 /ErrorCallStackLength=10 /PurifyDefaultInstrumentationType=precise /Out="M:/SYSC4805/Sysc4806-Alarm-System/TestCellHandler/build/Purify_TestCellHandler.EXE" /SaveTextData="M:\SYSC4805\Sysc4806-Alarm-System\TestCellHandler\build\Purify_TestCellHandler.txt"  -first-search-dir=M:\SYSC4805\Sysc4806-Alarm-System\TestCellHandler\build -out=M:\SYSC4805\Sysc4806-Alarm-System\TestCellHandler\build\Purify_TestCellHandler.EXE -exe_ini_filename=M:\SYSC4805\Sysc4806-Alarm-System\TestCellHandler\build\TestCellHandler_pure.ini M:\SYSC4805\Sysc4806-Alarm-System\TestCellHandler\build\TestCellHandler.EXE
+

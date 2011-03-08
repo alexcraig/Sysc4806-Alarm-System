@@ -1,0 +1,8 @@
+CellHandler_DEPS = \
+	../src/CellHandler.cpp \
+	../src/RTSystem/TestCellHandler.h \
+	../src/CellHandler.h \
+	../src/PeripheralIdentifier.h \
+	../src/CellConfiguration.h \
+	../src/HandlerProtocol.h \
+	../src/TestProtocol.h

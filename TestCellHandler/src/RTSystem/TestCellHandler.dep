@@ -1,0 +1,33 @@
+TestCellHandler_SYSTARGET = RTSystem/TestCellHandler.dep
+TestCellHandler_SYSDEPS = \
+	M:/SYSC4805/Sysc4806-Alarm-System/4806_Alarm_System.rtmdl \
+	"C:/Program Files/Rational/Rose RealTime/C++/RTComponents.rtcmppkg" \
+	"C:/Program Files/Rational/Rose RealTime/C++/RTClasses.rtlogpkg"
+
+TestCellHandler_SYSTARGET_CS = RTSystem/TestCellHandler.dep
+TestCellHandler_SYSDEPS_CS = \
+	RTSystem/TestCellHandler.cpp \
+	RTSystem/TestCellHandler.h \
+	Alarm.cpp \
+	Alarm.h \
+	CellConfiguration.cpp \
+	CellConfiguration.h \
+	CellHandler.cpp \
+	CellHandler.h \
+	Display.cpp \
+	Display.h \
+	DisplayProtocol.cpp \
+	DisplayProtocol.h \
+	HandlerProtocol.cpp \
+	HandlerProtocol.h \
+	PeripheralIdentifier.cpp \
+	PeripheralIdentifier.h \
+	PeripheralTest.cpp \
+	PeripheralTest.h \
+	Sensor.cpp \
+	Sensor.h \
+	TestCellHandler.cpp \
+	TestCellHandler.h \
+	TestProtocol.cpp \
+	TestProtocol.h
+

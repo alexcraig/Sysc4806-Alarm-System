@@ -1,0 +1,5 @@
+HandlerProtocol_DEPS = \
+	../src/HandlerProtocol.cpp \
+	../src/RTSystem/TestCellHandler.h \
+	../src/HandlerProtocol.h \
+	../src/PeripheralIdentifier.h
