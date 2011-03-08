@@ -10,6 +10,7 @@
 #include <RTSystem/TestSystemHandler.h>
 #include <HandlerProtocol.h>
 #include <PeripheralTest.h>
+#include <TestProtocol.h>
 class CellConfiguration;
 
 // {{{RME tool 'OT::Cpp' property 'HeaderPreface'
@@ -54,6 +55,9 @@ protected:
 	// {{{RME port 'testPort'
 	PeripheralTest::Base testPort;
 	// }}}RME
+	// {{{RME port 'testSystem'
+	TestProtocol::Conjugate testSystem;
+	// }}}RME
 
 public:
 	Sensor_Actor( RTController * rtg_rts, RTActorRef * rtg_ref );
@@ -61,6 +65,10 @@ public:
 	virtual int _followInV( RTBindingEnd & rtg_end, int rtg_portId, int rtg_repIndex );
 
 protected:
+	// {{{RME enter ':TOP:Armed'
+	INLINE_METHODS void enter3_Armed( void );
+	// }}}RME
+	virtual void enterStateV( void );
 	// {{{RME transition ':TOP:Initial:Initial'
 	INLINE_METHODS void transition1_Initial( const void * rtdata, RTProtocol * rtport );
 	// }}}RME

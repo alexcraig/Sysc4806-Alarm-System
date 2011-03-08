@@ -10,6 +10,7 @@
 #include <RTSystem/TestSystemHandler.h>
 #include <HandlerProtocol.h>
 #include <PeripheralTest.h>
+#include <TestProtocol.h>
 
 // {{{RME tool 'OT::Cpp' property 'HeaderPreface'
 // {{{USR
@@ -52,6 +53,9 @@ protected:
 	// }}}RME
 	// {{{RME port 'testPort'
 	PeripheralTest::Base testPort;
+	// }}}RME
+	// {{{RME port 'testSystem'
+	TestProtocol::Conjugate testSystem;
 	// }}}RME
 
 public:

@@ -4,4 +4,5 @@ Alarm_DEPS = \
 	../src/Alarm.h \
 	../src/HandlerProtocol.h \
 	../src/PeripheralTest.h \
+	../src/TestProtocol.h \
 	../src/PeripheralIdentifier.h

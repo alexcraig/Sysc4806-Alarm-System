@@ -23,6 +23,11 @@ static const RTRelayDescriptor rtg_relays[] =
 	  , &HandlerProtocol::Conjugate::rt_class
 	  , 1 // cardinality
 	}
+  , {
+		"testSystem"
+	  , &TestProtocol::Conjugate::rt_class
+	  , 1 // cardinality
+	}
 };
 
 static RTActor * new_CellHandler_Actor( RTController * _rts, RTActorRef * _ref )
@@ -35,7 +40,7 @@ const RTActorClass CellHandler =
 	(const RTActorClass *)0
   , "CellHandler"
   , (RTVersionId)0
-  , 1
+  , 2
   , rtg_relays
   , new_CellHandler_Actor
 };
@@ -56,6 +61,10 @@ static const RTInterfaceDescriptor rtg_interfaces_alarmR1[] =
 		"testPort"
 	  , 0
 	}
+  , {
+		"testSystem"
+	  , 1
+	}
 };
 
 static const RTBindingDescriptor rtg_bindings_alarmR1[] =
@@ -63,6 +72,10 @@ static const RTBindingDescriptor rtg_bindings_alarmR1[] =
 	{
 		0
 	  , &HandlerProtocol::Base::rt_class
+	}
+  , {
+		2
+	  , &TestProtocol::Base::rt_class
 	}
 };
 
@@ -76,6 +89,10 @@ static const RTInterfaceDescriptor rtg_interfaces_sensorR1[] =
 		"testPort"
 	  , 0
 	}
+  , {
+		"testSystem"
+	  , 1
+	}
 };
 
 static const RTBindingDescriptor rtg_bindings_sensorR1[] =
@@ -83,6 +100,10 @@ static const RTBindingDescriptor rtg_bindings_sensorR1[] =
 	{
 		0
 	  , &HandlerProtocol::Base::rt_class
+	}
+  , {
+		2
+	  , &TestProtocol::Base::rt_class
 	}
 };
 
@@ -124,6 +145,15 @@ int CellHandler_Actor::_followInV( RTBindingEnd & rtg_end, int rtg_portId, int r
 			return 1;
 		}
 		break;
+	case 1:
+		// testSystem
+		if( rtg_repIndex < 1 )
+		{
+			rtg_end.port = &testSystem;
+			rtg_end.index = rtg_repIndex;
+			return 1;
+		}
+		break;
 	default:
 		break;
 	}
@@ -148,6 +178,16 @@ int CellHandler_Actor::_followOutV( RTBindingEnd & rtg_end, int rtg_compId, int 
 				return 1;
 			}
 			break;
+		case 2:
+			// testSystem
+			if( rtg_repIndex < 3 )
+			{
+				// testAlarms
+				rtg_end.port = &testAlarms;
+				rtg_end.index = rtg_repIndex;
+				return 1;
+			}
+			break;
 		default:
 			break;
 		}
@@ -161,6 +201,16 @@ int CellHandler_Actor::_followOutV( RTBindingEnd & rtg_end, int rtg_compId, int 
 			{
 				// toSensors
 				rtg_end.port = &toSensors;
+				rtg_end.index = rtg_repIndex;
+				return 1;
+			}
+			break;
+		case 2:
+			// testSystem
+			if( rtg_repIndex < 3 )
+			{
+				// testSensors
+				rtg_end.port = &testSensors;
 				rtg_end.index = rtg_repIndex;
 				return 1;
 			}
@@ -267,9 +317,11 @@ INLINE_METHODS void CellHandler_Actor::transition5_SelfTestComplete( const void 
 // }}}RME
 
 // {{{RME transition ':TOP:Idle:J4D6D5EA20159:Arm'
-INLINE_METHODS void CellHandler_Actor::transition6_Arm( const void * rtdata, HandlerProtocol::Conjugate * rtport )
+INLINE_METHODS void CellHandler_Actor::transition6_Arm( const void * rtdata, RTProtocol * rtport )
 {
 	// {{{USR
+	debugLog.log("Arm signal recieved");
+
 	toAlarms.arm().send();
 	toSensors.arm().send();
 	// }}}USR
@@ -301,7 +353,7 @@ INLINE_METHODS void CellHandler_Actor::transition9_BreakInTriggered( const Perip
 {
 	// {{{USR
 	int portIndex = msg->sapIndex0();
-	String identifier = char(cellIndex) + "test";
+
 	PeripheralIdentifier ident;
 	ident.peripheralType = TYPE_SENSOR;
 	ident.cellIndex = this->cellIndex;
@@ -316,6 +368,21 @@ INLINE_METHODS void CellHandler_Actor::transition10_SoundAlarms( const void * rt
 {
 	// {{{USR
 	toAlarms.trigger().send();
+	// }}}USR
+}
+// }}}RME
+
+// {{{RME transition ':TOP:Idle:J4D7674B90240:testSensorArmed'
+INLINE_METHODS void CellHandler_Actor::transition11_testSensorArmed( const PeripheralIdentifier * rtdata, TestProtocol::Base * rtport )
+{
+	// {{{USR
+	int portIndex = msg->sapIndex0();
+	String identifier = char(cellIndex) + "test";
+	PeripheralIdentifier ident;
+	ident.peripheralType = TYPE_SENSOR;
+	ident.cellIndex = this->cellIndex;
+	ident.peripheralIndex = portIndex;
+	testSystem.armed(ident).send();
 	// }}}USR
 }
 // }}}RME
@@ -336,7 +403,7 @@ INLINE_CHAINS void CellHandler_Actor::chain6_Arm( void )
 	rtgChainBegin( 2, "Arm" );
 	exitState( rtg_parent_state );
 	rtgTransitionBegin();
-	transition6_Arm( msg->data, (HandlerProtocol::Conjugate *)msg->sap() );
+	transition6_Arm( msg->data, msg->sap() );
 	rtgTransitionEnd();
 	enterState( 2 );
 }
@@ -425,6 +492,17 @@ INLINE_CHAINS void CellHandler_Actor::chain5_SelfTestComplete( void )
 	exitState( rtg_parent_state );
 	rtgTransitionBegin();
 	transition5_SelfTestComplete( msg->data, (Timing::Base *)msg->sap() );
+	rtgTransitionEnd();
+	enterState( 2 );
+}
+
+INLINE_CHAINS void CellHandler_Actor::chain11_testSensorArmed( void )
+{
+	// transition ':TOP:Idle:J4D7674B90240:testSensorArmed'
+	rtgChainBegin( 2, "testSensorArmed" );
+	exitState( rtg_parent_state );
+	rtgTransitionBegin();
+	transition11_testSensorArmed( (const PeripheralIdentifier *)msg->data, (TestProtocol::Base *)msg->sap() );
 	rtgTransitionEnd();
 	enterState( 2 );
 }
@@ -530,6 +608,30 @@ void CellHandler_Actor::rtsBehavior( int signalIndex, int portIndex )
 				}
 				break;
 				// }}}RME
+			case 5:
+				// {{{RME port 'testSystem'
+				switch( signalIndex )
+				{
+				case TestProtocol::Conjugate::rti_arm:
+					chain6_Arm();
+					return;
+				default:
+					break;
+				}
+				break;
+				// }}}RME
+			case 7:
+				// {{{RME port 'testSensors'
+				switch( signalIndex )
+				{
+				case TestProtocol::Base::rti_armed:
+					chain11_testSensorArmed();
+					return;
+				default:
+					break;
+				}
+				break;
+				// }}}RME
 			default:
 				break;
 			}
@@ -555,7 +657,7 @@ const RTActor_class CellHandler_Actor::rtg_class =
   , &CellHandler
   , 2
   , CellHandler_Actor::rtg_capsule_roles
-  , 4
+  , 8
   , CellHandler_Actor::rtg_ports
   , 0
   , (const RTLocalBindingDescriptor *)0
@@ -579,9 +681,9 @@ const RTComponentDescriptor CellHandler_Actor::rtg_capsule_roles[] =
 	  , RTComponentDescriptor::Fixed
 	  , 1
 	  , 3 // cardinality
-	  , 2
+	  , 3
 	  , rtg_interfaces_alarmR1
-	  , 1
+	  , 2
 	  , rtg_bindings_alarmR1
 	}
   , {
@@ -592,9 +694,9 @@ const RTComponentDescriptor CellHandler_Actor::rtg_capsule_roles[] =
 	  , RTComponentDescriptor::Fixed
 	  , 1
 	  , 3 // cardinality
-	  , 2
+	  , 3
 	  , rtg_interfaces_sensorR1
-	  , 1
+	  , 2
 	  , rtg_bindings_sensorR1
 	}
 };
@@ -636,6 +738,42 @@ const RTPortDescriptor CellHandler_Actor::rtg_ports[] =
 	  , 1 // cardinality
 	  , 4
 	  , RTPortDescriptor::KindSpecial + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityProtected
+	}
+  , {
+		"testSystem"
+	  , (const char *)0
+	  , &TestProtocol::Conjugate::rt_class
+	  , RTOffsetOf( CellHandler_Actor, CellHandler_Actor::testSystem )
+	  , 1 // cardinality
+	  , 5
+	  , RTPortDescriptor::KindWired + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityPublic
+	}
+  , {
+		"debugLog"
+	  , (const char *)0
+	  , &Log::Base::rt_class
+	  , RTOffsetOf( CellHandler_Actor, CellHandler_Actor::debugLog )
+	  , 1 // cardinality
+	  , 6
+	  , RTPortDescriptor::KindSpecial + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityProtected
+	}
+  , {
+		"testSensors"
+	  , (const char *)0
+	  , &TestProtocol::Base::rt_class
+	  , RTOffsetOf( CellHandler_Actor, CellHandler_Actor::testSensors )
+	  , 3 // cardinality
+	  , 7
+	  , RTPortDescriptor::KindWired + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityProtected
+	}
+  , {
+		"testAlarms"
+	  , (const char *)0
+	  , &TestProtocol::Base::rt_class
+	  , RTOffsetOf( CellHandler_Actor, CellHandler_Actor::testAlarms )
+	  , 3 // cardinality
+	  , 8
+	  , RTPortDescriptor::KindWired + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityProtected
 	}
 };
 

@@ -25,6 +25,11 @@ static const RTRelayDescriptor rtg_relays[] =
 	  , &PeripheralTest::Base::rt_class
 	  , 1 // cardinality
 	}
+  , {
+		"testSystem"
+	  , &TestProtocol::Conjugate::rt_class
+	  , 1 // cardinality
+	}
 };
 
 static RTActor * new_SoundAlarm_Actor( RTController * _rts, RTActorRef * _ref )
@@ -37,7 +42,7 @@ const RTActorClass SoundAlarm =
 	&Alarm
   , "SoundAlarm"
   , (RTVersionId)0
-  , 2
+  , 3
   , rtg_relays
   , new_SoundAlarm_Actor
 };
@@ -80,6 +85,15 @@ int SoundAlarm_Actor::_followInV( RTBindingEnd & rtg_end, int rtg_portId, int rt
 		if( rtg_repIndex < 1 )
 		{
 			rtg_end.port = &testPort;
+			rtg_end.index = rtg_repIndex;
+			return 1;
+		}
+		break;
+	case 2:
+		// testSystem
+		if( rtg_repIndex < 1 )
+		{
+			rtg_end.port = &testSystem;
 			rtg_end.index = rtg_repIndex;
 			return 1;
 		}
@@ -451,7 +465,7 @@ const RTActor_class SoundAlarm_Actor::rtg_class =
   , &SoundAlarm
   , 0
   , (const RTComponentDescriptor *)0
-  , 2
+  , 3
   , SoundAlarm_Actor::rtg_ports
   , 0
   , (const RTLocalBindingDescriptor *)0
@@ -486,6 +500,15 @@ const RTPortDescriptor SoundAlarm_Actor::rtg_ports[] =
 	  , RTOffsetOf( SoundAlarm_Actor, Alarm_Actor::testPort )
 	  , 1 // cardinality
 	  , 2
+	  , RTPortDescriptor::KindWired + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityPublic
+	}
+  , {
+		"testSystem"
+	  , (const char *)0
+	  , &TestProtocol::Conjugate::rt_class
+	  , RTOffsetOf( SoundAlarm_Actor, Alarm_Actor::testSystem )
+	  , 1 // cardinality
+	  , 3
 	  , RTPortDescriptor::KindWired + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityPublic
 	}
 };

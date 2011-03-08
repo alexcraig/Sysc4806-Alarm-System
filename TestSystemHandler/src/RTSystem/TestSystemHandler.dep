@@ -1,6 +1,6 @@
 TestSystemHandler_SYSTARGET = RTSystem/TestSystemHandler.dep
 TestSystemHandler_SYSDEPS = \
-	M:/Sysc4806-Alarm-System/4806_Alarm_System.rtmdl \
+	M:/SYSC4805/Sysc4806-Alarm-System/4806_Alarm_System.rtmdl \
 	"C:/Program Files/Rational/Rose RealTime/C++/RTComponents.rtcmppkg" \
 	"C:/Program Files/Rational/Rose RealTime/C++/RTClasses.rtlogpkg"
 

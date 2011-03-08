@@ -10,6 +10,7 @@
 #include <RTSystem/TestSystemHandler.h>
 #include <CellConfiguration.h>
 #include <HandlerProtocol.h>
+#include <TestProtocol.h>
 class PeripheralIdentifier;
 
 // {{{RME tool 'OT::Cpp' property 'HeaderPreface'
@@ -72,6 +73,18 @@ protected:
 	// {{{RME port 'toTimer'
 	Timing::Base toTimer;
 	// }}}RME
+	// {{{RME port 'testSystem'
+	TestProtocol::Conjugate testSystem;
+	// }}}RME
+	// {{{RME port 'debugLog'
+	Log::Base debugLog;
+	// }}}RME
+	// {{{RME port 'testSensors'
+	TestProtocol::Base testSensors;
+	// }}}RME
+	// {{{RME port 'testAlarms'
+	TestProtocol::Base testAlarms;
+	// }}}RME
 
 public:
 	CellHandler_Actor( RTController * rtg_rts, RTActorRef * rtg_ref );
@@ -96,7 +109,7 @@ protected:
 	INLINE_METHODS void transition5_SelfTestComplete( const void * rtdata, Timing::Base * rtport );
 	// }}}RME
 	// {{{RME transition ':TOP:Idle:J4D6D5EA20159:Arm'
-	INLINE_METHODS void transition6_Arm( const void * rtdata, HandlerProtocol::Conjugate * rtport );
+	INLINE_METHODS void transition6_Arm( const void * rtdata, RTProtocol * rtport );
 	// }}}RME
 	// {{{RME transition ':TOP:Idle:J4D6D5ED400ED:Disarm'
 	INLINE_METHODS void transition7_Disarm( const void * rtdata, HandlerProtocol::Conjugate * rtport );
@@ -110,6 +123,9 @@ protected:
 	// {{{RME transition ':TOP:Idle:J4D6D5FF900B8:SoundAlarms'
 	INLINE_METHODS void transition10_SoundAlarms( const void * rtdata, HandlerProtocol::Conjugate * rtport );
 	// }}}RME
+	// {{{RME transition ':TOP:Idle:J4D7674B90240:testSensorArmed'
+	INLINE_METHODS void transition11_testSensorArmed( const PeripheralIdentifier * rtdata, TestProtocol::Base * rtport );
+	// }}}RME
 
 private:
 	INLINE_CHAINS void chain3_Initial( void );
@@ -122,6 +138,7 @@ private:
 	INLINE_CHAINS void chain2_SensorResponded( void );
 	INLINE_CHAINS void chain9_BreakInTriggered( void );
 	INLINE_CHAINS void chain5_SelfTestComplete( void );
+	INLINE_CHAINS void chain11_testSensorArmed( void );
 
 public:
 	virtual void rtsBehavior( int signalIndex, int portIndex );

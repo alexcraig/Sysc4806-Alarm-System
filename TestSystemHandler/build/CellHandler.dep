@@ -4,4 +4,5 @@ CellHandler_DEPS = \
 	../src/CellHandler.h \
 	../src/PeripheralIdentifier.h \
 	../src/CellConfiguration.h \
-	../src/HandlerProtocol.h
+	../src/HandlerProtocol.h \
+	../src/TestProtocol.h

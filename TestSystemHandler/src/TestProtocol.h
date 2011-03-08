@@ -22,15 +22,17 @@ struct TestProtocol
 			rti_breakin = rtiLast_RTRootProtocol + 1
 		  , rti_disarm
 		  , rti_failed
+		  , rti_armed
 		};
 
 	protected:
-		enum { rtiLast_TestProtocol = rti_failed };
+		enum { rtiLast_TestProtocol = rti_armed };
 
 	public:
 		inline RTInSignal breakin( void );
 		inline RTSymmetricSignal disarm( void );
 		inline RTInSignal failed( void );
+		inline RTInSignal armed( void );
 		inline RTOutSignal password_entered( const RTTypedValue_RTString & data );
 		inline RTOutSignal arm_pressed( void );
 		inline RTOutSignal disarm_pressed( void );
@@ -39,6 +41,7 @@ struct TestProtocol
 		inline RTOutSignal disabled_pressed( void );
 		inline RTOutSignal breakin( const RTTypedValue_PeripheralIdentifier & data );
 		inline RTOutSignal call_failed( void );
+		inline RTOutSignal arm( void );
 		static const RTProtocolDescriptor rt_class;
 
 	private:
@@ -60,10 +63,11 @@ struct TestProtocol
 		  , rti_breakin
 		  , rti_disarm
 		  , rti_call_failed
+		  , rti_arm
 		};
 
 	protected:
-		enum { rtiLast_TestProtocol = rti_call_failed };
+		enum { rtiLast_TestProtocol = rti_arm };
 
 	public:
 		inline RTInSignal password_entered( void );
@@ -75,8 +79,10 @@ struct TestProtocol
 		inline RTInSignal breakin( void );
 		inline RTSymmetricSignal disarm( void );
 		inline RTInSignal call_failed( void );
+		inline RTInSignal arm( void );
 		inline RTOutSignal breakin( const RTTypedValue_PeripheralIdentifier & data );
 		inline RTOutSignal failed( const RTTypedValue_PeripheralIdentifier & data );
+		inline RTOutSignal armed( const RTTypedValue_PeripheralIdentifier & data );
 		static const RTProtocolDescriptor rt_class;
 
 	private:
@@ -106,6 +112,11 @@ inline RTSymmetricSignal TestProtocol::Base::disarm( void )
 inline RTInSignal TestProtocol::Base::failed( void )
 {
 	return RTInSignal( this, rti_failed );
+}
+
+inline RTInSignal TestProtocol::Base::armed( void )
+{
+	return RTInSignal( this, rti_armed );
 }
 
 inline RTOutSignal TestProtocol::Base::password_entered( const RTTypedValue_RTString & data )
@@ -146,6 +157,11 @@ inline RTOutSignal TestProtocol::Base::breakin( const RTTypedValue_PeripheralIde
 inline RTOutSignal TestProtocol::Base::call_failed( void )
 {
 	return RTOutSignal( this, Conjugate::rti_call_failed, (const void *)0, &RTType_void );
+}
+
+inline RTOutSignal TestProtocol::Base::arm( void )
+{
+	return RTOutSignal( this, Conjugate::rti_arm, (const void *)0, &RTType_void );
 }
 
 inline TestProtocol::Conjugate::Conjugate( void )
@@ -202,6 +218,11 @@ inline RTInSignal TestProtocol::Conjugate::call_failed( void )
 	return RTInSignal( this, rti_call_failed );
 }
 
+inline RTInSignal TestProtocol::Conjugate::arm( void )
+{
+	return RTInSignal( this, rti_arm );
+}
+
 inline RTOutSignal TestProtocol::Conjugate::breakin( const RTTypedValue_PeripheralIdentifier & data )
 {
 	return RTOutSignal( this, Base::rti_breakin, data.data, data.type );
@@ -210,6 +231,11 @@ inline RTOutSignal TestProtocol::Conjugate::breakin( const RTTypedValue_Peripher
 inline RTOutSignal TestProtocol::Conjugate::failed( const RTTypedValue_PeripheralIdentifier & data )
 {
 	return RTOutSignal( this, Base::rti_failed, data.data, data.type );
+}
+
+inline RTOutSignal TestProtocol::Conjugate::armed( const RTTypedValue_PeripheralIdentifier & data )
+{
+	return RTOutSignal( this, Base::rti_armed, data.data, data.type );
 }
 
 #endif /* TestProtocol_H */

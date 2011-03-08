@@ -26,6 +26,11 @@ static const RTRelayDescriptor rtg_relays[] =
 	  , &PeripheralTest::Base::rt_class
 	  , 1 // cardinality
 	}
+  , {
+		"testSystem"
+	  , &TestProtocol::Conjugate::rt_class
+	  , 1 // cardinality
+	}
 };
 
 static RTActor * new_Sensor_Actor( RTController * _rts, RTActorRef * _ref )
@@ -38,7 +43,7 @@ const RTActorClass Sensor =
 	(const RTActorClass *)0
   , "Sensor"
   , (RTVersionId)0
-  , 2
+  , 3
   , rtg_relays
   , new_Sensor_Actor
 };
@@ -84,10 +89,49 @@ int Sensor_Actor::_followInV( RTBindingEnd & rtg_end, int rtg_portId, int rtg_re
 			return 1;
 		}
 		break;
+	case 2:
+		// testSystem
+		if( rtg_repIndex < 1 )
+		{
+			rtg_end.port = &testSystem;
+			rtg_end.index = rtg_repIndex;
+			return 1;
+		}
+		break;
 	default:
 		break;
 	}
 	return RTActor::_followInV( rtg_end, rtg_portId, rtg_repIndex );
+}
+
+// {{{RME enter ':TOP:Armed'
+INLINE_METHODS void Sensor_Actor::enter3_Armed( void )
+{
+	// {{{USR
+	PeripheralIdentifier ident;
+	ident.peripheralType = TYPE_SENSOR;
+	ident.cellIndex = 0;
+	ident.peripheralIndex = 0;
+
+	// NOTE: This PeripheralIdentifier is meaningless and will be
+	// discarded without being read by the CellHandler.
+
+	testSystem.armed(ident).send();
+	// }}}USR
+}
+// }}}RME
+
+void Sensor_Actor::enterStateV( void )
+{
+	switch( getCurrentState() )
+	{
+	case 3:
+		enter3_Armed();
+		break;
+	default:
+		RTActor::enterStateV();
+		break;
+	}
 }
 
 // {{{RME transition ':TOP:Initial:Initial'
@@ -452,7 +496,7 @@ const RTActor_class Sensor_Actor::rtg_class =
   , &Sensor
   , 0
   , (const RTComponentDescriptor *)0
-  , 2
+  , 3
   , Sensor_Actor::rtg_ports
   , 0
   , (const RTLocalBindingDescriptor *)0
@@ -486,6 +530,15 @@ const RTPortDescriptor Sensor_Actor::rtg_ports[] =
 	  , RTOffsetOf( Sensor_Actor, Sensor_Actor::testPort )
 	  , 1 // cardinality
 	  , 2
+	  , RTPortDescriptor::KindWired + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityPublic
+	}
+  , {
+		"testSystem"
+	  , (const char *)0
+	  , &TestProtocol::Conjugate::rt_class
+	  , RTOffsetOf( Sensor_Actor, Sensor_Actor::testSystem )
+	  , 1 // cardinality
+	  , 3
 	  , RTPortDescriptor::KindWired + RTPortDescriptor::NotificationDisabled + RTPortDescriptor::RegisterNotPermitted + RTPortDescriptor::VisibilityPublic
 	}
 };

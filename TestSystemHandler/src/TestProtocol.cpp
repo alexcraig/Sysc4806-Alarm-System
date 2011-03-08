@@ -13,7 +13,7 @@ const RTProtocolDescriptor TestProtocol::Base::rt_class =
   , &TestProtocol::Conjugate::rt_class
   , "TestProtocol"
   , 0
-  , 5
+  , 6
   , TestProtocol::Base::rt_signals
 #if RTRUNTIMEBC
   , &RTProtocolDescriptor::getUnknownGlobalSignal, &RTProtocolDescriptor::getUnknownLocalSignal
@@ -23,6 +23,11 @@ const RTProtocolDescriptor TestProtocol::Base::rt_class =
 const RTSignalDescriptor TestProtocol::Base::rt_signals[] =
 {
 	{
+		"armed"
+	  , &RTType_PeripheralIdentifier
+	  , TestProtocol::Base::rti_armed
+	}
+  , {
 		"breakin"
 	  , &RTType_PeripheralIdentifier
 	  , TestProtocol::Base::rti_breakin
@@ -55,7 +60,7 @@ const RTProtocolDescriptor TestProtocol::Conjugate::rt_class =
   , &TestProtocol::Base::rt_class
   , "TestProtocol"
   , 0
-  , 11
+  , 12
   , TestProtocol::Conjugate::rt_signals
 #if RTRUNTIMEBC
   , &RTProtocolDescriptor::getUnknownGlobalSignal, &RTProtocolDescriptor::getUnknownLocalSignal
@@ -65,6 +70,11 @@ const RTProtocolDescriptor TestProtocol::Conjugate::rt_class =
 const RTSignalDescriptor TestProtocol::Conjugate::rt_signals[] =
 {
 	{
+		"arm"
+	  , &RTType_void
+	  , TestProtocol::Conjugate::rti_arm
+	}
+  , {
 		"arm_pressed"
 	  , &RTType_void
 	  , TestProtocol::Conjugate::rti_arm_pressed

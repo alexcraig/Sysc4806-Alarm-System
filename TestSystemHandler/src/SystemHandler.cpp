@@ -112,6 +112,10 @@ static const RTInterfaceDescriptor rtg_interfaces_soundAlarmR1[] =
 		"testPort"
 	  , 0
 	}
+  , {
+		"testSystem"
+	  , 0
+	}
 };
 
 static const RTBindingDescriptor rtg_bindings_soundAlarmR1[] =
@@ -127,6 +131,10 @@ static const RTInterfaceDescriptor rtg_interfaces_cellHandlerR1[] =
 	{
 		"fromSystem"
 	  , 1
+	}
+  , {
+		"testSystem"
+	  , 0
 	}
 };
 
@@ -1627,7 +1635,7 @@ const RTComponentDescriptor SystemHandler_Actor::rtg_capsule_roles[] =
 	  , RTComponentDescriptor::Fixed
 	  , 1
 	  , 1 // cardinality
-	  , 2
+	  , 3
 	  , rtg_interfaces_soundAlarmR1
 	  , 1
 	  , rtg_bindings_soundAlarmR1
@@ -1640,7 +1648,7 @@ const RTComponentDescriptor SystemHandler_Actor::rtg_capsule_roles[] =
 	  , RTComponentDescriptor::Fixed
 	  , 1
 	  , 3 // cardinality
-	  , 1
+	  , 2
 	  , rtg_interfaces_cellHandlerR1
 	  , 1
 	  , rtg_bindings_cellHandlerR1
