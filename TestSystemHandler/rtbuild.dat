@@ -1,3 +1,2 @@
-model=M:/Sysc4806-Alarm-System/4806_Alarm_System.rtmdl
-purifyexename=
 exename=build/TestSystemHandler.EXE
+model=M:/Sysc4806-Alarm-System/4806_Alarm_System.rtmdl
