@@ -1,4 +1,0 @@
-PeripheralIdentifier_DEPS = \
-	../src/PeripheralIdentifier.cpp \
-	../src/RTSystem/TestCellHandler.h \
-	../src/PeripheralIdentifier.h

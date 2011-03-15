@@ -1,8 +1,0 @@
-SoundAlarm_DEPS = \
-	../src/SoundAlarm.cpp \
-	../src/RTSystem/TopLevelTesting.h \
-	../src/SoundAlarm.h \
-	../src/Alarm.h \
-	../src/HandlerProtocol.h \
-	../src/PeripheralTest.h \
-	../src/PeripheralIdentifier.h

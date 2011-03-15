@@ -1,4 +1,0 @@
-DisplayProtocol_DEPS = \
-	../src/DisplayProtocol.cpp \
-	../src/RTSystem/TestCellHandler.h \
-	../src/DisplayProtocol.h

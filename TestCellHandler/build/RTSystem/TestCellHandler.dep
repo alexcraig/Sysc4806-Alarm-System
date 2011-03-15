@@ -1,3 +1,0 @@
-TestCellHandler_SYSDEPS = \
-	../src/RTSystem/TestCellHandler.cpp \
-	../src/RTSystem/TestCellHandler.h

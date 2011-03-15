@@ -1,6 +1,0 @@
-PhoneLine_DEPS = \
-	../src/PhoneLine.cpp \
-	../src/RTSystem/TestSystemHandler.h \
-	../src/PhoneLine.h \
-	../src/PhoneProtocol.h \
-	../src/PhoneTest.h

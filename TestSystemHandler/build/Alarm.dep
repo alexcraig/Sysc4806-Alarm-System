@@ -1,8 +1,0 @@
-Alarm_DEPS = \
-	../src/Alarm.cpp \
-	../src/RTSystem/TestSystemHandler.h \
-	../src/Alarm.h \
-	../src/HandlerProtocol.h \
-	../src/PeripheralTest.h \
-	../src/TestProtocol.h \
-	../src/PeripheralIdentifier.h

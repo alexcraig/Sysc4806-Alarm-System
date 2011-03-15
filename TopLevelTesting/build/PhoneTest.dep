@@ -1,4 +1,0 @@
-PhoneTest_DEPS = \
-	../src/PhoneTest.cpp \
-	../src/RTSystem/TopLevelTesting.h \
-	../src/PhoneTest.h

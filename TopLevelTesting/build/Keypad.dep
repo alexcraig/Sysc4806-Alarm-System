@@ -1,5 +1,0 @@
-Keypad_DEPS = \
-	../src/Keypad.cpp \
-	../src/RTSystem/TopLevelTesting.h \
-	../src/Keypad.h \
-	../src/KeypadProtocol.h

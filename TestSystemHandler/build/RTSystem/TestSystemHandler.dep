@@ -1,3 +1,0 @@
-TestSystemHandler_SYSDEPS = \
-	../src/RTSystem/TestSystemHandler.cpp \
-	../src/RTSystem/TestSystemHandler.h

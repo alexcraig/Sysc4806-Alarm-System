@@ -1,4 +1,0 @@
-PeripheralTest_DEPS = \
-	../src/PeripheralTest.cpp \
-	../src/RTSystem/TopLevelTesting.h \
-	../src/PeripheralTest.h

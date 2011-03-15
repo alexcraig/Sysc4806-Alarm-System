@@ -1,4 +1,0 @@
-CellConfiguration_DEPS = \
-	../src/CellConfiguration.cpp \
-	../src/RTSystem/TopLevelTesting.h \
-	../src/CellConfiguration.h

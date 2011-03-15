@@ -1,5 +1,0 @@
-Display_DEPS = \
-	../src/Display.cpp \
-	../src/RTSystem/TopLevelTesting.h \
-	../src/Display.h \
-	../src/DisplayProtocol.h
