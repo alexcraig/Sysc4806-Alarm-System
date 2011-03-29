@@ -1,0 +1,8 @@
+ConcurrencyTestSystem_DEPS = \
+	../src/ConcurrencyTestSystem.cpp \
+	../src/RTSystem/ConcurrencyTests.h \
+	../src/ConcurrencyTestSystem.h \
+	../src/DisplayProtocol.h \
+	../src/PeripheralTest.h \
+	../src/TestProtocol.h \
+	../src/PeripheralIdentifier.h

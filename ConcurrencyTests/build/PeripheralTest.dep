@@ -1,0 +1,4 @@
+PeripheralTest_DEPS = \
+	../src/PeripheralTest.cpp \
+	../src/RTSystem/ConcurrencyTests.h \
+	../src/PeripheralTest.h

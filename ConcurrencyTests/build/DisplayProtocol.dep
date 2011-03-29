@@ -1,0 +1,4 @@
+DisplayProtocol_DEPS = \
+	../src/DisplayProtocol.cpp \
+	../src/RTSystem/ConcurrencyTests.h \
+	../src/DisplayProtocol.h

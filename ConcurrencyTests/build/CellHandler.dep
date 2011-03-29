@@ -1,0 +1,9 @@
+CellHandler_DEPS = \
+	../src/CellHandler.cpp \
+	../src/RTSystem/ConcurrencyTests.h \
+	../src/CellHandler.h \
+	../src/PeripheralIdentifier.h \
+	../src/PeripheralTest.h \
+	../src/CellConfiguration.h \
+	../src/HandlerProtocol.h \
+	../src/TestProtocol.h
