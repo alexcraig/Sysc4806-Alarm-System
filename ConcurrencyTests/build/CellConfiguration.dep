@@ -1,0 +1,4 @@
+CellConfiguration_DEPS = \
+	../src/CellConfiguration.cpp \
+	../src/RTSystem/ConcurrencyTests.h \
+	../src/CellConfiguration.h
