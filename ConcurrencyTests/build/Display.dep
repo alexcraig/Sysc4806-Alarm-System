@@ -1,0 +1,5 @@
+Display_DEPS = \
+	../src/Display.cpp \
+	../src/RTSystem/ConcurrencyTests.h \
+	../src/Display.h \
+	../src/DisplayProtocol.h

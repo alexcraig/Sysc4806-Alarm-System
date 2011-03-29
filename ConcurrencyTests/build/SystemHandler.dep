@@ -1,0 +1,14 @@
+SystemHandler_DEPS = \
+	../src/SystemHandler.cpp \
+	../src/RTSystem/ConcurrencyTests.h \
+	../src/SystemHandler.h \
+	../src/PeripheralTest.h \
+	../src/PhoneTest.h \
+	../src/CellConfiguration.h \
+	../src/DisplayProtocol.h \
+	../src/HandlerProtocol.h \
+	../src/KeypadProtocol.h \
+	../src/PhoneProtocol.h \
+	../src/TestProtocol.h \
+	../src/UserConfiguration.h \
+	../src/PeripheralIdentifier.h

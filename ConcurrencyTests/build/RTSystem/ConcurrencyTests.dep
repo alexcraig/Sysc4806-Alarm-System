@@ -1,0 +1,3 @@
+ConcurrencyTests_SYSDEPS = \
+	../src/RTSystem/ConcurrencyTests.cpp \
+	../src/RTSystem/ConcurrencyTests.h
