@@ -6,12 +6,6 @@
 
 (list toUnit
 	capsulePaths (list capsulePathsList
-		(object CapsulePath "/"
-			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D76918A0170"
-			classifier  "Logical View::SystemHandler"
-			quidu "4D485B7E0069"
-			capsulePathString ":SystemHandler")
 		(object CapsulePath "/keypadR1:0"
 			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
 			quid "4D76918D013D"
@@ -26,6 +20,12 @@
 					quidu "4D4865EA007B"
 					capsuleRoleCardinality 0))
 			capsulePathString "0/keypadR1:Keypad")
+		(object CapsulePath "/"
+			capsulePathProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D76918A0170"
+			classifier  "Logical View::SystemHandler"
+			quidu "4D485B7E0069"
+			capsulePathString ":SystemHandler")
 		(object CapsulePath "/systemHandlerR1:0"
 			capsulePathProcess "Deployment View::x86Processor::TestSystemHandlerInstance"
 			quid "4D7698A803E5"
@@ -40,32 +40,6 @@
 					quidu "4D6FEC440082"
 					capsuleRoleCardinality 0))
 			capsulePathString "0/systemHandlerR1:SystemHandler")
-		(object CapsulePath "/systemHandlerR1"
-			capsulePathProcess "Deployment View::x86Processor::ConcurrencyTestsInstance"
-			quid "4D91FDB3020B"
-			classifier  "Logical View::ConcurrencyTestSystem"
-			quidu "4D90F8C4005D"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D91FDB3020C"
-					classifier  "Logical View::ConcurrencyTestSystem"
-					quidu "4D90F8C4005D"
-					capsuleRole  ":Structure:systemHandlerR1"
-					quidu "4D90F91C0368"))
-			capsulePathString "systemHandlerR1(1)")
-		(object CapsulePath "/display"
-			capsulePathProcess "Deployment View::x86Processor::ConcurrencyTestsInstance"
-			quid "4D91FDB3020D"
-			classifier  "Logical View::ConcurrencyTestSystem"
-			quidu "4D90F8C4005D"
-			capsulePaths (list capsulePathsList
-				(object CapsulePathElement ""
-					quid "4D91FDB3020E"
-					classifier  "Logical View::ConcurrencyTestSystem"
-					quidu "4D90F8C4005D"
-					capsuleRole  ":Structure:display"
-					quidu "4D91ED190193"))
-			capsulePathString "display(1)")
 		(object CapsulePath "/display:0"
 			capsulePathProcess "Deployment View::x86Processor::ConcurrencyTestsInstance"
 			quid "4D91FDB3024C"
@@ -79,35 +53,34 @@
 					capsuleRole  ":Structure:display"
 					quidu "4D91ED190193"
 					capsuleRoleCardinality 0))
-			capsulePathString "0/display:Display"))
+			capsulePathString "0/display:Display")
+		(object CapsulePath "/display"
+			capsulePathProcess "Deployment View::x86Processor::ConcurrencyTestsInstance"
+			quid "4D91FDB3020D"
+			classifier  "Logical View::ConcurrencyTestSystem"
+			quidu "4D90F8C4005D"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D91FDB3020E"
+					classifier  "Logical View::ConcurrencyTestSystem"
+					quidu "4D90F8C4005D"
+					capsuleRole  ":Structure:display"
+					quidu "4D91ED190193"))
+			capsulePathString "display(1)")
+		(object CapsulePath "/systemHandlerR1"
+			capsulePathProcess "Deployment View::x86Processor::ConcurrencyTestsInstance"
+			quid "4D91FDB3020B"
+			classifier  "Logical View::ConcurrencyTestSystem"
+			quidu "4D90F8C4005D"
+			capsulePaths (list capsulePathsList
+				(object CapsulePathElement ""
+					quid "4D91FDB3020C"
+					classifier  "Logical View::ConcurrencyTestSystem"
+					quidu "4D90F8C4005D"
+					capsuleRole  ":Structure:systemHandlerR1"
+					quidu "4D90F91C0368"))
+			capsulePathString "systemHandlerR1(1)"))
 	daemons (list daemonsList
-		(object BehaviorDaemon ":SystemHandler-TOP"
-			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D76919C00B4"
-			capsuleInstance  "/"
-			quidu "4D76918A0170"
-			State  ":TOP")
-		(object BehaviorDaemon ":SystemHandler-Initialized"
-			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D76919D0112"
-			capsuleInstance  "/"
-			quidu "4D76918A0170"
-			State  ":TOP:Initialized")
-		(object StructureDaemon "0/keypadR1:Keypad"
-			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D7691B502D7"
-			capsuleInstance  "/keypadR1:0"
-			quidu "4D76918D013D")
-		(object PortDaemon "*/testPort/keypadR1:0_Probe"
-			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
-			quid "4D7691BA0038"
-			capsuleInstance  "/keypadR1:0"
-			quidu "4D76918D013D"
-			classifier  "Logical View::Keypad"
-			quidu "4D485CBB0010"
-			port  ":Structure:testPort"
-			quidu "4D6D46BD0309"
-			portCardinality -1)
 		(object PortDaemon "*/toSystem/keypadR1:0_Probe"
 			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
 			quid "4D7691BE0355"
@@ -118,21 +91,48 @@
 			port  ":Structure:toSystem"
 			quidu "4D48635102D5"
 			portCardinality -1)
-		(object BehaviorDaemon "0/systemHandlerR1:SystemHandler-TOP"
+		(object PortDaemon "*/testPort/keypadR1:0_Probe"
+			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D7691BA0038"
+			capsuleInstance  "/keypadR1:0"
+			quidu "4D76918D013D"
+			classifier  "Logical View::Keypad"
+			quidu "4D485CBB0010"
+			port  ":Structure:testPort"
+			quidu "4D6D46BD0309"
+			portCardinality -1)
+		(object StructureDaemon "0/keypadR1:Keypad"
+			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D7691B502D7"
+			capsuleInstance  "/keypadR1:0"
+			quidu "4D76918D013D")
+		(object BehaviorDaemon ":SystemHandler-Initialized"
+			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D76919D0112"
+			capsuleInstance  "/"
+			quidu "4D76918A0170"
+			State  ":TOP:Initialized")
+		(object BehaviorDaemon ":SystemHandler-TOP"
+			daemonProcess "Deployment View::x86Processor::TopLevelTestingInstance"
+			quid "4D76919C00B4"
+			capsuleInstance  "/"
+			quidu "4D76918A0170"
+			State  ":TOP")
+		(object BehaviorDaemon "0/systemHandlerR1:SystemHandler-Enabled"
 			daemonProcess "Deployment View::x86Processor::TestSystemHandlerInstance"
-			quid "4D7698AC0372"
+			quid "4D7698B4019D"
 			capsuleInstance  "/systemHandlerR1:0"
 			quidu "4D7698A803E5"
-			State  ":TOP")
+			State  ":TOP:Initialized:Enabled")
 		(object BehaviorDaemon "0/systemHandlerR1:SystemHandler-Initialized"
 			daemonProcess "Deployment View::x86Processor::TestSystemHandlerInstance"
 			quid "4D7698AE017E"
 			capsuleInstance  "/systemHandlerR1:0"
 			quidu "4D7698A803E5"
 			State  ":TOP:Initialized")
-		(object BehaviorDaemon "0/systemHandlerR1:SystemHandler-Enabled"
+		(object BehaviorDaemon "0/systemHandlerR1:SystemHandler-TOP"
 			daemonProcess "Deployment View::x86Processor::TestSystemHandlerInstance"
-			quid "4D7698B4019D"
+			quid "4D7698AC0372"
 			capsuleInstance  "/systemHandlerR1:0"
 			quidu "4D7698A803E5"
-			State  ":TOP:Initialized:Enabled")))
+			State  ":TOP")))

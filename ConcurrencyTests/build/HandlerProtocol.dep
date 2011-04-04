@@ -1,5 +1,0 @@
-HandlerProtocol_DEPS = \
-	../src/HandlerProtocol.cpp \
-	../src/RTSystem/ConcurrencyTests.h \
-	../src/HandlerProtocol.h \
-	../src/PeripheralIdentifier.h

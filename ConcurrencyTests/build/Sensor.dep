@@ -1,9 +1,0 @@
-Sensor_DEPS = \
-	../src/Sensor.cpp \
-	../src/RTSystem/ConcurrencyTests.h \
-	../src/Sensor.h \
-	../src/CellConfiguration.h \
-	../src/HandlerProtocol.h \
-	../src/PeripheralTest.h \
-	../src/TestProtocol.h \
-	../src/PeripheralIdentifier.h

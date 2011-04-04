@@ -1,5 +1,0 @@
-TestProtocol_DEPS = \
-	../src/TestProtocol.cpp \
-	../src/RTSystem/ConcurrencyTests.h \
-	../src/TestProtocol.h \
-	../src/PeripheralIdentifier.h
